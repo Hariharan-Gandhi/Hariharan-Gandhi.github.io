@@ -243,3 +243,39 @@ a {
 @media screen and (max-width: 42em) {
   .site-footer {
     font-size: 0.9rem; } }
+
+article {
+    border: 1px solid grey;
+    margin: 10px;
+    margin-bottom: 15px;
+    padding: 8px;
+    border-radius: 10px;
+    box-shadow: 5px 3px 15px 1px grey;
+}
+
+.prof_pic {
+    margin-left: auto;
+    margin-right: auto;
+    height: 230px;
+    width: 230px;
+    border-radius: 350px;
+    background: url(https://avatars3.githubusercontent.com/u/9645184?v=3&amp;s=460) center;
+    background-size: contain;
+    box-shadow: 5px 3px 15px 1px grey;
+}
+
+.prof_pic:hover {
+    background-size: 105% 105%;
+    box-shadow: 3px 5px 15px 1px grey;
+}
+.prof_badges {
+    margin: 10px;
+    border-radius: 10px;
+    padding: 8px;
+    box-shadow: 0px 0px 10px grey;
+}
+
+.description {
+    margin: 10px;
+    padding: 8px;
+}
