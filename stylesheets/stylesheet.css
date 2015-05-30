@@ -259,7 +259,7 @@ article {
     height: 230px;
     width: 230px;
     border-radius: 350px;
-    background: url(https://avatars3.githubusercontent.com/u/9645184?v=3&amp;s=460) center;
+    background: url(../Resources/Homepage/Hariharan_Gandhi.jpg) center no-repeat;
     background-size: contain;
     box-shadow: 5px 3px 15px 1px grey;
 }
@@ -275,7 +275,30 @@ article {
     box-shadow: 0px 0px 10px grey;
 }
 
+.project_header {
+    
+
+}
 .description {
     margin: 10px;
     padding: 8px;
 }
+
+
+.prof_pic1 {
+    margin-left: auto;
+    margin-right: auto;
+    height: 40px;
+    width: 550px;
+    background-size: contain;
+    box-shadow: 5px 3px 15px 1px grey;
+}
+
+.prof_pic1:hover {
+    height: 400px;
+    width: 100%;
+    background: url(../Resources/Homepage/image.PNG) center;
+    background-size: 105% 105%;
+    box-shadow: 3px 5px 15px 1px grey;
+}
+
