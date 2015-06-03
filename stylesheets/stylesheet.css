@@ -282,14 +282,14 @@ article {
 }
 
 .badges {
-    margin-left: 100px;
+    margin-left: 25%;
     position: relative;
     transition: transform 0.75s;
     -webkit-backface-visibility: hidden;
 }
 
 iframe {
-    margin-left: 100px;
+    margin-left: 25%;
     width:200px;
 }
 
@@ -304,6 +304,7 @@ iframe {
     background: linear-gradient(to bottom right, white, #e0f7fa);
 }
 #twitter {
+    padding-top: 0.3%;
     float: right;
     width: 50%;
     height: 25%;
@@ -311,6 +312,7 @@ iframe {
 }
 #github {
     float: left;
+    padding-top: 3%;
     width: 50%;
     height: 75%;
     background: linear-gradient(to bottom right, white, #e0f7fa);
@@ -318,6 +320,7 @@ iframe {
 
 #github_details {
     float: right;
+    padding-top: 1%;
     width: 50%;
     height: 50%;
     background: linear-gradient(to bottom right, white, #e0f7fa);
