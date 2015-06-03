@@ -330,17 +330,15 @@ iframe {
 }
 
 .page_quote {
-    opacity:0.09;
+    padding-top: 10px;
     transition: opacity 1s, font 1.3s;
+    height: 100px;
 }
-
 
 .page_quote:hover
 {
-    opacity:1;
+    opacity: 1 !important;
 }
-
-
 
 .view_arc_wifriends {
     margin-left: auto;
@@ -390,6 +388,3 @@ iframe {
     background-size: 105% 105%;
     box-shadow: 3px 5px 15px 1px grey;
 }
-
-
-
