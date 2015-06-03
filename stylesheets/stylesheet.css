@@ -330,16 +330,17 @@ iframe {
 }
 
 .page_quote {
-    font-family:fantasy;
-    font-size: 35px;
     opacity:0.09;
-    transition: opacity 1s;
+    transition: opacity 1s, font 1.3s;
 }
+
 
 .page_quote:hover
 {
     opacity:1;
 }
+
+
 
 .view_arc_wifriends {
     margin-left: auto;
@@ -354,7 +355,7 @@ iframe {
     transition: height 0.4s
 }
 
-p {
+.Projects p {
     text-align: justify;
     text-justify: inter-word;
 }
