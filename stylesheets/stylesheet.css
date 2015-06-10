@@ -252,6 +252,7 @@ article {
     border-radius: 10px;
     box-shadow: 5px 3px 15px 1px grey;
 }
+
 .prof_pic {
     margin-left: auto;
     margin-right: auto;
@@ -289,9 +290,12 @@ article {
 }
 
 iframe {
-    margin-left: 25%;
-    width:200px;
+    margin-left: 12.5%;
+    height: 100%;
+    width: 75%;
 }
+iframe[id^='twitter-widget-']{ width:62.5% !important;}
+
 
 .badges:hover {
     transform: scale(1.5);
@@ -322,7 +326,7 @@ iframe {
     float: right;
     padding-top: 1%;
     width: 50%;
-    height: 50%;
+    height: 75%;
     background: linear-gradient(to bottom right, white, #e0f7fa);
 }
 
@@ -335,7 +339,6 @@ iframe {
 .page_quote {
     padding-top: 10px;
     transition: opacity 1s, font 1.3s;
-    height: 100px;
 }
 
 .page_quote:hover
