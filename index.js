@@ -10,7 +10,7 @@ $(window).load(function() {
 //        });
         
         $('#page-loading-div').html('<h5 id="page-loading-text">Apologies...!!! Page is under construction. Please come back soon <br> - Hari</h5>');
-    }, 4000);
+    }, 5000);
 
 });
 
