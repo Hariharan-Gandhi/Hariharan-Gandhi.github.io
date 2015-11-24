@@ -4,13 +4,13 @@ $(window).load(function() {
 
     // PAGE IS FULLY LOADED - FADE OUT YOUR OVERLAYING DIV
     setTimeout(function() {
-//        $('#page-loading-div').fadeOut(6000, function() {
-//            $(".page_quote").fadeTo(2500, 0.5);
-//            
-//        });
+       $('#page-loading-div').fadeOut(6000, function() {
+           $(".page_quote").fadeTo(2500, 0.5);
+           
+        });
         
-        $('#page-loading-div').html('<h5 id="page-loading-text">Apologies...!!! Page is under construction. Please come back soon <br> - Hari</h5>');
-    }, 5000);
+        //$('#page-loading-div').html('<h5 id="page-loading-text">Apologies...!!! Page is under construction. Please come back soon <br> - Hari</h5>');
+    }, 1000);
 
 });
 
