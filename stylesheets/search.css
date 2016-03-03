@@ -12,7 +12,7 @@
 
 #hari-banner {
     font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
-    font-size: 96px !important;
+    font-size: 10vmin;
     padding: 55px 50px 35px 50px;
     text-align: center;
     text-transform: uppercase;
@@ -28,12 +28,20 @@
     text-align: center;
     transition: opacity 1s, font 1.3s;
 }
+
+#quote{
+    font-size: 4vmin !important;
+}
+.namebanner {
+    line-height: 90%;
+}
 .shake-animation:hover {
     -webkit-animation-name: spaceboots;
     -webkit-animation-duration: 200ms;
     -webkit-transform-origin: 50% 50%;
     -webkit-animation-iteration-count: 2;
     -webkit-animation-timing-function: linear;
+
     -moz-animation-name: spaceboots;
     -moz-animation-duration: 200ms;
     -moz-transform-origin: 50% 50%;
@@ -95,6 +103,33 @@
     width: 100%;
     text-align: center;
     color: #fff;
+}
+
+.viewmore{
+    margin-top: 5%;
+    font-size: 30px;
+    cursor: pointer;
+    color: yellow !important;
+
+    -moz-animation-duration: 2s;
+    -moz-animation-timing-function: linear;
+    -moz-animation-delay: 0s;
+    -moz-animation-direction: normal;
+    -moz-animation-fill-mode: none;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-play-state: running;
+    -moz-animation-name: viewmoreanim;
+    
+    -webkit-animation-duration: 2s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-delay: 0s;
+    -webkit-animation-direction: normal;
+    -webkit-animation-fill-mode: none;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-play-state: running;
+    -webkit-animation-name: viewmoreanim;
+    
+    animation: 2s linear 0s normal none infinite running viewmoreanim;
 }
 /***override Bootstrap css*/
 
@@ -311,8 +346,7 @@
 }
 
 /******* THUMB ANIMATION*******************/
-@
--webkit-keyframes thumb {
+@-webkit-keyframes thumb {
     0% {
         -webkit-transform: scale(1);
     }
@@ -405,4 +439,39 @@
     100% {
         -moz-transform: translate(1px, -2px) rotate(-1deg);
     }
+}
+
+/******* VIEWMORE ANIMATION*******************/
+
+@-moz-keyframes viewmoreanim {
+0%, 20%, 50%, 80%, 100% {
+    -moz-transform: translateY(0px);
+}
+40% {
+    -moz-transform: translateY(-30px);
+}
+60% {
+    -moz-transform: translateY(-15px);
+}
+}
+@-webkit-keyframes viewmoreanim {
+0%, 20%, 50%, 80%, 100% {
+    -webkit-transform: translateY(0px);
+}
+40% {
+    -webkit-transform: translateY(-30px);
+}
+60% {
+    -webkit-transform: translateY(-15px);
+}
+}
+@keyframes viewmoreanim {
+0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0px);
+}
+40% {
+    transform: translateY(-30px);
+}
+60% {
+    transform: translateY(-15px);
 }
