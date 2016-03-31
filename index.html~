@@ -1,0 +1,1379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="Personal Webpage">
+    <meta name="author" content="Hariharan Gandhi">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Hariharan Gandhi</title>
+
+    <!-- Bootstrap: Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+    <!-- Bootstrap: Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/search.css" media="screen">
+
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Custom styles for this template -->
+    <link href="carousel.css" rel="stylesheet">
+    
+    <!--Google Analytics Tagging -->
+    <script>
+        (function(i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function() {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-63700129-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+</head>
+<!-- NAVBAR
+================================================== -->
+
+<body>
+
+    <!-- Initial Overlay until page loads -->
+     <div id="page-loading-div1">
+        <!-- <h5 id="page-loading-text">Please wait. Loading....</h5>
+        <img id="page-loading-img" src="./Resources/Homepage/loading_html.gif" alt="Loading" />-->
+
+
+    </div> 
+
+    <!-- Hariharan Gandhi Banner with Quote
+    ================================================== -->
+    <div class="carousel-static">
+
+ <video width="320" height="240" autoplay>
+  <source src="welcome123.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video> 
+        <div id="hari-banner"><font class="elegantshadow shake-animation">Hariharan Gandhi</font>
+        </div>
+
+        <div class="page_quote">
+            <font id="quote" align="center" style="font-family: 'Great Vibes', cursive;font-size: 3em;">"We are drowning in information but starved for knowledge." - John Naisbitt</font>
+            <br>
+            <a href="http://www.brainyquote.com/quotes/quotes/j/johnnaisbi382513.html" target="_blank" style="color: rgb(0,0,0)">#brainyquotes</a> 
+            <a href="https://twitter.com/hashtag/analytics" target="_blank" style="color: cadetblue">#Analytics</a>
+            <a href="https://twitter.com/hashtag/DataWarehousing" target="_blank" style="color: cadetblue">#DataWarehousing</a>
+            <a href="https://twitter.com/hashtag/BusinessIntelligence" target="_blank" style="color: cadetblue">#BusinessIntelligence</a>
+            <a href="https://twitter.com/hashtag/BigData" target="_blank" style="color: cadetblue">#BigData</a>
+            <a href="https://twitter.com/hashtag/ColumnStore" target="_blank" style="color: cadetblue">#ColumnStore</a>
+            <img src="Resources/Homepage/TwitterLogo_blue.png" style="border: 0;height: 30px;width: 30px;overflow: hidden;" alt="View Hariharan Gandhi's profile on LinkedIn" title="See what world is saying about these trending topics">
+
+        </div>
+
+    </div>
+
+    <!-- Main Dashboard with links to all the topics
+    ================================================== -->
+    <div class="container marketing">
+
+        <div class="row featurette">
+            <div class="col-md-7">
+                <h2 class="featurette-heading" id="htmlMistakeText" style="margin-top: 0px;"><font color="red">&#33;</font>&lt;p class="header-text text-anim" &gt; About: &lt;/p&gt;</h2>
+
+                <p class="lead">I am <a href="https://de.linkedin.com/in/hariharangandhi" target="_blank">Hariharan Gandhi</a>, 25 yr old, Software developer. I am a student doing my Masters in Informatics specializing in <a href="https://www.informatik.tu-darmstadt.de/en/students/study-programmes/masterstudiengaenge/specialized-master-degrees/distributed-software-systems/" target="_blank">Distributed Software Systems</a> at the <a href="http://www.tu-darmstadt.de/universitaet/selbstverstaendnis/index.en.jsp" target="_blank">Technical University of Darmstadt</a>. I am currently interning at <a href="http://www-05.ibm.com/de/entwicklung/index_en.html" target="_blank">IBM Deutschland Research and Development Lab</a>
+                </p>
+            </div>
+            <div class="col-md-5">
+                <img class="featurette-image img-responsive center-block img-circle bubble" src="https://avatars3.githubusercontent.com/u/9645184?v=3&amp;s=460" alt="Generic placeholder image">
+            </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <!-- Education - Experience - Awards&Events -->
+        <div class="row">
+            <div class="col-lg-4">
+                <img class="img-circle bubble" src="./Resources/Homepage/education.png" alt="Generic placeholder image" width="140" height="140">
+                <h2>Education &amp; Skills</h2>
+                <p>Qualification, current degree, University of study, Performance, Skills, Programming Languages - Coding level &amp; other Technical Expertise.</p>
+                <p><a class="btn btn-primary" href="#education" role="button">View details &raquo;</a>
+                </p>
+            </div>
+            <!-- /.col-lg-4 -->
+            <div class="col-lg-4">
+                <img class="img-circle bubble" src="./Resources/Homepage/experience.png" alt="Generic placeholder image" width="140" height="140">
+                <h2>Experience</h2>
+                <p>Professional Experience in the area of Computer Science - Distributed Software Systems, Internships, Roles and Responsibilities, duration and performance</p>
+                <p><a class="btn btn-primary" href="#experience" role="button">View details &raquo;</a>
+                </p>
+            </div>
+            <!-- /.col-lg-4 -->
+            <div class="col-lg-4">
+                <img class="img-circle bubble" src="./Resources/Homepage/trophy_5.png" alt="Generic placeholder image" width="140" height="140">
+                <h2>Awards &amp; Events</h2>
+                <p>Academic &amp; Professional Honors for excelling in my education program, profession, internships and other honors. Technical Events that I attend</p>
+                <p><a class="btn btn-primary" href="#awards" role="button">View details &raquo;</a>
+                </p>
+            </div>
+            <!-- /.col-lg-4 -->
+        </div>
+
+        <hr>
+
+        <!-- Lab Projects - Hackathon Apps - Course Work Projects -->
+        <div class="row">
+
+            <!-- /.col-lg-4 -->
+            <div class="col-lg-4">
+                <img class="img-circle bubble" src="./Resources/Homepage/CodeWorks.png" alt="Generic placeholder image" width="140" height="140">
+                <h2>Lab Projects</h2>
+                <p>Lab projects(Internships) deals with cutting edge development work on practice-oriented problems. Invovles requirements engineering, design, implementation, &amp; testing of scalable software components &amp; protocols to solve the given problem.</p>
+                <p><a class="btn btn-primary" href="#labprojects" role="button">View details &raquo;</a>
+                </p>
+            </div>
+            <!-- /.col-lg-4 -->
+            <div class="col-lg-4">
+                <img class="img-circle bubble" src="./Resources/Homepage/computer_mouse_4.png" alt="Generic placeholder image" width="140" height="140">
+                <h2>Hackathon Apps</h2>
+                <p>I enjoy participating in Hackathons &amp; coding challenges - innovative apps, cloud, micro services, analytics, mobile, NoSQL databases etc. They are agile, bring out hidden potential, learn to react quick, fail fast prototyping and of course very great learning.</p>
+                <p><a class="btn btn-primary" href="#hackathons" role="button">View details &raquo;</a>
+                </p>
+            </div>
+            <div class="col-lg-4">
+                <img class="img-circle bubble" src="./Resources/Homepage/courseWorkProjects.png" alt="Generic placeholder image" width="140" height="140">
+                <h2>Course Work Projects</h2>
+                <p>Most of my courses have optional lab works to complement theory work. These work might involve software building and experimenting, getting familiar with implemenations and infrastructures, based on the theory content for respective course work</p>
+                <p><a class="btn btn-primary" href="#courseworks" role="button">View details &raquo;</a>
+                </p>
+            </div>
+            <!-- /.col-lg-4 -->
+        </div>
+        
+        <hr class="featurette-divider">
+
+        <!-- Contacts -->
+        <div class="row">
+            <div class="col-lg-3">
+                <img class="img-circle bubble" src="./Resources/Homepage/GitHub-Mark-120px-plus.png" alt="View Hariharan Gandhi's GitHub repositories" title="View Hariharan Gandhi's GitHub repositories" width="140" height="140">
+                <h2>GitHub</h2>
+                <p><a class="btn btn-default" href="https://github.com/Hariharan-Gandhi" target="_blank" role="button">View in Github &raquo;</a>
+                </p>
+            </div>
+            <!-- /.col-lg-4 -->
+            <div class="col-lg-3">
+                <img class="img-circle bubble" src="./Resources/Homepage/LinkedIn_logo_initials.png" alt="View Hariharan Gandhi's profile on LinkedIn" title="View Hariharan Gandhi's profile on LinkedIn" width="140" height="140">
+                <h2>LinkedIn</h2>
+
+                <p><a class="btn btn-default" href="https://de.linkedin.com/pub/hariharan-gandhi/46/241/8b9" target="_blank" role="button">View my LinkedIn Profile &raquo;</a>
+                </p>
+            </div>
+            <!-- /.col-lg-4 -->
+            <div class="col-lg-3">
+                <img class="img-circle bubble" src="./Resources/Homepage/TwitterLogo_blue.png" alt="Generic placeholder image" width="140" height="140">
+                <h2>Twitter</h2>
+                <p><a class="btn btn-default" href="https://twitter.com/hari_gandhi17" target="_blank" role="button">Follow me &raquo;</a>
+                </p>
+            </div>
+            <!-- /.col-lg-4 -->
+            <!-- /.col-lg-4 -->
+            <div class="col-lg-3">
+                <img class="img-circle bubble" src="./Resources/Homepage/hobby2.png" alt="Generic placeholder image" width="140" height="140">
+                <h2>Hobbies & More</h2>
+                <p><a class="btn btn-default" href="./hobbies.html" target="_blank" role="button">Know more &raquo;</a>
+                </p>
+            </div>
+            <!-- /.col-lg-4 -->
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                        </button>
+                        <h4 class="modal-title" id="myModalLabel">Report bugs in this pages</h4>
+                    </div>
+                    <div class="modal-body">
+                        Some part of the HTML text is visible on the page
+                        <code>&lt;p class="header-text text-anim" &gt; About: &lt;/p&gt;</code>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal" id="reported-btn">Report</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.modal -->
+
+        <!-- Modal: EDUCATION & SKILLS-->
+        <div class="modal fade in" id="modalEducationSkills" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header" style="background: #82b1ff">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                        </button>
+                        <h4 class="modal-title" id="myModalLabel1">Education &amp; Skills</h4>
+                    </div>
+                    <div class="modal-body">
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.modal -->
+
+    </div>
+    <!-- /.container -->
+
+	<!-- Start of individual segments (6 segments + 1 contact + 1 footer)
+    ================================================== -->
+    <!-- 1.*************************** -->
+    <div class="details-seperator" id="education"></div>
+
+    <div class="container">
+        <div class="row featurette">
+            <div class="col-md-12">
+                <h2 class="featurette-heading">Education  <span class="text-muted"> what I study and where</span></h2>
+                <div class="heading-underline"></div>
+
+                <div class="row featurette timeline">
+                    <div class="col-sm-2 timeline-left">
+                        <h3>2013  &#45; Current</h3>
+                        <div class="timeline-left-circle"></div>
+                    </div>
+                    <div class="col-sm-9 timeline-right">
+                        <div class="timeline-right-circle"></div>
+                        <div class="col-sm-9">
+                            <h2><span class="glyphicon glyphicon-education" aria-hidden="true"></span> <span class="timeline-header">Master of Science</span></h2>
+                            <h2>Technische Universität Darmstadt</h2>
+                            <h3>Distributed Software System</h3>
+                            <kbd>Score: 1.9 </kbd><samp> (Best: 1.0 - Worst 5.0)</samp>
+                        </div>
+                        <div class="col-sm-3 timeline-media">
+                            <a href="http://www.tu-darmstadt.de/universitaet/index.en.jsp" target="_blank">
+                                <img class="img-rounded featurette-image img-responsive center-block" src="./Resources/Homepage/TU_Darmstadt.png" alt="Generic placeholder image">
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="timeline-divider"></div>
+                <div class="row featurette timeline">
+                    <div class="col-sm-2 timeline-left">
+                        <h3>2007 &#45; 2011</h3>
+                        <div class="timeline-left-circle"></div>
+                    </div>
+                    <div class="col-sm-9 timeline-right">
+                        <div class="timeline-right-circle"></div>
+                        <div class="col-sm-9">
+
+                            <h2><span class="glyphicon glyphicon-education" aria-hidden="true"></span> <span class="timeline-header">Bachelor of Technology</span></h2>
+                            <h2>Madras Institute of Technology, University Department, Anna University</h2>
+                            <h3>Information Technology</h3>
+                            <kbd>Score: 8.1 </kbd><samp> (Best: 10.0 - Worst 1.0)</samp>
+                        </div>
+                        <div class="col-sm-3 timeline-media">
+                            <a href="http://www.mitindia.edu/" target="_blank">
+                                <img class="img-rounded featurette-image img-responsive" style="border-radius:16px;" src="./Resources/Homepage/Anna_University_Chennai_logo.png" alt="Generic placeholder image">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-divider"></div>
+                <div class="row featurette timeline">
+                    <div class="col-sm-2 timeline-left">
+                        <h3>2005 &#45; 2007</h3>
+                        <div class="timeline-left-circle"></div>
+                    </div>
+                    <div class="col-sm-9 timeline-right">
+                        <div class="timeline-right-circle"></div>
+                        <div class="col-sm-9">
+
+                            <h2><span class="glyphicon glyphicon-education" aria-hidden="true"></span> <span class="timeline-header">Higher Secondary</span></h2>
+                            <h2>Kurinji Higher Secondary School</h2>
+                            <h3> Computer Science, Mathematics</h3>
+                            <kbd>Score: 96.7&#37; </kbd><samp> (Best: 100&#37;)</samp>
+                        </div>
+                        <div class="col-sm-3 timeline-media">
+                            <a href="http://www.kurinjischoolnkl.in/" target="_blank">
+                                <img class="img-rounded featurette-image img-responsive" src="./Resources/Homepage/kurinji_school_logo_new.png" alt="Generic placeholder image">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-divider"></div>
+                <div class="row featurette timeline">
+                    <div class="col-sm-2 timeline-left">
+                        <h3>1993 &#45; 2005</h3>
+                        <div class="timeline-left-circle"></div>
+                    </div>
+                    <div class="col-sm-9 timeline-right">
+                        <div class="timeline-right-circle"></div>
+                        <div class="col-sm-9">
+
+                            <h2><span class="glyphicon glyphicon-education" aria-hidden="true"></span> <span class="timeline-header">High School</span></h2>
+                            <h2>Devi Matriculation School</h2>
+                            <h3>High School</h3>
+                            <kbd>Score: 91.64&#37; </kbd><samp> (Best: 100&#37;)</samp>
+                        </div>
+                        <div class="col-sm-3 timeline-media">
+                            <a href="https://www.facebook.com/devimatrichrsecschool" target="_blank">
+                                <img class="img-rounded featurette-image img-responsive" src="./Resources/Homepage/dms.jpg" alt="Generic placeholder image">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+		<!-- ***** SKILLS SEGMENT ***** -->
+                <hr class="featurette-divider">
+                <h2 class="featurette-heading">Skills  <span class="text-muted"> how good am I trained</span></h2>
+                <div class="heading-underline"></div>
+
+                <!-- ***** Programming Languages ***** -->
+
+                <div class="skills-panel col-md-12 col-sm-12 col-xs-12">
+
+                    <h4>Programming Languages:</h4>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:90%">Java(EE)</div>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:80%">Node.js</div>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:80%">JavaScript</div>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-info progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:60%">Scala</div>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:85%">Android</div>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:35%">C, C++</div>
+                    </div>
+                </div>
+
+                <!-- ***** Web Technology ***** -->
+                <div class="skills-panel col-md-12 col-sm-12 col-xs-12">
+                    <h4>Web Technology:</h4>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:95%">HTML5</div>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:95%">CSS3</div>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:80%">jQuery</div>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:80%">Leaflet.js</div>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-info progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:70%">D3.js</div>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:85%">Bootstrap</div>
+                    </div>
+
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:70%">JMS</div>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:70%">JSON/XML</div>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-info progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:70%">SAP UI5</div>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-warning progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:50%">React.js</div>
+                    </div>
+                </div>
+
+                <!-- ***** Cloud & Platforms ***** -->
+                <div class="skills-panel col-md-12 col-sm-12 col-xs-12">
+                    <h4>Cloud &amp; Distributed Platforms:</h4>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:90%">Apache Spark</div>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:90%">IBM Bluemix -PaaS</div>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-warning progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%">Hadoop</div>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:70%">SAP HANA</div>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-warning progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%">Hybris YaaS</div>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:30%">Amzon - AWS</div>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-warning progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:60%">ArcGIS Server</div>
+                    </div>
+                </div>
+
+                <!-- ***** Databases ***** -->
+                <div class="skills-panel col-md-12 col-sm-12 col-xs-12">
+                    <h4>Databases:</h4>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:90%">IBM DB2</div>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:80%">IBM dashDB(Column)</div>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:90%">MS SQL</div>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-warning progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:50%">Cloudant</div>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:70%">SAP HANA</div>
+                    </div>
+
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:30%">MongoDB</div>
+                    </div>
+                    
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-warning progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%">MySQL</div>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%">HBase</div>
+                    </div>
+                    
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-warning progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:54%">GeoSpatial</div>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-info progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:70%">Hibernate</div>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-info progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:70%">ORM Mappers</div>
+                    </div>
+                </div>
+                
+                 <!-- ***** Servers ***** -->
+                <div class="skills-panel col-md-12 col-sm-12 col-xs-12">
+                    <h4>Servers:</h4>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:90%">Node Server</div>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:80%">JBoss</div>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:90%">Apache Tomcat</div>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-info progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:70%">Apache ActiveMQ</div>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-warning progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:55%">Websphere(IBM)</div>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-warning progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:45%">Glassfish</div>
+                    </div>
+                    
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-warning progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:65%">ArcGIS Server</div>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-warning progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:65%">ArcMaps</div>
+                    </div>
+                </div>
+                
+                <!-- ***** IDE ***** -->
+                <div class="skills-panel col-md-12 col-sm-12 col-xs-12">
+                    <h4>IDE:</h4>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:90%">Eclipse</div>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:90%">IntelliJ - Android Studio</div>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-warning progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:60%">IntelliJ - Scala</div>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:95%">Brackets</div>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:65%">Scala-IDE</div>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:95%">SAP HCP Web-IDE</div>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:35%">Visual Studio</div>
+					</div>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:35%">Netbeans</div>
+					</div>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-warning progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:45%">Atom</div>
+					</div>
+                </div> 
+                
+                <!-- ***** Version Control ***** -->
+                <div class="skills-panel col-md-12 col-sm-12 col-xs-12">
+                    <h4>Version Control:</h4>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:90%">Git</div>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:90%">Github</div>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:90%">Bitbucket</div>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:95%">IBM DevOps &amp; JazzHub</div>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:85%">SAP WebIDE</div>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:95%">StarTeam</div>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-warning progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:60%">SVN</div>
+                    </div>
+                </div>
+                
+                
+                <!-- ***** Others ***** -->
+                <div class="skills-panel col-md-12 col-sm-12 col-xs-12">
+                    <h4>Others:</h4>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:77%">Linux(RHEL)</div>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:90%">Windows OS</div>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:75%">LaTeX</div>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:90%">Open Office</div>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:90%">MS Office</div>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-warning progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:70%">Modelling tools</div>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:90%">Photoshop</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2.*************************** -->
+
+    <div class="details-seperator" id="experience"></div>
+
+    <div class="container">
+        <div class="row featurette">
+            <div class="col-md-12">
+                <h2 class="featurette-heading">Experience <span class="text-muted"> industry exposure &amp; internships </span></h2>
+                <div class="heading-underline"></div>
+                
+                <div class="row featurette timeline">
+                    <div class="col-sm-2 timeline-left">
+                        <h3>2015 <h4>Oct &#45; Current</h4></h3>
+                        <div class="timeline-left-circle"></div>
+                    </div>
+                    <div class="col-sm-9 timeline-right">
+                        <div class="timeline-right-circle"></div>
+                        <div class="col-sm-9">
+                            <h2><span class="glyphicon glyphicon-education" aria-hidden="true"></span> <span class="timeline-header">Master Thesis</span></h2>
+                            <h2><strong>IBM Research &amp; Development Labs</strong>, in collaboration with <strong>Technische Universität Darmstadt</strong></h2>
+                            <h4 style="text-align: justify; text-justify: inter-ideograph;">Apache Spark - Distributed partitioning Algorithms. Thesis work involves Algorithm design, implementation, and
+evaluation with huge data-sets and multi-cores, Publication and Open source contribution.
+</h4>
+                        </div>
+                        <div class="col-sm-3 timeline-media">
+                            <a href="http://www.tu-darmstadt.de/universitaet/index.en.jsp" target="_blank">
+                                <img class="img-rounded featurette-image img-responsive center-block" src="./Resources/Homepage/TU_Darmstadt.png" alt="Generic placeholder image">
+                            </a>
+                            <hr>
+                            <a href="http://www-05.ibm.com/de/entwicklung/index_en.html" target="_blank">
+                                <img class="img-rounded featurette-image img-responsive center-block" style="padding:5px;" src="./Resources/Homepage/IBM.png" alt="Generic placeholder image">
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="timeline-divider"></div>
+                
+                <div class="row featurette timeline">
+                    <div class="col-sm-2 timeline-left">
+                        <h3>2015 <h4>Apr &#45; Sept</h4></h3>
+                        <div class="timeline-left-circle"></div>
+                    </div>
+                    <div class="col-sm-9 timeline-right">
+                        <div class="timeline-right-circle"></div>
+                        <div class="col-sm-9">
+
+                            <h2><span class="glyphicon glyphicon-education" aria-hidden="true"></span> <span class="timeline-header">Graduate Research &amp; Development Intern</span></h2>
+                            <h2><strong>IBM Deutschland Research &amp; Development Labs</strong></h2>
+                            <h4 style="text-align: justify; text-justify: inter-ideograph;">R&D of cloud services, Columnar database - IBM dashDB, Geospatial extension of database fields, Analytics of
+Bigdata Geo-Spatial application using ESRI-ArcGIS, plug-in development for Data format conversion in Spatial
+Extension of IBM-DB2, and Analytics using Apache Spark as a Service
+<h5 style="text-align: justify; text-justify: inter-ideograph;">
+<ul> <span class="glyphicon glyphicon-check" aria-hidden="true"></span>&nbsp;Developed a NodeJS Server Application and a web interface(maps) for loading Geo-spatial data(realtime& Historic) from TheWeatherCompany DB to IBM DashDB for Analysis as a Scalable, non-blocking model.</ul>
+<ul> <span class="glyphicon glyphicon-check" aria-hidden="true"></span>&nbsp;Developed a plug-in(Java) for conversion of result sets with Geo-spatial information (geometries) into GeoJSON format to be consumed by any mapping framework(UI).</ul>
+<ul> <span class="glyphicon glyphicon-check" aria-hidden="true"></span>&nbsp;Developed a visualization tool for displaying Geo-spatial tables and queries in a map view.</ul>
+<ul> <span class="glyphicon glyphicon-check" aria-hidden="true"></span>&nbsp;Created and published map layers, with dynamic data from IBM dashDB, as mapping web service hosted on ESRI ArcGIS Server, deployed on premise in a distributed fashion.</ul>
+</h5>
+                        </div>
+                        <div class="col-sm-3 timeline-media">
+                            <a href="http://www-05.ibm.com/de/entwicklung/index_en.html" target="_blank">
+                                <img class="img-rounded featurette-image img-responsive" style="padding:5px;"" src="./Resources/Homepage/IBM.png" alt="Generic placeholder image">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-divider"></div>
+                
+                <div class="row featurette timeline">
+                    <div class="col-sm-2 timeline-left">
+                        <h3>2011 <small>Jul   </small> &#45; 2013 <small> Sept</small></h3>
+                        <div class="timeline-left-circle"></div>
+                    </div>
+                    <div class="col-sm-9 timeline-right">
+                        <div class="timeline-right-circle"></div>
+                        <div class="col-sm-9">
+
+                            <h2><span class="glyphicon glyphicon-education" aria-hidden="true"></span> <span class="timeline-header">Professional Experience</span></h2>
+                            <h2><strong>Bally Technologies, Inc.</strong></h2>
+                            <h3 style="text-align: justify; text-justify: inter-ideograph;"> Distributed Enterprise Wide Casino Slot Machines Management System with Centralized Accounting and Analytics</h3>
+                            <h5 style="text-align: justify; text-justify: inter-ideograph;">
+<ul> <span class="glyphicon glyphicon-check" aria-hidden="true"></span>&nbsp;Development and testing of a Slot machine Simulator Application.</ul>
+<ul> <span class="glyphicon glyphicon-check" aria-hidden="true"></span>&nbsp;Designing of Technical and Functional Product Architecture and Interface.</ul>
+<ul> <span class="glyphicon glyphicon-check" aria-hidden="true"></span>&nbsp;Database Migration, DB Analysis, Client DB Indexing & Report Server Configuration.</ul>
+<ul> <span class="glyphicon glyphicon-check" aria-hidden="true"></span>&nbsp;Functional Walk-through to Product Management Team and Product report during SDLC.</ul>
+<ul> <span class="glyphicon glyphicon-check" aria-hidden="true"></span>&nbsp;Analyzing Efficiency, Load, Stress analysis of SQL Queries and Stored Procedure using Simulator.</ul>
+<ul> <span class="glyphicon glyphicon-check" aria-hidden="true"></span>&nbsp;Presentation of product technical design to other cross functional teams.</ul>
+</h5>
+                        </div>
+                        <div class="col-sm-3 timeline-media">
+                            <a href="https://www.ballytech.com/Systems/Accounting/Bally-MultiConnect" target="_blank">
+                                <img class="img-rounded featurette-image img-responsive" src="./Resources/Homepage/Bally.jpg" alt="Generic placeholder image">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-divider"></div>
+                
+            </div>
+
+        </div>
+    </div>
+
+    <!-- 3.*************************** -->
+
+    <div class="details-seperator" id="awards"></div>
+
+    <div class="container">
+        <div class="row featurette">
+            <div class="col-md-12">
+                <h2 class="featurette-heading">Awards &amp; Events  <span class="text-muted"> events I participate &amp; accolades</span></h2>
+                <div class="heading-underline"></div>
+                 <!-- ** Accordation**-->
+                    
+                    <div class="panel-group" id="accordion">
+                    
+                    <div class="panel panel-info">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseAwardOne" class="list-group-item group-header">
+                        <h4 class="list-group-item-heading acc-title">
+                         <span class="glyphicon glyphicon-star" style="color:orange" aria-hidden="true"></span>   Participated in TechEd: 32 hour Hackathon and got selected as Student representative for 'Mobile World Congress, 2016'</h4>
+                                <p class="list-group-item-text">November 2015 - Barcelona, Spain<span style="display: inline; float:right; text-align: right;"><small><span class="glyphicon glyphicon-option-vertical" aria-hidden="true"></span>more</small></span></p>
+                                </a>
+                                </h4>
+                            </div>
+                            <div id="collapseAwardOne" class="panel-collapse collapse in">
+                                <div class="panel-body div">
+                                    Attended the pre-conference event, a 32 hour hackathon, on providing cloud solutions to Energy industries using latest technologies(IoT, location awareness, notifications) to save energy. Participated as a Student representative from University to the SAP TechEd conference. 
+                                    Presented the hackathon solution to VP of University Alliance and got selected to participate in Mobile World Congress, 2016  
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="panel panel-info">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseAwardTwo" class="list-group-item group-header">
+                        <h4 class="list-group-item-heading acc-title">
+                         <span class="glyphicon glyphicon-star" style="color:orange" aria-hidden="true"></span>   1st place winner: InnoJam 2015 App Competition @ SAP Headquarters</h4>
+                                <p class="list-group-item-text">August 2015 - Walldorf, Germany<span style="display: inline; float:right; text-align: right;"><small><span class="glyphicon glyphicon-option-vertical" aria-hidden="true"></span>more</small></span></p>
+                                </a>
+
+                                </h4>
+                            </div>
+                            <div id="collapseAwardTwo" class="panel-collapse collapse">
+                                <div class="panel-body div">
+                                    The “Mobile App Competition” is designed to discover the potential of digitization at the workplace through mobile apps and how they foster productivity at SAP. App developers will get together on three separate tracks – SAP employees, startups, and students. Discuss your ideas, network, and bring your app to the next level
+										<ul> ★ Innovative and highly feasible solution</ul>
+										<ul> ★ Highly Business value product</ul>
+										<ul> ★ UI design - not about Aesthetics but about Functions and user experience</ul>
+										<ul> ★ Rapid Development</ul>
+										<ul> ★ Good presentation and live demo with audience</ul>
+
+										► Visit: https://ideas.sap.com/digitalinnovation
+
+As 1st place winner, our team gets invited to participate in the next InnoJam at Barcelona and the TechEd Conference
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="panel panel-info">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseAwardThree" class="list-group-item group-header">
+                        <h4 class="list-group-item-heading acc-title">
+                         <span class="glyphicon glyphicon-star" style="color:orange" aria-hidden="true"></span>   3rd place winner: Hackathon RheinMain - EduTech & Science Applications</h4>
+                                <p class="list-group-item-text">July 2015 - University of Mainz, Germany<span style="display: inline; float:right; text-align: right;"><small><span class="glyphicon glyphicon-option-vertical" aria-hidden="true"></span>more</small></span></p>
+                                </a>
+                                </h4>
+                            </div>
+                            <div id="collapseAwardThree" class="panel-collapse collapse">
+                                <div class="panel-body div">
+                                    Hackathon RheinMain was held at University of Mainz. The main theme of the contest is EduTech & Science Applications, which would be beneficial to the Students, Teachers, University, or anyone from Academic community.
+										<ul> ★ Innovative Idea and solution</ul>
+										<ul> ★ Quick prototyping and development</ul>
+										<ul> ★ Use of best and less expensive technologies - no additional devices/production downtime</ul>
+										<ul> ★ Easy app integration with existing university application</ul>
+										<ul> ★ Good presentation and live demo with audience</ul>
+</div>
+                            </div>
+                        </div>
+
+                        <div class="panel panel-info">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseAwardFour" class="list-group-item group-header" >
+                        <h4 class="list-group-item-heading acc-title">
+                         <span class="glyphicon glyphicon-star" style="color:orange" aria-hidden="true"></span>   Finalist Top 4 team Hackathon - SAP InnoJam "Coding the Future" 2015</h4>
+                                <p class="list-group-item-text">October 2015 - Berlin, Germany<span style="display: inline; float:right; text-align: right;"><small><span class="glyphicon glyphicon-option-vertical" aria-hidden="true"></span>more</small></span></p>
+                                </a>
+                                </h4>
+                            </div>
+                            <div id="collapseAwardFour" class="panel-collapse collapse">
+                                <div class="panel-body form-group">
+                                    The “Coding the Future Competition” is designed to discover the potential of latest technology in two main areas. 1. Reducing the barriers in access to Education through Online Universities and 2. Innovative Solution to efficient talent search. 32 hours non-stop coding event for over 70+ students, involving Design Thinking, Rapid Prototyping, Implementation, Deploying to Cloud, ready to use App worldwide by the end of event, presentation to panel members(Techies, Startups, Chief Executives)
+										<ul> ★ Innovative solution to current Refugee Crisis</ul>
+										<ul> ★ Built suitable for people needing immediate help</ul>
+										<ul> ★ Helps Firms to make contributions by providing jobs to suffering talents</ul>
+										<ul> ★ UI design - not about Aesthetics but about Functions and user experience</ul>
+										<ul> ★ Rapid Development and go-live</ul>
+										<ul> ★ Good presentation with refugee role-play and live demo with audience</ul>
+
+As a top 4 finalist, our team gets an additional chance to present our application to many Business executives and Start-up Founders, along with the judging panel</div>
+                            </div>
+                        </div>
+                        
+                        <div class="panel panel-info">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseAwardFive" class="list-group-item group-header" >
+                        <h4 class="list-group-item-heading acc-title">
+                         <span class="glyphicon glyphicon-star" style="color:orange" aria-hidden="true"></span>   Schloarship for Master Thesis from Technical University of Darmstadt</h4>
+                                <p class="list-group-item-text">September 2015 - Technical University of Darmstadt, Germany <span style="display: inline; float:right; text-align: right;"><small><span class="glyphicon glyphicon-option-vertical" aria-hidden="true"></span>more</small></span></p>
+                                </a>
+                                </h4>
+                            </div>
+                            <div id="collapseAwardFive" class="panel-collapse collapse">
+                                <div class="panel-body form-group">
+                                    Deutscheland Stipendum (Scholarship) for International Students excelling in academics.</div>
+                            </div>
+                        </div>
+                        
+                        <div class="panel panel-info">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseAwardTwelve" class="list-group-item group-header" >
+                        <h4 class="list-group-item-heading acc-title">
+                         <span class="glyphicon glyphicon-star" style="color:orange" aria-hidden="true"></span>   Participated and presented my prototype in The Hybris Cloud Hackfest</h4>
+                                <p class="list-group-item-text">October 2015 - Technical University of Munich, Germany<span style="display: inline; float:right; text-align: right;"><small><span class="glyphicon glyphicon-option-vertical" aria-hidden="true"></span>more</small></span></p>
+                                </a>
+                                </h4>
+                            </div>
+                            <div id="collapseAwardTwelve" class="panel-collapse collapse">
+                                <div class="panel-body form-group">
+                                    Participated and presented my solution for smart shopping using micro cloud services for products and rating(gamification) in The hybris Cloud HackFest (9-11 October, 2015 Munich, Germany), cloud business & technology hackathon conducted by Hybris and the Technische Universität München.
+								</div>
+                            </div>
+                        </div>
+                        
+                        <div class="panel panel-info">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseAwardThirteen" class="list-group-item group-header" >
+                        <h4 class="list-group-item-heading acc-title">
+                         <span class="glyphicon glyphicon-star" style="color:orange" aria-hidden="true"></span>   Participated in Technical Lectures &amp; training in Amazon AWS Summit</h4>
+                                <p class="list-group-item-text">June 2015 - Berlin, Germany<span style="display: inline; float:right; text-align: right;"><small><span class="glyphicon glyphicon-option-vertical" aria-hidden="true"></span>more</small></span></p>
+                                </a>
+                                </h4>
+                            </div>
+                            <div id="collapseAwardThirteen" class="panel-collapse collapse">
+                                <div class="panel-body form-group">
+                                    AWS Summit provided business and technical mentoring on the latest cloud computing best practices with sessions on technical best practices to help you grow faster as a business using the AWS Cloud.
+										<br><br>										
+										<span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>&nbsp;<strong>Technical Tracks attended:</strong>
+										<ul> ★ Efficiency in the Cloud.</ul>
+										<ul> ★ NoSQL? NoWorries: DynamoDB and ElastiCache Redis.</ul>
+										<ul> ★ Building and Using Predictive Machine Learning Models on AWS.</ul>
+										<ul> ★ Seeing the Future with Big Data.</ul>
+										<ul> ★ How to Scale Your Own Internet of Things.</ul>
+								</div>
+                            </div>
+                        </div>
+                        
+                        <div class="panel panel-info">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseAwardSix" class="list-group-item group-header" >
+                        <h4 class="list-group-item-heading acc-title">
+                         <span class="glyphicon glyphicon-star" style="color:orange" aria-hidden="true"></span>   Star of Bally:(4-times) Efficient and productive employee</h4>
+                                <p class="list-group-item-text">April 2013 <span class="glyphicon glyphicon-certificate" aria-hidden="true"></span> January 2013 <span class="glyphicon glyphicon-certificate" aria-hidden="true"></span> June 2012 <span class="glyphicon glyphicon-certificate" aria-hidden="true"></span> January 2012 - Bally Technologies, Chennai, India<span style="display: inline; float:right; text-align: right;"><small><span class="glyphicon glyphicon-option-vertical" aria-hidden="true"></span>more</small></span></p>
+                                </a>
+                                </h4>
+                            </div>
+                            <div id="collapseAwardSix" class="panel-collapse collapse">
+                                <div class="panel-body form-group">
+                                    Star of the Week is a honorary award given to employees who exhibit extraordinary performance in their respective areas. Every department chooses best employees and nominates them for the award.
+										<br><br>										
+										<span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>&nbsp;<strong>April 2013:</strong>
+										<ul> ★ Good coordination & team work for quicker product release.</ul>
+										<ul> ★ Release of product version BMC 12.1.1 SP11 for Argentina Customers.</ul>
+										
+										
+										<span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>&nbsp;<strong>January 2013:</strong>
+										<ul> ★ Quick in tracing the source of bug in previous release.</ul>
+										<ul> ★ Successful signing off: GMU 300.05.12a version in a very short notice.</ul>
+										
+										<span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>&nbsp;<strong>June 2012:</strong>
+										<ul> ★ Working for four major releases in parallel: Including Italy (protocol changes) with 4 drops, SP7 (Nagaworld), Pack3 & Illinois GMU.</ul>
+											
+										<span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>&nbsp;<strong>January 2012:</strong>
+										<ul> ★ Simultaneous involvement in two major releases - Winchell's submission & Nagaworld rollout.</ul>
+										<ul> ★ Verify and validate the patches & drops across products - BMC, SDS, CMP & submitted to compliance on a committed date.</ul>
+										<ul> ★ Helpful for Winchell's Casino Go-Live in the week with updated software.</ul>
+										
+										</div>
+                            </div>
+                        </div>
+                        
+                        <div class="panel panel-info">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseAwardTen" class="list-group-item group-header" >
+                        <h4 class="list-group-item-heading acc-title">
+                         <span class="glyphicon glyphicon-star" style="color:orange" aria-hidden="true"></span>   Top 20 Students</h4>
+                                <p class="list-group-item-text">January 2007 - Head of the School, Kurinji Higher Secondary School<span style="display: inline; float:right; text-align: right;"><small><span class="glyphicon glyphicon-option-vertical" aria-hidden="true"></span>more</small></span></p>
+                                </a>
+                                </h4>
+                            </div>
+                            <div id="collapseAwardTen" class="panel-collapse collapse">
+                                <div class="panel-body form-group">
+                                    Ranked top 20 top performing students based on the results of competitive examination among 1200+ students and received award from the Head of the School.
+								</div>
+                            </div>
+                        </div>
+                        
+                        <div class="panel panel-info">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseAwardEleven" class="list-group-item group-header" >
+                        <h4 class="list-group-item-heading acc-title">
+                         <span class="glyphicon glyphicon-star" style="color:orange" aria-hidden="true"></span>   Bharathi Yuvakala Award</h4>
+                                <p class="list-group-item-text">January 2006 - Bharathi Yuva Kendra, Madurai, India<span style="display: inline; float:right; text-align: right;"><small><span class="glyphicon glyphicon-option-vertical" aria-hidden="true"></span>more</small></span></p>
+                                </a>
+                                </h4>
+                            </div>
+                            <div id="collapseAwardEleven" class="panel-collapse collapse">
+                                <div class="panel-body form-group">
+                                    For being one of the Outstanding Students in my educational district students who have excelled in in academics and various arts such as music, academics, painting, sports, social work, ‘bharatanatyam,’ oratory and poetry.
+								</div>
+                            </div>
+                        </div>
+                        
+                        
+                    </div>
+                    <!-- ** Accordation**-->
+            </div>
+
+        </div>
+    </div>
+
+    <!-- 4.*************************** -->
+
+    <div class="details-seperator" id="labprojects"></div>
+
+    <div class="container">
+        <div class="row featurette">
+            <div class="col-md-12">
+                <h2 class="featurette-heading">Lab Projects  <span class="text-muted"> research project full-stack development</span></h2>
+                <div class="heading-underline"></div>
+            </div>
+            <div class="row featurette">
+                <div class="col-md-7 col-md-push-5">
+                    <h2 class="featurette-heading">Local Siri<span class="text-muted">  "Context-aware Opportunistic Sensing System" sponsored by IBM Bluemix cloud: <small>(Grade: 1.0; Best: 1.0 and Least: 5.0; Top Scorer)</small></span></h2>
+                    <p class="lead" style="text-align: justify; text-justify: inter-ideograph;">The project involves design and implementation of a Sensing system that opportunistically collects data. The challenge was to develop the engine that dynamically adapts this collection based on User and device context. The app collected location and context information that could be used for location services like Forums and community detection algorithms, and other emerging social business technologies. The Big data from huge user base was backed with IBM Bluemix mobile cloud services for Storage, Processing and push notifications (using Google Cloud Messaging)...<small><i><span id="show-more-localsiri-btn" role="button" style="color: #1565c0 ">view more</span></i></small>
+                    </p>
+                    <div id="show-more-localsiri" style="display: none;">
+                        <p class="lead" style="text-align: justify; text-justify: inter-ideograph;">It includes a monitoring feature to visualize the performance and points where adaption occurred. It involves Efficient Processing of Location Data and Intelligent User Aggregation based on the Context. IBM BlueMix (PaaS) cloud platform is used for developing the Server Side components, for supporting large User Scalability, Grouping Location based information, pushing Notifications to relevant Users. Querying the huge location data is done by map-reduce paradigm supported by the Mobile Data Cloudant (DBaaS) that uses CouchDB as the backend database. Push Service helps to notify users through the configured Google Cloud Messaging API.</p>
+                    </div>
+                    <code>Technologies: Android, Java, Node.js scripting, IBM Bluemix Cloud Services (Mobile Data and Push), IBM Jazz SCM, HoloGramChart, Git, Google Cloud Messaging, Android Studio,</code>
+
+                </div>
+                <div class="col-md-5 col-md-pull-7">
+                    <!-- <img class="featurette-image img-responsive center-block" src="https://cloud.githubusercontent.com/assets/9555615/8252394/e6857cf8-1685-11e5-8393-a3aa58324af8.jpg" alt="Generic placeholder image"> -->
+
+                    <div align="center" class="embed-responsive embed-responsive-16by9">
+                        <iframe width="480" height="270" src="https://www.youtube.com/embed/PhMMgHr1zv8" frameborder="0" allowfullscreen></iframe>
+                        <!-- <source src="https://www.dropbox.com/s/0bzvy1noq8fk2l6/LocalSiri_Video_Demo.mp4?dl=0" type="video/mp4" /> -->
+                    </div>
+                    <hr>
+                    <div class="col-md-offset-1">
+                        <a type="button" href="http://hariharan-gandhi.github.io/LocalSiri/" target="_blank" class="btn btn-primary">Project Web-page</a>
+                        <a type="button" href="https://github.com/Hariharan-Gandhi/LocalSiri" target="_blank" class="btn btn-primary">View on Github</a>
+                        <a type="button" href="https://github.com/Hariharan-Gandhi/LocalSiri" target="_blank" class="btn btn-warning">Watch Video</a>
+                    </div>
+                    <hr>
+                </div>
+            </div>
+
+            <hr class="featurette-divider" id="wifriends">
+
+            <div class="row featurette">
+                <div class="col-md-7">
+                    <h2 class="featurette-heading">WiFriends<span class="text-muted">  "Decentralized Secure Social Networking app using Wi-Fi Direct and NFC: WiFriends" <small>(Grade: 1.3; Best 1.0 and Least 5.0; Top Scorer)</small></span></h2>
+
+
+
+                    <p class="lead" style="text-align: justify; text-justify: inter-ideograph;">As a part of the research idea, from the <a href="http://www.ps.tu-darmstadt.de/teaching/cnlab/">Peer-to-Peer Systems Engineering Lab</a>, TU-Darmstadt, to estimate the feasibility of latest mobile technology in creating an ad-hoc peer to peer networks, this project involved developing a Decentralized Social Networking application, that uses Wi-Fi P2P API for the overlay creation and it dynamically discovers peers in proximity to exchange profile information in JSON format....<small><i><span id="show-more-wifriends-btn" role="button" style="color: #1565c0 ">view more</span></i></small>
+                    </p>
+                    <div id="show-more-wifriends" style="display: none;">
+                        <p class="lead" style="text-align: justify; text-justify: inter-ideograph;">The project considers security as a major aspect of concern in such ad-hoc communication and addresses by data encryption using pre-shared key (AES 256) exchanged securely via Near Field Communication(NFC) during the add friend stage.Material Design UI (Android Lollipop) is also incorporated into the application.</p>
+                    </div>
+                    <code>Technologies: Android, Java, SQLite, WifiP2P API, Cryptography: AES 256 Encryption, Spongy Castle API, Git, Material Design UI for Android Lollipop, Android Studio</code>
+                </div>
+                <div class="col-md-5">
+                    <img class="featurette-image img-responsive center-block" src="https://cloud.githubusercontent.com/assets/9555615/8251643/9433a346-167e-11e5-9eb7-cf5fe89ebfa1.jpg" alt="Generic placeholder image">
+                    <hr>
+                    <div class="col-md-offset-1">
+                        <a type="button" href="http://hariharan-gandhi.github.io/WiFriends/" target="_blank" class="btn btn-primary">Project Web-page</a>
+                        <a type="button" href="https://github.com/Hariharan-Gandhi/WiFriends" target="_blank" class="btn btn-primary">View on Github</a>
+                        <a type="button" href="https://www.dropbox.com/s/gecbzkny85bip30/WiFriends%20-%20A%20Decentralized%20Social%20Network%20using%20WiFi%20Direct.pdf?dl=0" target="_blank" class="btn btn-warning">Read white-paper</a>
+                    </div>
+                    <hr>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 5. *************************** -->
+
+    <div class="details-seperator" id="hackathons"></div>
+
+    <div class="container">
+        <div class="row featurette">
+            <div class="col-md-12">
+                <h2 class="featurette-heading">Hackathon Apps  <span class="text-muted"> rapid &amp; innovative ideas and coding </span></h2>
+                <div class="heading-underline"></div>
+            </div>
+        </div>
+
+        <div class="row featurette">
+            <div class="col-md-7 col-md-push-5">
+                <h2 class="featurette-heading">Meeting Room Finder<span class="text-muted">   Optimized suggestions for meeting rooms based on current location <br><small  class="event-label">(1st place - SAP Innojam 2015 App Competition)</small></span></h2>
+                <p class="lead" style="text-align: justify; text-justify: inter-ideograph;">Design and implementation of a productivity tool for employees of an organization that facilitates finding free meeting rooms; Provides best possible suggestion to employees based on physical proximity and room availability; Provides innovative solution to the problem of No-Show in a booked meeting room using IoT; Users get notified about free rooms once they enter a particular building within a campus. Developed with SAP UI5 and hosted on SAP HANA Cloud Platform.
+                </p>
+                <code>Technologies: SAP UI5 Front End, HTML5, XML, JSON, MVC, JAVASCRIPT, JAVA, SAP HANA Cloud Platform, Design Thinking, Prototyping</code>
+
+            </div>
+            <div class="col-md-5 col-md-pull-7">
+                <!-- <img class="featurette-image img-responsive center-block" src="https://cloud.githubusercontent.com/assets/9555615/8252394/e6857cf8-1685-11e5-8393-a3aa58324af8.jpg" alt="Generic placeholder image"> -->
+
+                <div align="center" class="embed-responsive embed-responsive-16by9">
+                    <img class="featurette-image img-responsive center-block" src="https://raw.githubusercontent.com/Hariharan-Gandhi/MeetingRoomFinder/master/Main/img/overallview.PNG" alt="Generic placeholder image">
+
+                    <!--<iframe width="560" height="315" src="https://www.youtube.com/embed/cw-NKMBVVkk" frameborder="0" allowfullscreen></iframe>
+                     <source src="https://www.dropbox.com/s/0bzvy1noq8fk2l6/LocalSiri_Video_Demo.mp4?dl=0" type="video/mp4" /> -->
+                </div>
+                
+                <br>
+                <div align="center" class="embed-responsive embed-responsive-16by9">
+
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/DwIcyLXAHh4" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <hr>
+                <div class="col-md-offset-1">
+                    <a type="button" href="http://hariharan-gandhi.github.io/MeetingRoomFinder" target="_blank" class="btn btn-primary">Project Web-page</a>
+                    <a type="button" href="https://github.com/Hariharan-Gandhi/MeetingRoomFinder" target="_blank" class="btn btn-primary">View on Github</a>
+                    <a type="button" href="https://github.com/Hariharan-Gandhi/LocalSiri" target="_blank" class="btn btn-warning">Watch Video</a>
+                </div>
+                <hr>
+            </div>
+        </div>
+
+        <hr class="featurette-divider" id="studentoverflow">
+
+        <div class="row featurette">
+            <div class="col-md-7">
+                <h2 class="featurette-heading">StudentOverflow<span class="text-muted">  "Intutive University App to help Students know how crowded their Library is!  " <br><small  class="event-label">Rheinmain Hackathon project (3rd place Winning Team)</small></span></h2>
+
+
+
+                <p class="lead" style="text-align: justify; text-justify: inter-ideograph;">The idea is to help users(students and university members) to figure out "How occupied a particular building(say, Library/Cafeteria) is?"​ It provides a Web and Mobile application to display current seat availability vs capacity, with attractive and dynamic charts. While doing so, it also provides a twitter chat room for each location, facilitating users to discuss events happening at that location, like "Hey, good food at the Cafeteria today!! Don't miss!!". The app runs on cloud infrastructure provided by IBM Bluemix and uses a NodeJS Server with scalable NoSQL Cloudant Database, Android app client for Geo-fencing and notifying server.</p>
+                <code>Technologies Used: IBM Bluemix Cloud, NodeJS Server, Cloudant NoSQL Database, Android Geofensing with foreground service, UI - Web & Mobile friendly AdminLTE Bootstrap, D3.js, Android Studio</code>
+            </div>
+            <div class="col-md-5">
+                <div align="center" class="embed-responsive embed-responsive-16by9" style="box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.28);">
+
+                    <img class="featurette-image img-responsive center-block" src="https://raw.githubusercontent.com/Hariharan-Gandhi/StudentOverflow/a18960327dff5f2464605ab155acf7c09d46e523/www/AdminLTE-2.2.0/images/StudentOverflow.jpg" alt="Generic placeholder image" />
+                </div>
+                <br>
+                <div align="center" class="embed-responsive embed-responsive-16by9">
+
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/cw-NKMBVVkk" frameborder="0" allowfullscreen></iframe>
+                </div>
+
+                <hr>
+                <div class="col-md-offset-1">
+                    <a type="button" href="https://github.com/Hariharan-Gandhi/StudentOverflow#studentoverflow" target="_blank" class="btn btn-primary">Project Web-page</a>
+                    <a type="button" href="https://github.com/Hariharan-Gandhi/StudentOverflow" target="_blank" class="btn btn-primary">View on Github</a>
+                    <a type="button" href="http://www.hackathon-rhein-main.de/#content" target="_blank" class="btn btn-warning">Event Page</a>
+                </div>
+                <hr>
+            </div>
+        </div>
+
+        <hr class="featurette-divider" id="refugeebook">
+
+        <div class="row featurette">
+            <div class="col-md-7 col-md-push-5">
+                <h2 class="featurette-heading">Refugee Book <span class="text-muted">  App to reduce entry level barrier to access education for refugees <small class="event-label">(Winner: Top 3 Apps - SAP Coding the Future 2015 Berlin)</small></span></h2>
+                <p class="lead" style="text-align: justify; text-justify: inter-ideograph;">The application "RefugeeBook" helps refugees to get in connect with companies. It uses data (user profiles, company profiles, job profiles, course profiles) stored in SAP HANA and matches these data in order to make smart recommendations. This is done by using text mining and machine learning. Additionally, it offers a meta-search to search for online courses on different learning platforms ("google for online courses"). Which helps the refugee to get certificates and gather new knowledge easily. This allows him to verify his knowledge to his potential employer.</p>
+                <code>Technologies Tag: SAP HANA Cloud platform, Open UI5, HTML5, JavaScript, CSS3, jQuery, Java</code>
+
+            </div>
+            <div class="col-md-5 col-md-pull-7">
+                <!-- <img class="featurette-image img-responsive center-block" src="https://cloud.githubusercontent.com/assets/9555615/8252394/e6857cf8-1685-11e5-8393-a3aa58324af8.jpg" alt="Generic placeholder image"> -->
+
+                <div align="center" class="embed-responsive embed-responsive-16by9">
+
+                    <img class="featurette-image img-responsive center-block" src="./Resources/Homepage/RefugeeBook.PNG" alt="Generic placeholder image" />
+                </div>
+                <hr>
+                <div class="col-md-offset-1">
+                    <a type="button" href="https://github.com/Hariharan-Gandhi/Refugee-Book" target="_blank" class="btn btn-primary">Project Web-page</a>
+                    <a type="button" href="https://github.com/Hariharan-Gandhi/Refugee-Book" target="_blank" class="btn btn-primary">View on Github</a>
+                    <a type="button" href="https://www.youtube.com/watch?v=hH4KjhJlDcE" target="_blank" class="btn btn-warning">Watch Event Video</a>
+                </div>
+                <hr>
+            </div>
+        </div>
+
+        <hr class="featurette-divider" id="supermarket">
+
+        <div class="row featurette">
+            <div class="col-md-7">
+                <h2 class="featurette-heading">&#39;SU&#39;per Market<span class="text-muted">  "Smart Ads to promote offers based Customer context" <br><small class="event-label">YaaS Hybris Cloud Hackfest</small></span></h2>
+
+
+
+                <p class="lead" style="text-align: justify; text-justify: inter-ideograph;">Super Market alerts users with offers that are listed on that day as soon as the customer enters the Supermarket. It also incorporates analytical feature to analyse most liked product offer, successful promotion, offers that don't interest customers etc</p>
+                <code>Technologies Used: Hybris YaaS - Cloud microservices, Java, Android, HTML5, CSS3, NoSQL document store Database, Android Geofensing with foreground service, Android Studio</code>
+            </div>
+            <div class="col-md-5">
+                
+                <div align="center" class="embed-responsive embed-responsive-16by9">
+
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/u8XR1t4SgRg" frameborder="0" allowfullscreen></iframe>
+                </div>
+
+                <hr>
+                <div class="col-md-offset-1">
+                    <a type="button" href="http://www.cloudhackfest.com/" target="_blank" class="btn btn-warning">View Event Page</a>
+                </div>
+                <hr>
+            </div>
+        </div>
+        
+        <hr class="featurette-divider" id="poweron">
+
+        <div class="row featurette">
+            <div class="col-md-7 col-md-push-5">
+                <h2 class="featurette-heading">Power-On <span class="text-muted">  Cloud  solution to enable energy companies' repair crews to be proactive.  <small class="event-label">SAP TechEd 2015 Barcelona</small></span></h2>
+                <p class="lead" style="text-align: justify; text-justify: inter-ideograph;">SAP HANA Cloud Application to provide solution to energy companies' repair crews to be proactive or alerted to outages or problems, which will affect customers, consumers and service level agreements.
+    <ul> <span class="glyphicon glyphicon-check" aria-hidden="true"></span>  Provides overview of Power-zones on Maps and also current status</ul>
+    <ul> <span class="glyphicon glyphicon-check" aria-hidden="true"></span>  Ranks each power nodes based on threat level(5 parameters - weather, age, previous damages, #affected people)</ul>
+    <ul> <span class="glyphicon glyphicon-check" aria-hidden="true"></span>  Profiles of various Skill Set maps to threat severity</ul>
+    <ul> <span class="glyphicon glyphicon-check" aria-hidden="true"></span>  Automatic Notification for critical areas using Nofitication service running on Cloud Platform</ul>
+    <ul> <span class="glyphicon glyphicon-check" aria-hidden="true"></span>  Efficiently utilizes free Weather Predication data to increase proactiveness</ul>
+                </p>
+                <code>Technologies Tag: Java, ODATA, SAP HANA Cloud platform, REST APIs, Open UI5, HTML5, JavaScript, CSS3, jQuery, Java</code>
+
+            </div>
+            <div class="col-md-5 col-md-pull-7">
+                <!-- <img class="featurette-image img-responsive center-block" src="https://cloud.githubusercontent.com/assets/9555615/8252394/e6857cf8-1685-11e5-8393-a3aa58324af8.jpg" alt="Generic placeholder image"> -->
+
+                <div align="center" class="embed-responsive embed-responsive-16by9">
+
+                    <img class="featurette-image img-responsive center-block" src="./Resources/Homepage/PowerOn_AnalysisReport.png" alt="Generic placeholder image" />
+                </div>
+                <hr>
+                <div class="col-md-offset-1">
+                    <a type="button" href="http://hariharan-gandhi.github.io/Power-On/" target="_blank" class="btn btn-primary">Project Web-page</a>
+                    <a type="button" href="https://github.com/Hariharan-Gandhi/Power-On" target="_blank" class="btn btn-primary">View on Github</a>
+                    <a type="button" href="https://poweron-p1941578957trial.dispatcher.hanatrial.ondemand.com/" target="_blank" class="btn btn-warning">Demo APP</a>
+                </div>
+                <hr>
+            </div>
+        </div>
+    </div>
+
+    <!-- 6.*************************** -->
+
+    <div class="details-seperator" id="courseworks"></div>
+
+    <div class="container">
+        <div class="row featurette">
+            <div class="col-md-12">
+                <h2 class="featurette-heading">Course Work Projects  <span class="text-muted"> non-mandatory part of course work</span></h2>
+                <div class="heading-underline"></div>
+            </div>
+
+            <div class="row featurette">
+                <div class="col-md-7 col-md-push-5">
+                    <h2 class="featurette-heading">Omazon<span class="text-muted">  Distributed databases, ORM, 2pc, offline & mobile, transactions, Reactive ERP, <small>Middleware Technologies</small></span></h2>
+                    <p class="lead" style="text-align: justify; text-justify: inter-ideograph;">Developed: An Enterprise Solution to a company that provides high quality logistics services to customers with real-time shipment tracking. ERP solution Java EE components for an Online Inventory similar to Amazon, with SQL Server Database, Hibernate(ORM mappers).
+                        <br>Task: Suggest and Implement a brand new ERP solution using Java EE components (Enterprise Beans, Java Server Faces/Pages, Java Persistence API, Hibernate) Features Developed:
+                        <ul><span class="glyphicon glyphicon-check" aria-hidden="true"></span>&nbsp;Customer and Product Data Management</ul>
+                        <ul><span class="glyphicon glyphicon-check" aria-hidden="true"></span>&nbsp;Order Process Support</ul>
+                        <ul><span class="glyphicon glyphicon-check" aria-hidden="true"></span>&nbsp;Reactive ERP(JMS, XML payload) – Shipment Tracking + Notification on exceptional events</ul>
+                        <ul><span class="glyphicon glyphicon-check" aria-hidden="true"></span>&nbsp;Automated Shipment Status Updates</ul>
+                        <ul><span class="glyphicon glyphicon-check" aria-hidden="true"></span>&nbsp;Shipment Position Updates</ul>
+                        <ul><span class="glyphicon glyphicon-check" aria-hidden="true"></span>&nbsp;Mobile Clients with local DB for Offline Support</ul>
+                    </p>
+                    <code>Technologies: Java EE, Entity beans, Session Beans, EJB3, Message Driven Beans, JSP/JSF, Javascript, MVC architecture, JMS, Apache ActiveMQ, JPA, Hibernate Object relational mapper, JBOSS, MS SQL server 2008</code>
+
+                </div>
+                <div class="col-md-5 col-md-pull-7">
+                    <!-- <img class="featurette-image img-responsive center-block" src="https://cloud.githubusercontent.com/assets/9555615/8252394/e6857cf8-1685-11e5-8393-a3aa58324af8.jpg" alt="Generic placeholder image"> -->
+
+                    <div align="center" class="embed-responsive embed-responsive-16by9">
+                        <img class="featurette-image img-responsive center-block" src="./Resources/Homepage/omazon.jpg" alt="Omazon Architecture">
+
+                        <!--<iframe width="560" height="315" src="https://www.youtube.com/embed/cw-NKMBVVkk" frameborder="0" allowfullscreen></iframe>
+                     <source src="https://www.dropbox.com/s/0bzvy1noq8fk2l6/LocalSiri_Video_Demo.mp4?dl=0" type="video/mp4" /> -->
+                    </div>
+                    <hr>
+                    <div class="col-md-offset-1">
+                        <a type="button" href="https://github.com/Hariharan-Gandhi/MiddlewareJEE" target="_blank" class="btn btn-primary">Project Web-page</a>
+                        <a type="button" href="https://github.com/Hariharan-Gandhi/MiddlewareJEE" target="_blank" class="btn btn-primary">View on Github</a>
+                        <a type="button" href="https://drive.google.com/file/d/0B881-Tw8Yu50MHpNMEV2Uk1RMUIzSnhOYlRDVEVMN2xNYWk0/view?usp=sharing" target="_blank" class="btn btn-warning">Read Report</a>
+                    </div>
+                    <hr>
+                </div>
+            </div>
+
+            <hr class="featurette-divider">
+
+            <div class="row featurette">
+                <div class="col-md-12">
+                    <h2 class="featurette-heading">Sleuthing Application Level DoS using Group Mining eccentric classifiers<span class="text-muted">  Bachelor Thesis</span></h2>
+
+                    <p class="lead" style="text-align: justify; text-justify: inter-ideograph;">Proposal: Architecture to employ Group Testing and Pattern Mining approaches to mine useful patterns, which helps in the detection of sources creating application level denial of services attacks, that disrupt the networks and the functions of the Application Server. Implementation: JAVA application that accepts input data-sets and uses a Graphical display to respond to an Intermediate Alert Mode Operations Publication: 2nd Publication of Prof. KolaSujatha http://www.annauniv.edu/doit/kola-Pub.htm
+                    </p>
+                    
+                    <hr class="featurette-divider">
+                    <!-- ** Accordation**-->
+                    <h2 class="featurette-heading">Others: <span class="text-muted">
+                        
+                        <br><small></small></span></h2>
+                    <div class="panel-group" id="accordion">
+                        <div class="panel panel-info">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOthersOne" class="list-group-item group-header">
+                        <h4 class="list-group-item-heading acc-title">Implementation of a Android App for Lossless audio sample recording</h4>
+                                <p class="list-group-item-text">Android App to read RAW audio for audio classification tasks<span style="display: inline; float:right; text-align: right;"><small><span class="glyphicon glyphicon-option-vertical" aria-hidden="true"></span>more</small></span></p>
+                                </a>
+
+                                </h4>
+                            </div>
+                            <div id="collapseOthersOne" class="panel-collapse collapse in">
+                                <div class="panel-body div">
+                                    An Android App to record loss-less Audio Samples as WAV files for classification tasks Features Developed: 
+                                    <ul>• Recording the Audio in WAV format</ul> 
+                                    <ul>• Choosing Sampling Rates to Record and Detect supported sampling rates by any Device </ul>
+                                    <ul>• Playback of last recorded Audio file </ul>
+                                    <ul>• File Manager to browse through the list of old recordings </ul>
+                                    <ul>• Compatible with older Android versions starting from Android 2.2(Froyo)</ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="panel panel-info">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOthersTwo" class="list-group-item group-header">
+                        <h4 class="list-group-item-heading acc-title">Social Media Network Analysis</h4>
+                                <p class="list-group-item-text">A survey publication(internal) on advancements and methodologies in Social Media Network Analysis.<span style="display: inline; float:right; text-align: right;"><small><span class="glyphicon glyphicon-option-vertical" aria-hidden="true"></span>more</small></span></p>
+                                </a>
+                                </h4>
+                            </div>
+                            <div id="collapseOthersTwo" class="panel-collapse collapse">
+                                <div class="panel-body div">
+                                     Link
+Prediction algorithms in Social Networks, clusters and community detection algorithms, tools to visualize them.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="panel panel-info">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" class="list-group-item group-header" >
+                        <h4 class="list-group-item-heading acc-title"><small><span class="glyphicon glyphicon-book" style="margin-bottom:15px;" aria-hidden="true"></span>&nbsp; <u>Bachelors:</u></small>
+                        		<br>Managing a Group of Hotels</h4>
+                        		<p class="list-group-item-text">Dynamic web application (JSP,DB2): JSP, HTML, Eclipse, IBM DB2</p>
+                        		
+                        		<h4 class="list-group-item-heading acc-title">
+                        		<hr>Micro Processor Digital Clock with Alarm</h4>
+                                <p class="list-group-item-text">A digital clock program using 8086 that synchronizes with an alarm, Speakers &amp; storage. : Assembly Language, Programmer/Burner</p>
+                        		
+                        		<h4 class="list-group-item-heading acc-title">
+                        		<hr>University Admission System</h4>
+                                <p class="list-group-item-text">Database Management System project: Visual Basic, Oracle DB</p>
+                        		
+                        		<h4 class="list-group-item-heading acc-title">
+                        		<hr>Railway Traffic Management</h4>
+                                <p class="list-group-item-text">Enhanced Digital Electronic Circuit to sense Train movement &amp; help in regulating traffic: 555Timer, Relay Circuit Switcher, Traffic Reader magnet and more.</p>
+                                
+                                </a>
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ** Accordation**-->
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 7. *************************** -->
+
+    <div class="details-seperator" id="contacts"></div>
+
+    <div class="container">
+        <div class="row featurette">
+            <div class="col-md-12">
+                <h2 class="featurette-heading">  Contact   <span class="text-muted"> let&#39;s stay in touch</span></h2>
+                <div class="heading-underline"></div>
+
+                <div class="row marketing">
+                    <div class="col-lg-3">
+                        <img class="img-circle bubble" src="./Resources/Homepage/GitHub-Mark-120px-plus.png" alt="View Hariharan Gandhi's GitHub repositories" title="View Hariharan Gandhi's GitHub repositories" width="140" height="140">
+                        <h2>GitHub</h2>
+                        <p><a class="btn btn-default" href="https://github.com/Hariharan-Gandhi" target="_blank" role="button">View in Github &raquo;</a>
+                        </p>
+                    </div>
+                    <!-- /.col-lg-4 -->
+                    <div class="col-lg-3">
+                        <img class="img-circle bubble" src="./Resources/Homepage/LinkedIn_logo_initials.png" alt="View Hariharan Gandhi's profile on LinkedIn" title="View Hariharan Gandhi's profile on LinkedIn" width="140" height="140">
+                        <h2>LinkedIn</h2>
+
+                        <p><a class="btn btn-default" href="https://de.linkedin.com/pub/hariharan-gandhi/46/241/8b9" target="_blank" role="button">View my LinkedIn Profile &raquo;</a>
+                        </p>
+                    </div>
+                    <!-- /.col-lg-4 -->
+                    <div class="col-lg-3">
+                        <img class="img-circle bubble" src="./Resources/Homepage/TwitterLogo_blue.png" alt="Generic placeholder image" width="140" height="140">
+                        <h2>Twitter</h2>
+                        <p><a class="btn btn-default" href="https://twitter.com/hari_gandhi17" target="_blank" role="button">Follow me &raquo;</a>
+                        </p>
+                    </div>
+                    <!-- /.col-lg-4 -->
+                    <!-- /.col-lg-4 -->
+                    <div class="col-lg-3">
+                        <img class="img-circle bubble" src="./Resources/Homepage/hobby2.png" alt="Generic placeholder image" width="140" height="140">
+                        <h2>Hobbies &amp; More</h2>
+                        <p><a class="btn btn-default" href="./hobbies.html" target="_blank" role="button">Know more &raquo;</a>
+                        </p>
+                    </div>
+                    <!-- /.col-lg-4 -->
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <a class="back-to-top" href="#" title="Scroll to top" style="display: block;"><span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span></a>
+
+    <!-- 8. ******** FOOTER *********** -->
+    <div class="container">
+        <hr style="margin-top:50px">
+        <form class="form-inline" role="form">
+            <div class="form-group">
+                <label for="closeCode"><code>&lt;p class="close-window-code" &gt; Complete this code to close this page: &lt;/</code>
+                </label>
+                <input class="form-control" id="closeCode" type="text">
+            </div>
+        </form>
+
+        <hr style="margin-top:50px">
+        <footer>
+            <p class="pull-right"><a href="#">Back to top</a>
+            </p>
+            <p>&copy; 2015 Page Maintained by <a href="#">Hariharan Gandhi</a> &middot; <a href="#">Icon and Style Attribution</a> &middot; <a href="mailto:hariharangandhi17@gmail.com?Subject=Contacting%20from%20your%20web%20page" target="_top">Contact</a>
+            </p>
+        </footer>
+
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>
