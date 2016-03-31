@@ -225,37 +225,103 @@
 
     <div  class="step slide" data-x="1000" data-y="-1500" data-scale="1">
         
-        <img src="res/img/img3.jpg"/>
+        <h1 style="font-size: 60px; text-align: center">Trending Scenario</h1><br>
+        <hr>
+
+        
+        <p style="margin-top: 50px;margin-left: 1%">
+            <li> Very <span style="color:red">large volume</span>  of Geo-spatial data</li><br>
+            <li> Businesses need location aware services</li>
+            <ul>  &ensp; &ensp; &ensp; -  Like tweets in an particular area</ul>
+            <ul>  &ensp; &ensp; &ensp; -  Weather information of a holiday spot which you plan to visit over the vacation</ul>
+            <ul>  &ensp; &ensp; &ensp; -  Attractions nearby</ul>
+            <ul>  &ensp; &ensp; &ensp; -  Take me through the shortest route</ul>
+            <ul>  &ensp; &ensp; &ensp; -  many more.....</ul>
+
+        </p>
+        <!-- <img src="res/img/img3.jpg"/> -->
     </div>
 
     <div  class="step slide" data-x="2000" data-y="-1500" data-scale="1">
         
-        <img src="res/img/img4.jpg"/>
+          <h1 style="font-size: 60px; text-align: center">Seek support from Parallel <br><br>computing platforms </h1><br>
+        <hr>
+        <div style="float: right; width: 40%; height: 40%">
+            <img src="res/sh.png" style="width: 75%; height: 100%" /> </div>
+        
+        <p style="margin-top: 50px;margin-left: 1%">
+            <li> To handle such large volumes</li><br>
+            <li> But unfortunately, <span style="color:red"> no native support</span> (yet))</li><br>
+            <li> Needs modifying internal implementations</li>
+            
+        </p>
+        <!-- <img src="res/img/img4.jpg"/> -->
     </div>
 
 
 
     <div class="step slide" data-x="1500" data-y="0" data-scale="1">
         
-        <img src="res/img/img5.jpg"/>
+        <h1 style="font-size: 60px; text-align: center">Why partition ?</h1><br>
+        <hr>
+
+        
+        <p style="margin-top: 50px;margin-left: 1%">
+            <li> Spatial Indexing for retrieval </li><br>
+            <li> Range Queries, grouping – <span style="color:red">Network cost </span>due to shuffling between clusters/nodes</li><br><br>
+            <img src="res/nodes.png" style="margin-left:12.5%"/> 
+        </p>    
+        <!-- <img src="res/img/img5.jpg"/> -->
     </div>
 
 
     <div class="step slide" data-x="2750" data-y="0" data-scale="1">
         
-        <img src="res/img/img6.jpg"/>
+         <h1 style="font-size: 60px; text-align: center">When to partition ? </h1><br>
+        <hr>
+
+        <p style="margin-top: 50px;margin-left: 1%">
+            <li> GeoSpatial operations intense application,. Eg: Location aware services</li>
+            <ul>  &ensp; &ensp; &ensp; -  Ex: Maps, Uber, Jodel, AirBnB, Emergency Services</ul><br>
+            <li> Major interests of queries are Geospatial: </li><br>
+            <li> Multiple reads</li>
+            
+        </p>
+       
     </div>
 
 
-    <div  class="step slide" data-x="3000" data-y="-1500" data-scale="1">
+    <div  class="step slide" data-x="4000" data-y="-1500" data-rotate="45"  data-scale="1">
         
-        <img src="res/img/img7.jpg"/>
-    </div>
+        <h1 style="font-size: 60px; text-align: center">The plan </h1><br>
+        <hr>
+        
+        <p>Introduce a partitioning scheme in Apache Spark that partitions data-sets considering Geo-spatial info:</p>
+        <p style="margin-top: 10px">
+            <li> <span style="color:red">Communication in distributed environment:</span> </li>
+            <ul>  &ensp; &ensp; &ensp; -  minimize network traffic by allowing spark program to control RDD partitioning</ul><br>
+            <li> <span style="color:red">Retained Spatial Locality:</span> </li>
+            <ul>  &ensp; &ensp; &ensp; -  nearby points are probably in the same partition / cluster</ul><br>
+            <li> Minimize data points shuffling during Geo-spatial queries</li><br>
+            <li> Optimized for Search, Range queries on Geo-points</li>
+            
+        </p>
+      
+    </div> 
 
 
      <div  class="step slide" data-x="5000" data-y="1000" data-rotate="90" data-scale="3">
         
-        <img src="res/img/img8.jpg"/>
+         <h1 style="font-size: 60px; text-align: center">Implementing on Spark</h1><br>
+        <hr>
+
+        
+        <p style="margin-top: 50px;margin-left: 1%">
+            <li> <span style="color:red">GeoHash Partitioner</span></li><br>
+            <li> GeoHash Query Layer</li><br><br>
+            <img src="res/data-backup.jpg" style="float: right"/> 
+        </p>
+        <!-- <img src="res/img/img8.jpg"/> -->
     </div>
 
 
@@ -312,32 +378,66 @@
 
 
      <div class="step slide" data-x="5000" data-y="7000" data-rotate="90" data-scale="3">
+        <h1 style="font-size: 60px; text-align: center">Variable Length Indexing</h1><br>
+        <hr>
+
         
+        <p style="margin-top: 50px;margin-left: 1%">
+            <li> We need a <span style="color:red">Mapping</span> from grid to spark nodes</li><br>
+            <li> Variable resolution grids mapping is preserved in a data structure</li>
+            <div style="float: right; width: 50%; height: 60%">
+            <img src="res/keys.png" style="width: 75s%; height: 100%" /> </div>
+        </p>
        
-         <img src="res/img/img16.jpg"/>
+         <!-- <img src="res/img/img16.jpg"/> -->
     </div>
 
 
      <div class="step slide" data-x="5000" data-y="10000" data-rotate="90" data-scale="3">
         
-       
-         <img src="res/img/img17.jpg"/>
+       <h1 style="font-size: 60px; text-align: center">Custom Partitioning</h1><br>
+        <hr>
+
+        
+        <p style="margin-top: 50px;margin-left: 1%">
+            <li> Step1: <span style="color:red">Load</span> Aware</li><br>
+            <li> Step2: Variable length to generate Hash</li><br>
+            <li> Step3: Map these hash to RDD partitions</li>
+        </p>
+         <!-- <img src="res/img/img17.jpg"/> -->
     </div>
 
-
-     <div class="step slide" data-x="5000" data-y="13000" data-rotate="90" data-scale="3">
+    <div class="step slide" data-x="5000" data-y="13000" data-rotate="90" data-scale="3">
         
-        <img src="res/img/img18.jpg"/>
+       <h1 style="font-size: 60px; text-align: center">Custom Partitioner Code</h1><br>
+        
+
+        <img src="res/code.png" style="width:100%;height:90%"/>
+        
+         <!-- <img src="res/img/img17.jpg"/> -->
     </div>
 
      <div class="step slide" data-x="5000" data-y="16000" data-rotate="90" data-scale="3">
         
-       
-         <img src="res/img/img19.jpg"/>
+        <img src="res/img/img18.jpg"/>
+    </div>
+
+     <div class="step slide" data-x="5000" data-y="19000" data-rotate="90" data-scale="3">
+        
+       <h1 style="font-size: 60px; text-align: center">Implementing on Spark</h1><br>
+        <hr>
+
+        
+        <p style="margin-top: 50px;margin-left: 1%">
+            <li> GeoHash Partitioner</li><br><br>
+            <li> <span style="color:red">GeoHash Query Layer</span></li><br>
+            <img src="res/data-backup.jpg" style="float: right"/> 
+        </p>
+         <!-- <img src="res/img/img19.jpg"/> -->
     </div>
 
 
-     <div class="step slide" data-x="3000" data-y="22000" data-rotate="180" data-scale="5">
+     <div class="step slide" data-x="3000" data-y="25000" data-rotate="180" data-scale="5">
                
         <h1 style="font-size: 60px; text-align: center">Query affects all nodes</h1><br>
         <hr>
@@ -354,14 +454,27 @@
     </div>
 
 
-     <div class="step slide" data-x="-2000" data-y="22000" data-rotate="180" data-scale="5">
+     <div class="step slide" data-x="-2000" data-y="25000" data-rotate="180" data-scale="5">
                
-         <img src="res/img/img21.jpg"/>
+        <h1 style="font-size: 60px; text-align: center">GeoHash Query Layer</h1><br>
+        <hr>
+
+        
+        <p style="margin-top: 50px;margin-left: 1%">
+            <li> Leverage the <span style="color:red">knowledge of previous partitioning</span> and efficiently query on subset of data:</li><br>
+            <li> Identify the <span style="color:red">type of Query</span> </li><br>
+            <li> Determine the <span style="color:red">areas of interest</span>  from the overall world</li><br>
+            <li> Figure out partitions that contain our interested region</li><br>
+            <li> <span style="color:red">Slice out</span>  the partitions from the RDD</li><br>
+            <li> Push the query on the <span style="color:red">final RDD</span>  based on the Query predicates</li><br>
+
+        </p>
+         <!-- <img src="res/img/img21.jpg"/> -->
     </div>
 
 
 
-     <div id="video-step1" class="step slide" data-x="-7000" data-y="22000" data-rotate="180" data-scale="5">
+     <div id="video-step1" class="step slide" data-x="-7000" data-y="25000" data-rotate="180" data-scale="5">
                
                <video  id="video1" autoplay="true" loop style="width:100%;height:100%;"/>
                     <source src="res/query.webm" type="video/webm">
@@ -371,21 +484,51 @@
 
 
 
-     <div class="step slide" data-x="-12000" data-y="22000" data-rotate="180" data-scale="5">
+     <div class="step slide" data-x="-12000" data-y="25000" data-rotate="180" data-scale="5">
                
          <img src="res/img/img23.jpg"/>
     </div>
 
   
-    <div id="its-in-3d" class="step" data-x="-12000" data-y="20000" data-z="-100" data-rotate="180"  data-rotate-x="40" data-rotate-y="0" data-scale="2">
+    <div id="its-in-3d" class="step" data-x="-12000" data-y="23000" data-z="-100" data-rotate="180"  data-rotate-x="40" data-rotate-y="0" data-scale="2">
         <p><span class="have">Are you <span class="you">interested</span> in seeing it work ?</span> </p>
         <span class="footnote">trust me*! it works ;)</span>
     </div>
     
 
      <div class="step slide" data-x="-3000" data-y="1500" data-rotate="0" data-scale="5">
-               
-         <img src="res/img/img25.jpg"/>
+        <h1 style="font-size: 60px; text-align: center">Thank you</h1><br>
+        <hr>
+        <img src="res/tud.png" style="width:200px;height:80px; float: left; margin-right:50px;"/>
+
+        <div>
+                    
+            <li><a href="https://www.dvs.tu-darmstadt.de/staff/buchmann/" target="blank">Prof. Alejandro Buchmann Ph.D. </a></li> <br/>
+            <li><a href="https://www.dvs.tu-darmstadt.de/staff/rehner/" target="blank">Robert Rehner, M.Sc.</a></li> 
+            
+        </div>
+            <hr>
+        <img src="res/ibm.png" style="width:200px;height:80px; float: left; margin-right:50px;"/>   
+        <div >
+            <li><a href="mailto:moehler@de.ibm.com">Dr. Gregor Möhler (IBM, Germany)</a></li> <br/>
+            <li><a href="http://researcher.watson.ibm.com/researcher/view.php?person=us-rganti" target="blank">Dr. Raghu Kiran Ganti (IBM Lab, USA)</a></li> 
+
+        </div>
+ <hr>
+ <img src="res/tud.png" style="width:200px;height:80px; float: left; margin-right:50px;"/>
+        <div >
+            <p><u><strong>Master Thesis Student:</strong></u></p><br>
+             <li><a href="https://hariharan-gandhi.github.io/" target="blank">Hariharan Gandhi </a></li> <br/>
+            <!-- <img src="res/me.png" style="width:100%;height:100%; float: left; margin-right:50px;"/> -->
+
+        </div>
+         <!-- <img src="res/img/img25.jpg"/> -->
+        
+    </div>
+
+    <div id="ing" class="step" data-x="-15000" data-y="1500" data-rotate="0" data-rotate-x="-40" data-rotate-y="0" data-scale="5" style="margin-left:-1500px !important;">
+               <b class="scaling" style="transform:scale(0.5);">Contact Me:</b>
+         <a href="https://hariharan-gandhi.github.io/" target="blank"><img src="res/me.png"/></a>
     </div>
     <!--
         
