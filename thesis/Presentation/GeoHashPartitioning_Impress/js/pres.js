@@ -20,9 +20,11 @@ function launch(){
     	
     	var res = data.trim();
     	res ="index.html"
+    	
+    	  sessionStorage.setItem('key', pwd);
         window.open(res,"_self")
 
-        sessionStorage.setItem('key', pwd);
+        
 
     }).fail(function() {
         $("#myModal").modal('show');
