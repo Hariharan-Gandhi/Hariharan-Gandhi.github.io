@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>GeoHashSpark | Geo-Partitioning and querying in Apache Spark</title>
+    
+    <meta name="description" content="impress.js is a presentation tool based on the power of CSS3 transforms and transitions in modern browsers and inspired by the idea behind prezi.com." />
+    <meta name="author" content="Bartek Szopka" />
+
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic" rel="stylesheet" />
+
+    <link href="css/impress-demo.css" rel="stylesheet" />
+    
+    <link rel="shortcut icon" href="favicon.png" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    
+    <link rel="stylesheet" type="text/css" href="../../../stylesheets/search.css" media="screen">
+    
+    <script type="text/javascript">
+    document.onreadystatechange = function(e)
+    {
+        if (document.readyState === 'complete')
+        {
+            console.log("Testing scope1");
+            var pass = sessionStorage.getItem('key');
+            if (typeof pass == "undefined" || pass == null) {
+                console.log("No session available");
+                window.open("login.html","_self");
+            }else{ 
+            var url = "https://raw.githubusercontent.com/Hariharan-Gandhi/Master-Thesis/master/"+pass+"?token=AJMsgPX952mTtHkzKw-Ma-je0Svc1NYlks5XPh0vwA%3D%3D";
+            $.get(url, function(data) {
+                console.log("Valid Session");
+            }).fail(function() {
+                console.log("Invalid Session");
+                window.open("login.html","_self");
+              });
+            }    
+        }
+    };
+    window.onload = function() {
+    	console.log("Loaded1");
+        // PAGE IS FULLY LOADED - FADE OUT YOUR OVERLAYING DIV
+        setTimeout(function() {
+           document.getElementById('page-loading-div').style.display = "none";
+           console.log("Loaded");
+        }, 1500);
+        console.log("Testing scope");
+        console.log("Ans: " );
+        //window.open("login.html","_self")
+    };
+    
+    </script>
+</head>
+
+<body>
+<h1>HI</h1>
+</body>
+</html>
+
