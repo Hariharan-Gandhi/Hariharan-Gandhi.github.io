@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="Thesis Presentation">
+    <meta name="author" content="Hariharan Gandhi">
+    <link rel="icon" href="../../../favicon.ico">
+
+    <title>Presentation Login</title>
+
+    <!-- Bootstrap: Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+    <!-- Bootstrap: Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/pres.css" media="screen">
+
+    <!--Google Analytics Tagging -->
+    <script>
+        (function(i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function() {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-63700129-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+</head>
+<!-- NAVBAR
+================================================== -->
+
+<body>
+
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                        </button>
+                        <h4 class="modal-title" id="myModalLabel">Invalid pass-key</h4>
+                    </div>
+                    <div class="modal-body">
+                        If you need a <code>pass-key</code> or if you think the <code>Token</code> has expired <a type="button" href="mailto:hariharangandhi17@gmail.com?Subject=Contacting%20for%20presentation%20passkey" target="_top" class="btn btn-info">Ask Hari</a>
+                         
+                        
+                    </div>
+                    <div class="modal-footer">
+                        
+                        <button type="button" class="btn btn-warning" data-dismiss="modal" id="retry-btn">Retry</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <div class="container">
+        <div class="row vertical-offset-100">
+            <div class="col-md-4 col-md-offset-4">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">GeoHash SPARK</h3>
+                    </div>
+                    <div class="panel-body">
+                        <form onsubmit="return launch()">
+                        <fieldset>
+                            
+                            <div class="form-group">
+                                <label for="password">
+                                    <h4><h5 style="display: inline"><span class="glyphicon glyphicon-lock" aria-hidden="true"> </span></h5> Enter your pass-key:</h4>
+                                </label>
+                                <input class="form-control" placeholder="Password" id="password" type="password" value="" required>
+                                <hr>
+                            </div>
+                            
+                            <button class="button btn" id="btn-launch-pres">Launch Presentation</button>
+                        
+                            <!-- <input class="btn btn-lg btn-success btn-block" type="submit" value="Login"> -->
+                           <!--  <div class="col-sm-offset-2 col-sm-10">
+                                <button class="button btn" id="btn-launch-pres" type="submit">Launch Presentation</button>
+                            </div> -->
+                        </fieldset>
+                        </form>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/TweenMax.min.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="./js/pres.js"></script>
+
+</body>
+
+</html>
