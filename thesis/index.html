@@ -7,18 +7,13 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <title>GeoHashSpark | Geo-Partitioning and querying in Apache Spark</title>
     
-    <meta name="description" content="impress.js is a presentation tool based on the power of CSS3 transforms and transitions in modern browsers and inspired by the idea behind prezi.com." />
-    <meta name="author" content="Bartek Szopka" />
-
-    <link href="http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic" rel="stylesheet" />
-
-    <link href="css/impress-demo.css" rel="stylesheet" />
+    <meta name="description" content="Home Page for my thesis work" />
+    <meta name="author" content="Hariharan Gandhi" />
     
-    <link rel="shortcut icon" href="favicon.png" />
-    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
-    
-    <link rel="stylesheet" type="text/css" href="../../../stylesheets/search.css" media="screen">
-        <!-- Bootstrap: Latest compiled and minified CSS -->
+    <link rel="shortcut icon" href="../favicon.ico" />
+    <link rel="icon" href="../favicon.ico">
+
+    <!-- Bootstrap: Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
     <!-- Bootstrap: Optional theme -->
@@ -68,6 +63,10 @@
     <div class="container">
         <h2 id="docs">Documents</h2>
         <hr>
+            <div id="alert" class="alert alert-danger alert-dismissible" role="alert" style="display: none">
+                <button type="button" class="close" onclick="$('#alert').hide()" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <strong>Note! </strong> Links to documents are currently disabled. Next Update: 11/12-June-2016
+            </div>
         <div class="table-responsive">
             <table class="table table-hover">
                 <tr style="font-size: 16px;">
@@ -79,49 +78,49 @@
                 <tr>
                     <td class="active"><i style="color:#EF5350">[pdf]</i> Thesis Latex</td>
                     <td class=" ">V1.0</td>
-                    <td class="warning">Gregor <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> &nbsp; &#124; &nbsp; Robert <span class="glyphicon glyphicon-edit" aria-hidden="true"></span></td>
+                    <td class="warning">Gregor <a href="#" onclick="$('#alert').show()" class="glyphicon glyphicon-edit" aria-hidden="true"></a> &nbsp; &#124; &nbsp; Robert <a href="#" onclick="$('#alert').show()" class="glyphicon glyphicon-edit" aria-hidden="true"></a></td>
                     <td class="success">07-June-2016</td>
                 </tr>
                 <tr>
                     <td class="active"><i style="color:#64B5F6">[doc]</i> Abstract</td>
                     <td class=" ">V1.0</td>
-                    <td class="warning">Gregor <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> &nbsp; &#124; &nbsp; Robert <span class="glyphicon glyphicon-edit" aria-hidden="true"></span></td>
+                    <td class="warning">Gregor <a href="#" onclick="$('#alert').show()" class="glyphicon glyphicon-edit" aria-hidden="true"></a> &nbsp; &#124; &nbsp; Robert <a href="#" onclick="$('#alert').show()" class="glyphicon glyphicon-edit" aria-hidden="true"></a></td>
                     <td class="success">07-June-2016</td>
                 </tr>
                 <tr>
                     <td class="active"><i style="color:#64B5F6">[doc]</i> Introduction</td>
                     <td class=" ">V1.0</td>
-                    <td class="warning">Gregor <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>  &nbsp; &#124; &nbsp; Robert <span class="glyphicon glyphicon-edit" aria-hidden="true"></span></td>
+                    <td class="warning">Gregor <a href="#" onclick="$('#alert').show()" class="glyphicon glyphicon-edit" aria-hidden="true"></a>  &nbsp; &#124; &nbsp; Robert <a href="#" onclick="$('#alert').show()" class="glyphicon glyphicon-edit" aria-hidden="true"></a></td>
                     <td class="success">07-June-2016</td>
                 </tr>
                 <tr>
                     <td class="active"><i style="color:#64B5F6">[doc]</i> Background and Related Work</td>
                     <td class=" ">V1.0</td>
-                    <td class="warning">Gregor <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>  &nbsp; &#124; &nbsp; Robert <span class="glyphicon glyphicon-edit" aria-hidden="true"></span></td>
+                    <td class="warning">Gregor <a href="#" onclick="$('#alert').show()" class="glyphicon glyphicon-edit" aria-hidden="true"></a>  &nbsp; &#124; &nbsp; Robert <a href="#" onclick="$('#alert').show()" class="glyphicon glyphicon-edit" aria-hidden="true"></a></td>
                     <td class="success">07-June-2016</td>
                 </tr>
                 <tr>
                     <td class="active"><i style="color:#64B5F6">[doc]</i> GeoHash Partitioner: Design and Implementation</td>
                     <td class=" ">V1.0</td>
-                    <td class="warning">Gregor <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>  &nbsp; &#124; &nbsp; Robert <span class="glyphicon glyphicon-edit" aria-hidden="true"></span></td>
+                    <td class="warning">Gregor <a href="#" onclick="$('#alert').show()" class="glyphicon glyphicon-edit" aria-hidden="true"></a>  &nbsp; &#124; &nbsp; Robert <a href="#" onclick="$('#alert').show()" class="glyphicon glyphicon-edit" aria-hidden="true"></a></td>
                     <td class="success">07-June-2016</td>
                 </tr>
                 <tr>
                     <td class="active"><i style="color:#64B5F6">[doc]</i> GeoHash Query Optimizer: Design and Implementation</td>
                     <td class=" ">V1.0</td>
-                    <td class="warning">Gregor <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>  &nbsp; &#124; &nbsp; Robert <span class="glyphicon glyphicon-edit" aria-hidden="true"></span></td>
+                    <td class="warning">Gregor <a href="#" onclick="$('#alert').show()" class="glyphicon glyphicon-edit" aria-hidden="true"></a>  &nbsp; &#124; &nbsp; Robert <a href="#" onclick="$('#alert').show()" class="glyphicon glyphicon-edit" aria-hidden="true"></a></td>
                     <td class="success">07-June-2016</td>
                 </tr>
                 <tr>
                     <td class="active"><i style="color:#64B5F6">[doc]</i> Evaluation and Results</td>
                     <td class=" ">V1.0</td>
-                    <td class="warning">Gregor <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>  &nbsp; &#124; &nbsp; Robert <span class="glyphicon glyphicon-edit" aria-hidden="true"></span></td>
+                    <td class="warning">Gregor <a href="#" onclick="$('#alert').show()" class="glyphicon glyphicon-edit" aria-hidden="true"></a>  &nbsp; &#124; &nbsp; Robert <a href="#" onclick="$('#alert').show()" class="glyphicon glyphicon-edit" aria-hidden="true"></a></td>
                     <td class="success">07-June-2016</td>
                 </tr>
                 <tr>
                     <td class="active"><i style="color:#64B5F6">[doc]</i> Conclusions</td>
                     <td class=" ">V1.0</td>
-                    <td class="warning">Gregor <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>  &nbsp; &#124; &nbsp; Robert <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> </td>
+                    <td class="warning">Gregor <a href="#" onclick="$('#alert').show()" class="glyphicon glyphicon-edit" aria-hidden="true"></a>  &nbsp; &#124; &nbsp; Robert <a href="#" onclick="$('#alert').show()" class="glyphicon glyphicon-edit" aria-hidden="true"></a> </td>
                     <td class="success">07-June-2016</td>
                 </tr>
             </table>
@@ -136,7 +135,7 @@
         <h2 id="code">Source Code </h2>
         <hr>
         <li> <a href="https://github.com/Hariharan-Gandhi/Master-Thesis"> View Source on Github </a>
-            <small><i>&nbsp; Currently available only to collaborators&#33; </i></small>
+            <small class="text-warning"><i>&nbsp; &#42;Currently available only to collaborators&#33; </i></small>
         </li>
         <hr style="margin-top:50px">
 
