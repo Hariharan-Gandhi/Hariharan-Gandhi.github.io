@@ -14,7 +14,7 @@ function launch(){
 
     var pwd = $("#password").val();
 
-    var url = "https://raw.githubusercontent.com/Hariharan-Gandhi/Master-Thesis/master/"+pwd+"?token=AJMsgOObOzjjB2L0nsOvrfFT8dg9Pl0Fks5XYnA8wA%3D%3D" ;
+    var url = "https://raw.githubusercontent.com/Hariharan-Gandhi/Master-Thesis/master/"+pwd+"?token=AJMsgEjA_Ya4NdH2L-xXljWio3PnQAvxks5XcQjKwA%3D%3D" ;
 
     $.get(url, function(data) {
     	
