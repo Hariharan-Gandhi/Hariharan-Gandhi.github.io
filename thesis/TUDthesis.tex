@@ -4,11 +4,39 @@
 \usepackage{csquotes}
 \MakeOuterQuote{"}
 \usepackage{xcolor,colortbl}
-
+ \usepackage[normalem]{ulem}
+ \useunder{\uline}{\ul}{}
 \usepackage{titlesec}
 \titleformat{\section}
 {\normalfont\fontsize{20}{25}\bfseries}{\thesection}{1em}{}
  
+ % Import for using coding style Scala/Java%
+ % Reference: http://stackoverflow.com/questions/3175105/writing-code-in-latex-document %
+		 \usepackage{listings}
+		 \usepackage{color}
+		 
+		 \definecolor{dkgreen}{rgb}{0,0.6,0}
+		 \definecolor{gray}{rgb}{0.5,0.5,0.5}
+		 \definecolor{mauve}{rgb}{0.58,0,0.82}
+		 
+		 \lstset{frame=tb,
+		 	language=Scala,
+		 	aboveskip=3mm,
+		 	belowskip=3mm,
+		 	showstringspaces=false,
+		 	columns=flexible,
+		 	basicstyle={\small\ttfamily},
+		 	numbers=none,
+		 	numberstyle=\tiny\color{gray},
+		 	keywordstyle=\color{blue},
+		 	commentstyle=\color{dkgreen},
+		 	stringstyle=\color{mauve},
+		 	breaklines=true,
+	 		frame=single,
+		 	breakatwhitespace=true,
+		 	tabsize=3
+		 } 
+		 
 \usepackage{hyperref}
 \hypersetup{
 	colorlinks,
@@ -33,6 +61,8 @@
 \pdfmapfile{=5fp.map}
 \pdfmapfile{=5sf.map}
 
+
+
 \begin{document}
   \thesistitle{Balanced Geohash Partitioning and Ef{}f{}icient Retrieval of Geospatial Big Data on Distributed and Parallel Platforms (Apache Spark)}
 	{}
@@ -47,6 +77,22 @@
   \makethesistitle
   \affidavit{Hariharan Gandhi}
 
+\cleardoublepage
+
+\section*{\begin{center}
+		{\huge Acknowledgment}
+	\end{center}}
+ 
+ \vspace*{\fill}
+ \begin{center}
+	\par \textit{"Thanks to Gregor, Raghu, Robert, Professor Buchmann, Harini and friends! for playing a major role in supporting my Master studies"}\\
+	\begin{flushright}
+	\textit{	-Hari}
+	\end{flushright}
+\end{center}
+  \vspace*{\fill}
+  
+ \clearpage
 
 \begin{abstract}
 			
@@ -168,7 +214,7 @@
 			  
 			   \begin{figure}[h]
 				   	\centering
-				   	\includegraphics[width=1.0\linewidth]{Spatialtypes}
+				   	\includegraphics[width=1.0\linewidth]{Spatialtypes1}
 				   	\caption{Various Spatial data types. Image inspired from \cite{spatialdatatypes}  }
 				   	\label{fig:spatialdatatypes}
 			   \end{figure}
@@ -255,14 +301,18 @@
 		   
 		   First, recursively divide the initial or parent domain into four child sub-domains. Next, connect neighboring sub-domains with a space-filling curve.
 		  
-			  
+			  \hfill
+			  \hfill	  
 				\begin{figure}[h]
 					\centering
 					\includegraphics[width=1.0\linewidth]{hilbertcurve}
 					\caption{Space Filling Curve: Hilbert Curve of order 1, 2 and 3. Image source \cite{kevinSFCthesis} }
 					\label{fig:hilbertcurve}
 				\end{figure}
-						  
+					\hfill
+					\hfill	  
+		  
+		  
 		  Like many of the multidimensional Query processing\cite{DBLP:conf/pods/XuT12}, we base our Geospatial Query processing in Spark based on the characteristics of Space Filling Curves in Geohash. This helps in converting point query to be applied in the multi-dimensional space\cite{DBLP:conf/pods/XuT12}. Additional benefit of applying Space Filling Curves, say Moore Curve\cite{wiki:Moorecurve}, Hilbert Curve\cite{wiki:hilbertcurve}, is their recursive nature and it makes them more suitable for hierarchical indexing of Geo-spatial data\cite{kevinSFCthesis}. 
 		  
 		  The main benefit of applying Space Filling Curves on Geospatial datatypes is that it does not require major changes to the existing internal data structure that were used to handle one dimensional non-geospatial data type. Once Space Filling Curves transforms Geo dimensions into single dimensions, it could be used with existing data structures, say B+ Trees, R-Tree etc\cite{Asano1995}. For long Space Filling Curves are used for persistence and querying of multidimensional databases\cite{Lawder:2000:USC:646102.681186}. In modern databases, their application in Geospatial data processing could be found in MongoDB\cite{MongoDB}, Solr\cite{apachesolr}, Oracle Spatial\cite{oraclespatial} 
@@ -627,10 +677,10 @@
 			The general behavior of spark is that whenever there is an incoming tasks, it is launched on all partitions. For instance, when there is filter to extract all the restaurants in Chicago, the filtering task in launched on all the partitions even on the ones which holds records only from Australia. Now that the application has control on partitions based on the custom Geohash partitioner, we could leverage this knowledge to affect only those partitions which are of our concern. 
 			
 			
-				\begin{figure}[h]
+				\begin{figure}[p]
 				\centering
-				\includegraphics[width=0.65\linewidth]{img/Queryonallnodes}
-				\includegraphics[width=0.65\linewidth]{img/Queryonallnodes2}
+				\includegraphics[width=1\linewidth]{img/Queryonallnodes}
+				\includegraphics[width=1\linewidth]{img/Queryonallnodes2}
 				\caption{Spark's default behavior to launch tasks in all partitions}
 				\label{fig:Queryonallnodes2}
 				\end{figure}
@@ -640,7 +690,7 @@
 									
 					\begin{figure}[h]
 					\centering
-					\includegraphics[width=0.7\linewidth]{img/partitionprunning}
+					\includegraphics[width=1.0\linewidth]{img/partitionprunning}
 					\caption{Spark Partition Pruning RDDs launching tasks on selected partitions}
 					\label{fig:partitionprunning}
 					\end{figure}
@@ -744,34 +794,263 @@
   \hfill
   		  \subsection{System Footprint}
 		  
+		  \subsubsection{Environment}
+ 
+		  \par The design is evaluated on virtual machines at IBM Research and Development Lab in Germany.
+		 
+		  \begin{table}[h]
+		  	\centering
+		  	\begin{tabular}{ll}
+		  		\hline
+		  		\rowcolor[HTML]{03A9F4} 
+		  		\multicolumn{1}{c}{\cellcolor[HTML]{03A9F4}{\ul \textbf{System Property}}} & \multicolumn{1}{c}{\cellcolor[HTML]{03A9F4}{\ul \textbf{Value}}} \\ \hline
+		  		\\[-1em]
+		  		\textbf{Number of VMs}                                                     & \textit{5}                                                  \\      \\[-1em]
+		  		\textbf{Operating System}                                                  & \textit{RedHat Enterprise Linux, 3.10.0-327.13.1.el7.x86\_64}    
+		  		\\   \\[-1em]                          
+		  		\textbf{Memory}                                                            & \textit{16GB (X 5)}                                                \\  \\[-1em]
+		  		\textbf{CPU}                                                               & \textit{9 (X 5)}                                        \\            \\[-1em]
+		  		\textbf{Disk}                                                              & \textit{250GB (X 5)}                                              
+		  	\end{tabular}
+		  	\caption{Test System Specifications}
+		  	\label{systemenv}
+		  \end{table}
+		  \paragraphbreak
+		  \par Spark cluster with a master and 5 worker nodes are configured in these machines with the following specifications:
+		  
+		  		  \begin{table}[h]
+		  		  	\centering
+		  		  	\begin{tabular}{ll}
+		  		  		\hline
+		  		  		\rowcolor[HTML]{03A9F4} 
+		  		  		\multicolumn{1}{c}{\cellcolor[HTML]{03A9F4}{\ul \textbf{System Property}}} & \multicolumn{1}{c}{\cellcolor[HTML]{03A9F4}{\ul \textbf{Value}}}                                \\ \hline\\[-1em]
+		  		  		\textbf{Spark Version }                                                                                       & \textit{1.6.1(Pre Built for Hadoop 2.6)}                                                        \\ \\[-1em]
+		  		  		\textbf{Deploy mode}                                                                                          & \textit{Cluster}                                                                               \\ \\[-1em]
+		  		  		\textbf{Cluster Manager}                                                                                      & \textit{Standalone}                                                                             \\ \\[-1em]
+		  		  		\textbf{Number of Worker nodes}                                                                               & \textit{5}                                                                                      \\ \\[-1em]
+		  		  		\textbf{Application Language}                                                                                 & \textit{Scala, Version 2.10.5}                                                                  \\ \\[-1em]
+		  		  		\textbf{Java}                                                                                 & \textit{Java-1.8.0 Openjdk-1.8.0.91-0.b14.el7\_2.x86\_64}                                                                  \\ \\[-1em]
+		  		  		\textbf{Input datasource} & \textit{HDFS} \\ \\[-1em]
+		  		  		\textbf{Executor Memory}                                                                                      & \textit{12GB (X 5)}                                                                             
+		  		  	\end{tabular}
+		  		  	\caption{Spark Cluster Specifications}
+		  		  	\label{sparkenv}
+		  		  \end{table}
+		  		  
+		  		  \paragraphbreak
+		  		 \par The input spatial dataset is  stored and retrieved from HDFS layer below Spark
+		  		  		  		  
+		  		    \begin{table}[h]
+		  		    	\centering
+		  		    	\begin{tabular}{ll}
+		  		    		\hline
+		  		    		\rowcolor[HTML]{03A9F4} 
+		  		    		\multicolumn{1}{c}{\cellcolor[HTML]{03A9F4}{\ul \textbf{System Property}}} & \multicolumn{1}{c}{\cellcolor[HTML]{03A9F4}{\ul \textbf{Value}}} \\ \hline
+		  		    		\\[-1em]
+		  		    		\textbf{Hadoop Version }                                                     & \textit{2.6.4}                                                       \\ \\[-1em]
+		  		    		\textbf{Number of Worker Data-nodes}                                                               & \textit{5}                                                   \\ \\[-1em]
+		  		    	\end{tabular}
+		  		    	\caption{Hadoop HDFS Specifications}
+		  		    	\label{hdfsenv}
+		  		    \end{table}
+		  
+		  
+		  
+		  \subsubsection{Dataset}
+			  The evaluation used Input dataset with Geospatial point data from New York Taxi dataset\cite{nyctaxidata}.
+			  
+			  The dataset is in CSV format and it contains records with details about trips made, with month level segregation for any particular year. Each record corresponds to a trip and fields of these records includes 
+			  
+			 \begin{itemize}
+			 	\item  \textbf{Time}(Pick up and Drop)
+			 	\item   \textbf{Location} (Pick up and Drop) - \textit{Spatial Point(latitude, longitude)}
+			  	\item  \textbf{Trip Distance}, 
+			  	\item  \textbf{Trip Fare},
+			  	\item  \textbf{Payment Type} etc
+			 \end{itemize}
+			  
+			  The spatial data from the raw dataset comes with few corrupted GPS recording, locating irrelevant locations. Before using them for evaluation, we use spark to cleanse the dataset to remove all empty and erroneous location references. The cleansed dataset is then uploaded and persisted into HDFS. 
+			  
+			  We create a \textit{Spark context} object, which instructs Spark how to access a cluster,  and \textit{textFile} method to read data from HDFS layer
+			  
+			  \begin{lstlisting}
+					//reading from HDFS data source
+					val inputNycdata = "hdfs://ghp.evaluationsetup.com:9000/nyc/large"
+				  	val nycRdd = sc.textFile(inputNycdata).persist()		  	
+			  \end{lstlisting}
+ 
+		  		    \begin{table}[h]
+		  		    	\centering
+		  		    	\begin{tabular}{ll}
+		  		    		\hline
+		  		    		\rowcolor[HTML]{03A9F4} 
+		  		    		\multicolumn{1}{c}{\cellcolor[HTML]{03A9F4}{\ul \textbf{Fields}}} & \multicolumn{1}{c}{\cellcolor[HTML]{03A9F4}{\ul \textbf{Record Value}}} \\ \hline
+		  		    		\\[-1em]
+		  		    		medallion & 96472     \\ \\[-1em]
+		  		    		hack\_license    &8EB9CE00A5AD729095BC542FC5FDB5F4     \\ \\[-1em]                
+		  		    		vendor\_id         & 0766C20575FB088022E9B7D889D899A3     \\ \\[-1em]             
+		  		    		rate\_code 	& VTS     \\ \\[-1em]
+		  		    		store\_and\_fwd\_flag & 1     \\ \\[-1em]
+		  		    		pickup\_datetime    & 2013-01-01 10:31:00     \\ \\[-1em]
+		  		    		dropoff\_datetime   & 2013-01-01 10:45:00     \\ \\[-1em]
+		  		    		passenger\_count & 2     \\ \\[-1em]
+		  		    		trip\_time\_in\_secs & 840     \\ \\[-1em]
+		  		    		trip\_distance & 4.67     \\ \\[-1em]
+		  		    		pickup\_longitude & -73.991516     \\ \\[-1em]
+		  		    		pickup\_latitude & 40.75798      \\ \\[-1em]
+		  		    		dropoff\_longitude & -74.016251     \\ \\[-1em]
+		  		    		dropoff\_latitude & 40.706989     \\ \\[-1em]
+		  		    		payment\_type & CSH     \\ \\[-1em]
+		  		    		fare\_amount & 16.5     \\ \\[-1em]
+		  		    		surcharge & 0     \\ \\[-1em]
+		  		    		mta\_tax & 0.5     \\ \\[-1em]
+		  		    		tip\_amount & 0     \\ \\[-1em]
+		  		    		tolls\_amount & 0     \\ \\[-1em]
+		  		    		total\_amount & 17     \\ \\[-1em] 
+		  		    	\end{tabular}
+		  		    	\caption{A single record of NYC Taxi dataset}
+		  		    	\label{nyctaxidatarec}
+		  		    \end{table}
+			  
+			  
+			  
+		  \clearpage
+		  
+		  \subsubsection{Setup Overview}
+		  
+		  The overall test environment setup is depicted in the Figure \ref{fig:system-footprint}
+		  
 				\begin{figure}[h]
 				\centering
-				\includegraphics[width=1.0\linewidth]{SystemFootprint}
+				\includegraphics[width=1.0\linewidth]{SystemFootprint.pdf}
 				\caption{Apache Spark clusters running on Top of HDFS}
 				\label{fig:system-footprint}
 				\end{figure}
 		  
-		  \subsection{Results}
-		  \hfill
-		  \subsection{Challenges and Limitations}
-		  \par The default hash partitioning algorithm in spark depends on Java hash code. For every incoming record, the hash code of its key is generated. Each hash code which is an integer, is mapped on to one the available partitions using 
-		  \begin{quote}
-		  	Partition number = Hashcode / No.of partitions. 
-		  \end{quote}
-		  In this case, the hashcode to partition mapping is always calculated dynamically.
 		  
-		  However, in our case, since hashcode is a geohash string and we perform a load balanced hash partitioning we always need the data structure that holds the load aware geohash to RDD partitions mapping metadata. We need this metadata to perform partitioning. As
+		  \hfill
+		  \clearpage
+		  \subsection{Results}
+		  
+		   The evaluation was performed on varying sizes of dataset, 
+		   \begin{itemize}
+		   	\item Small (just for coding the logic), 
+		   \item Medium (~15 million records) and 
+		   \item Large (~ 175 million records). 
+		   \end{itemize}
+		  Once the dataset is read from HDFS, the necessary spatial fields are GeoHash encoded and a default Key Value RDD is created with GeoHash value as the key. Then a new RDD is created by partitioning the default RDD, based on GeoHash partitioner logic. Queries are executed against both these RDDs. Besides the Query response time, parameters like time taken to perform default partition, Geohash based partition are calculated. Then the locality of tasks during the query execution on these differently partitioned RDD is observed.
+		  
+		  Spatial \textbf{\textit{Within}} query was executed on these RDDs and results are observed. 
+		  
+		  \begin{quote}
+		  	"Return all the Taxi \textbf{\textit{on boarding events}} that happened within a radius of \textbf{\textit{200 meters}} around \textbf{\textit{my location}}"
+		  \end{quote}
+		  
+		  Any evaluation execution runs in parallel for three different partitioners logic,
+		  \begin{itemize}
+		  	\item Default partitioning (resulting from the Key Value RDD)
+		  \item GeoHash Partitioning (load aware location based partitioning)
+		  \item GeoHash Partitioning with Query optimization
+		  and results are evaluated. 
+		  \end{itemize}
+		  
+		  \clearpage
+			  \paragraph{Improvement in Spatial Query Response time}
+		  	  
+				\begin{figure}[h]
+				\centering
+				\includegraphics[width=1.0\linewidth]{img/QueryResponsetime}
+				\caption{Improved Spatial Query response time}
+				\label{fig:queryresponsetime}
+				\end{figure}
+				
+				
+		  \clearpage
+			\paragraph{Reduction in number of records scanned}
+			
+\begin{figure}[h]
+\centering
+\includegraphics[width=1.0\linewidth]{img/noofrecords}
+\caption{Reduced number of scanning records}
+\label{fig:noofrecords}
+\end{figure}
+			
+			
+			\clearpage
+			\paragraph{Reduction in network traffic: Locality of Spark tasks}
+			\clearpage
+			\paragraph{Partitioning is not always beneficial: Benefits of Partitioning with multiple Reads}
+			
+			As we could infer that custom partitioning involves (i) additional transformations, (ii) learning about the load to performing load balancing, (iii) increase or decrease in size of partitions and  (iv) redistribution of data points, there is a considerable increase in the time Spark takes to partition relative to the default partitioning. 
+			
+			So, when we take into consideration also the time it took to partition the dataset. However this is a one time process and further querying on these partitions are spatially effective. So, when we calculate the overall benefit the partitioning provides, we consider the impact on multiple reads(spatial queries, filters and joins) on this Geohash Partitioned RDD. 
+							 
+				\begin{figure}[h]
+				\centering
+				\includegraphics[width=1.0\linewidth]{img/benefitgraph}
+				\caption{Partitioning benefit with multiple reads}
+				\label{fig:benefitgraph}
+				\end{figure}
+			
+			From the graph it is obvious that 
+			\begin{itemize}
+				\item the reason to partition has to be solid 
+				\item contain multiple Spatial reads on these partitioned RDDs
+				\item need to maintain the context of partition through the application’s lifespan
+			\end{itemize}
+						  
+		  \clearpage
+		  \subsection{Challenges and Limitations}
+		  
+		  The realization of the proposed approached imposed few challenges and limitations. The thesis work tried to solve those challenges with simpler solutions and optimizations and the rest of technical chanllenges that are beyond the scope of this work have been documented as limitations in this section.
+		  
+		  \paragraph{Inherent imbalance with Hashing}
+			  Hash based partitioning alone, generally results in an imbalanced partitioning. Data could be distributed more at one particular hash value. This is greatly possible with geospatial data set with data points concentrated around major cities and temporally in hotspot areas. Hence there is a need to address this issue and we propose that the algorithm learns the data distribution of the input dataset and the creates variable orders of space filling curves. 
+			  
+		  \paragraph{Need for minimizing scans during load balancing}
+			  During the load aware balancing phase, there is a need to scan through the complete dataset multiple times to encode latitude, longitude to Geohash, calculate Geohash prefix, understand the load distribution under each prefix cluster. Such multiple scanning during partitioning are acceptable if the size of dataset is considerably small. However for large data sets with more than 100 million records, would result is \textit{n x 100 millions scans} if we are scanning them for \textit{'n'} difference operations. The algorithm addresses this problem by drilling deeper scan once and building in reverse for coarser resolutions as explained in section \pageref{fig:loadlevels}. 
+			  
+		 \paragraph{Custom partitioner: Need to maintain metadata}
+		  \par The default hash partitioning algorithm in spark depends on Java hash code. For every incoming record, the hash code of its key is generated. Each hash code which is an integer, is mapped on to one the available partitions using 
+				\begin{center}
+					  \begin{quote}
+				  	Partition number = Hashcode / No.of partitions. 
+				  \end{quote}
+				\end{center}
+		  In this case, the hashcode-to-partition mapping could always be calculated dynamically.
+		  
+		  However, in our case, since hashcode is a geohash string and we perform a load balanced hash partitioning we always need the data structure that holds the load aware geohash to RDD partitions mapping metadata. We need this metadata to perform partitioning. 
+		  
+		  \paragraph{Custom partitioner: Need to retain spark context}
+		  Once the spark Job is completed the Geohash partitioned RDD has to be persisted on to a disk (or) HDFS. When we read these RDDs back again within a different spark context, the RDD would retain the partitioner and partitions but not the same corresponding partition number. In this case, the metadata with mapping from Geohash to Partition number becomes irrelevant. Hence we are need to maintain the same spark context throughout the life span of the application or the life span of spark cluster. This is the normal case with any Spark application, yet it is a reasonable limitation.
 		  
   \cleardoublepage
   
   \hfill
   \section{Conclusions}
   \hfill
-		   \subsection{Contributions}
+		   \subsection{Contribution}
+		   
+		   This thesis work acknowledges the unprecedented growth in the usage of geospatial data and seeks modern distributed computing platform like Spark to efficiently process them. In this process, the work identifies challenges and limitations posed by these platforms in handling geospatial data. The need for retaining locality of geo-points with RDD partitions are emphasized and realized.
+		   
+		   A custom partitioning algorithm to retain \textit{partition-level} locality has be designed, implemented and evaluated. The partition algorithm uses Geohash encoding scheme, which in-turn is based on z order Space Filling Curve, to transform the dimensionality of spatial data and leverages from '\textit{Hierarchical Prefix}' property of Geohash encoding to efficiently layout spatial data into RDD partitions. In order to avoid imbalance in the partition sizes, the algorithm proposes a load aware balancing technique using variable resolution Geohash grids. This helps in avoiding starvation in few CPUs while others are overloaded. The algorithm is optimized at several areas to minimize the scan needed to study the load distribution on earth surface. Once the data set is custom partitioned using Geohash Partitioner, further spatial transformation queries on these partitions results in minimized shuffled read/write and achieve very low locality possible(\texttt{Process\_Local}). 
+		   
+		   Further more, the later part of the thesis, proposes an efficient spatial query processing algorithm for any transformation that act on these Geohash partitioned RDDs. This layer leverages the knowledge of Geohash partitioning meta-data which is a hash table mapping geohash code to RDD partition number. It translates queries into 2D space and draws a query region that are affected by the query. This query region is then evaluated against the partitioner information to choose a minimal subset of partitions to run the spark tasks. This approach drastically reduces the number of records scanned and substantially increases query response time. 
+		   
+		   The thesis work further explains the limitations of our approach like the need to retain partitioning metadata across context and concludes the dissertation by proposing various ideas for future extension of this work.
+		   		   
+		   \clearpage
 	   	   \subsection{Future Work}
 	   	   
-	   	   \par Our dissertation concerns mainly about Geometry Points. This could be extended to support composite Geometries like LineString, Polygons, Circles which would represent Transport routes, city boundary, travel zones respectively.
-	   	   Once partitioning is completed the
+	   	   \paragraph{Supporting additional Geometry types} 
+	   	   
+	   	   Our dissertation focuses mainly on spatial data with \textbf{Point} geometry. This could be extended to support composite Geometries like LineString, Polygons, Circles which would represent Transport routes, city boundary, travel zones respectively. This idea would involve calculating a overlapping geohash for each composite geometry, say a \textit{polygon} would be represented by the geohash of a Minimum Bounding Geohash Rectangle.
+   	  
+	   	  \paragraph{Extending to other distributed platforms}
+	   	  The Geohash based partitioning was implemented on Apache Spark to distribute spatial data into partitions in an ordered fashion. The same algorithm could be ported to other similar parallel computing platforms like Hadoop, Hbase, or other MPP Databases to support spatial partitioning and their performance could be studied. 
+	   	  
+	   	  \paragraph{Building a Geo processing stack}
+	   	   Once partitioning is completed the partitions could be persisted into a distributed database like Elastic, MongoDB and further create a secondary Spatial\textit{ Indexing} for efficient search and retrieval of Spatial data for visualization, resulting in a complete stack for processing, indexing, visualizing spatial data. 	  
    	  
    	   
   \cleardoublepage
@@ -781,5 +1060,9 @@
  %=====BIBLIOGRAPHY================================================================================
  \bibliographystyle{ieeetr}
  \bibliography{GeoHashPartitionerReference}	  
+
+\clearpage
+\listoftables
+
 
 \end{document}
