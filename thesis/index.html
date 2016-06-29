@@ -35,7 +35,15 @@
         ga('create', 'UA-63700129-1', 'auto');
         ga('send', 'pageview');
         
-        document.getElementById('ifrm').contents().find('img').css({'width':'10%','height':'10%'});
+        
+        window.onload = function() {
+ 
+        setTimeout(function() {
+           document.getElementById("ifrm").contents().find('img').css({'width':'10%','height':'10%'});
+        }, 1500);
+ 
+    };
+        
         
     </script>
 </head>
