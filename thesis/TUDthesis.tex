@@ -100,11 +100,11 @@
 		
 		  \par Amongst several big data disciplines, \textit{spatial data} is one of the most exponentially proliferating data type. This could be attributed to the explosive increase in the number of users of mobile devices with sophisticated GPS\footnote{Global Positioning System} location sensors, emergence of social media and advancement in weather and navigation systems. More and more applications and businesses are providing location based services and personalised suggestions. Some of the most disruptive apps of recent times, such as Uber for taxi services, AirBnB for resource sharing, Google Maps, geo-tagged Tweets, Instagram photos, drones, logistics, weather apps, all provide location aware service to their users.
 		    \\ \\
-		  Exploiting this Geospatial dimension of information for the benefits of analytics is interesting and challenging. To store and process such huge volumes of data, we harness the efficiency of emerging distributed and parallel computing platforms, such as \textit{\textbf{Apache Spark, Hadoop Mapreduce, Hadoop Distributed Files Systems}}. However, conventional distributed storage and processing systems, do not provide native support for handling and efficiently storing Geospatial data types. The challenge is further made intricate by the necessity to preserve data points' locality in order to minimize network cost involved due to shuffling of intermittent results between the computing nodes. In this thesis work, we use the large scale data processing engine, \textbf{Apache Spark }\cite{sparkmainpaper}, to process Geospatial datasets. Spark provides \textit{resilient distributed dataset} (RDD)\cite{RDDmainpaper}, which is a collection of dataset partitioned across the nodes of a cluster for parallel operation \cite{sparkHomePage}. 
+		  Exploiting this geospatial dimension of information for the benefits of analytics is interesting and challenging. To store and process such huge volumes of data, we harness the efficiency of emerging distributed and parallel computing platforms, such as \textit{\textbf{Apache Spark, Hadoop Mapreduce, Hadoop Distributed Files Systems}}. However, conventional distributed storage and processing systems, do not provide native support for handling and efficiently storing geospatial data types. The challenge is further made intricate by the necessity to preserve data points' geographic locality in order to minimize network cost involved due to shuffling of intermittent results between the computing nodes. In this thesis work, we use the large scale data processing engine, \textbf{Apache Spark }\cite{sparkmainpaper}, to process geospatial datasets. Spark provides \textit{resilient distributed dataset} (RDD)\cite{RDDmainpaper}, which is a collection of dataset partitioned across the nodes of a cluster for parallel operation \cite{sparkHomePage}. 
 		   \\ \\
-		  Geospatial operations such as \textit{contains, within, overlaps} etc involve a shuffling between partitions when there is a scan for data points in a region. This means that geographically closer data points should be preserved in the same partitions within a Spark RDD for reduced shuffling, minimal network cost, and efficient scans and retrieval. Spark's default partitioning are \textit{Range-based and Hash-based}(Java Hashcode) both of which are not suitable for achieving spatial locality within partitions. It emphasizes the need for developing a 'custom' Geospatial partitioning and retrieval methodology tailored to store and retrieve the overwhelming amount of Geospatial big data. 
+		  geospatial operations such as \textit{contains, within, overlaps} etc involve a shuffling between partitions when there is a scan for data points in a region. This means that geographically closer data points should be preserved in the same partitions within a Spark RDD for reduced shuffling, minimal network cost, and efficient scans and retrieval. Spark's default partitioning are \textit{Range-based and Hash-based}(Java Hashcode) both of which are not suitable for achieving spatial locality within partitions. It emphasizes the need for developing a 'custom' geospatial partitioning and retrieval methodology tailored to store and retrieve the overwhelming amount of geospatial big data. 
 		 \\ \\
-		  This thesis works aims at addressing this issue by proposing and providing a geographically load balanced partitioning mechanism, for Apache Spark, tailored for Geospatial dataset and further improves by providing an optimized querying layer for efficient retrieval of records on spatial queries. Experimental results, using New York Taxi dataset, show  improvement in data points' locality for minimized shuffling and efficiency with scanning and retrieving results for spatial queries in terms of response time and number of records scanned.\cite{sparkbook}
+		  This thesis works aims at addressing this issue by proposing and providing a geographically load balanced partitioning mechanism, for Apache Spark, tailored for geospatial dataset and further improves by providing an optimized querying layer for efficient retrieval of records on spatial queries. Experimental results, using New York Taxi dataset, show  improvement in data points' locality for minimized shuffling and efficiency with scanning and retrieving results for spatial queries in terms of response time and number of records scanned.\cite{sparkbook}
 		
 
 \end{abstract}  
@@ -132,7 +132,7 @@
  
 		\subsection{Motivation}
 		
-		\par Of late, Geospatial data has seen an unprecedented growth rate owing to the increasing popularity of mobile devices. According to GSMA report 2016 \cite{GSMA_REPORT_2016}, there were \textbf{7.6 billion} mobile subscriptions with 4.7 'unique' subscribers by the end of 2015, one billion more expected by 2020 and more interestingly, more than half of the world's population has mobile subscriptions with a penetration rate of more than 63\% and operator revenue of one trillion dollars.
+		\par Of late, geospatial data has seen an unprecedented growth rate owing to the increasing popularity of mobile devices. According to GSMA report 2016 \cite{GSMA_REPORT_2016}, there were \textbf{7.6 billion} mobile subscriptions with 4.7 'unique' subscribers by the end of 2015, one billion more expected by 2020 and more interestingly, more than half of the world's population has mobile subscriptions with a penetration rate of more than 63\% and operator revenue of one trillion dollars.
 		
 		These devices are equipped with sophisticated \textit{Global Positioning System(GPS)} which reports the exact location information of the device. This feature has made lives easier with tons of day to day applications providing \textit{location based services}. Some of these apps, such as maps, navigation, social networking, have become integral part of our lives. The major source of data for these applications originates from end-users through opportunistic or participatory sensing. Besides mobile devices, almost every web application have also centralized their services to location based. Twitter trends in a particular country, traffic information for a highway route, weather forecast in a location/city - all involve spatial data associated with them. 
 		
@@ -149,7 +149,7 @@
 		
 		\clearpage
 		\subsection{Proposed Approach in this Thesis}
-		\par We propose a custom partitioning scheme, implemented and tested with Apache Spark(in general, the algorithm aims to be used with any distributed partitioning scheme) which helps to overcome the problem shuffling and reduced performance while handling geospatial data. Our approach based on \textbf{\textit{Geohash encoding}}, that encodes location points based on \textbf{\textit{Z-order}}, does not require any internal modification to existing implementation of Apache Spark. We extend sparks \texttt{'Partitioner()'} class to provide a thin layer of custom partitioner that introduces location awareness to spark partitioner. This facilitates future geospatial queries on these partitioned RDD to be effective and substantially faster. The working of these techniques are discussed in detail by the forthcoming chapters.
+		\par We propose a custom spatial partitioning scheme, implement and test it with Apache Spark(in general, the algorithm aims to be used with any distributed partitioning scheme). It aims to provide an efficient spatial partitioning to overcome the problem of large size shuffling and reduced performance while handling geospatial data. Our approach based on \textbf{\textit{Geohash encoding}}, that encodes location points based on \textbf{\textit{Z-order}}, does not require any internal modification to existing implementation of Apache Spark. We extend sparks \texttt{'Partitioner()'} class to provide a thin layer of custom partitioner that introduces location awareness to spark partitioner. This facilitates future geospatial queries on these partitioned RDD to be effective and substantially faster. The working of these techniques are discussed in detail by the forthcoming chapters.
 		
 		We also propose and implement a query handling layer that leverages the knowledge of our spark spatial partitioning scheme and drastically reduces the number of parallel tasks launched on Spark nodes that do not contain data of our interest, minimizes number of records scanned, and eventually improves response time for queries. We also discuss about the observations from evaluation, limitations and challenges while using this approach. Our work mainly focus on \textit{Point} spatial data type, which contains single latitude and longitude. However the approach could easily be extended to support complex spatial type without much effort.
 		
@@ -160,7 +160,7 @@
 		
 		\subparagraph{Chapter B} explains background knowledge that would help to under existing principles, architecture of systems in use, available and previous works in the relevant areas or works that could you used to support our proposal.  
 		
-		\subparagraph{Chapter C} proposes a new algorithm for distributed spatial partitioning. We then design and build the components of a custom partitioner for Spark that uses Geohashing technique to perform load aware partitioning on Geospatial dataset. 
+		\subparagraph{Chapter C} proposes a new algorithm for distributed spatial partitioning. We then design and build the components of a custom partitioner for Spark that uses Geohashing technique to perform load aware partitioning on geospatial dataset. 
 		
 		\subparagraph{Chapter D} proposes an effective query translation and optimization layer on Spark. We then demonstrate its the design and implementation which leverages the knowledge of partitioning scheme to minimize scans on RDD partitions. 
 		
@@ -171,7 +171,7 @@
 	\clearpage
 
 	\hfill
-  \section{Background and Related Work}
+  \section{Background and Related Work} \label{bg}
   \hfill
 	  
 		   \subsection{Geospatial data }
@@ -257,7 +257,26 @@
 		     \end{figure}
 		   
 		    \clearpage
-		   \subsection{Need for (Spatial)Partitioning: Shuffling}
+		    \paragraph{Impact of Data Locality on Spark performance} \label{datalocality}
+		    
+		    The location of data has a great impact on execution performance. Spark tends to export code to data's location to execute on them. When the executing code and its target data reside closer then the job execution is faster. 
+		    
+		    Proximity to data to its processing code is categorized by Spark Documentation \cite{sparkLocality} as follows:(in the order of best to worst)
+		    \begin{itemize}
+		    	\item \textbf{\texttt{PROCESS\_LOCAL}} - data is located in the same process(JVM). Best locality possible
+		    	
+		    	\item \textbf{\texttt{NODE\_LOCAL}} data is on the same node. Examples might be in HDFS on the same node, or in another executor on the same node. This is a little slower than PROCESS\_LOCAL because the data has to travel between processes
+		    	
+		    	\item \textbf{\texttt{NO\_PREF}} - data locality without any preference. All access to data are considered equal.
+		    	
+		    	\item \textbf{\texttt{RACK\_LOCAL}} - data is located on the another server which resides in the same rack. 
+		    	
+		    	\item \textbf{\texttt{ANY}} -  data is not located in the same rack and is available elsewhere on the network.
+		    \end{itemize}
+		    
+		    
+		    
+		   \paragraph{Need for (Spatial)Partitioning: Shuffling}
 		   
 		   In a distributing computing platform, like Spark, one of the main concerns is to minimise the network traffic between clusters. With Spark, it is very crucial to partition, Pair RDD\cite{sparkKV} data sets(key-value) since subsequent transformations on these PairRDDs involve data shuffling across the nodes in the cluster. When data set is partitioned and similar keys reside in the same partition(locality is maintained, in spatial terms), then transformations in these partitioned dataset results in minimised shuffling and substantially cheaper and faster processing.  
 		   
@@ -269,7 +288,7 @@
 		   \hfill
 		   \subsection{Spatial Indexing techniques}
 		   
-		   Spatial data handling has been in study and use for several years. This section lists down few of the spatial indexing techniques like R-Trees, Quad Trees, Grid files
+		   Spatial data handling has been in study and use for several years. This section lists down few of the spatial indexing techniques like R-Trees, Quad Trees, Grid files and their properties are summarized in Table \ref{tab:Spatial indexing}
 		   
 		   \subparagraph{R-Tree} is similar to B-Tree with dynamic index where the search key are minimum bounding rectangles(MBR) in multidimensional. R-trees are extensively used in spatial databases and are efficient in processing Range Queries and kNN Queries.
 		   
@@ -312,15 +331,15 @@
 					\hfill	  
 		  
 		  
-		  Like many of the multidimensional Query processing\cite{DBLP:conf/pods/XuT12}, we base our Geospatial Query processing in Spark based on the characteristics of Space Filling Curves in Geohash. This helps in converting point query to be applied in the multi-dimensional space\cite{DBLP:conf/pods/XuT12}. Additional benefit of applying Space Filling Curves, say Moore Curve\cite{wiki:Moorecurve_1, wiki:Moorecurve}, Hilbert Curve\cite{wiki:hilbertcurve_1, wiki:hilbertcurve}, is their recursive nature and it makes them more suitable for hierarchical indexing of Geo-spatial data\cite{kevinSFCthesis}. 
+		  Like many of the multidimensional Query processing\cite{DBLP:conf/pods/XuT12}, we base our geospatial Query processing in Spark based on the characteristics of Space Filling Curves in Geohash. This helps in converting point query to be applied in the multi-dimensional space\cite{DBLP:conf/pods/XuT12}. Additional benefit of applying Space Filling Curves, say Moore Curve\cite{wiki:Moorecurve_1, wiki:Moorecurve}, Hilbert Curve\cite{wiki:hilbertcurve_1, wiki:hilbertcurve}, is their recursive nature and it makes them more suitable for hierarchical indexing of Geo-spatial data\cite{kevinSFCthesis}. 
 		  
-		  The main benefit of applying Space Filling Curves on Geospatial datatypes is that it does not require major changes to the existing internal data structure that were used to handle one dimensional non-geospatial data type. Once Space Filling Curves transforms Geo dimensions into single dimensions, it could be used with existing data structures, say B+ Trees, R-Tree etc\cite{Asano1995}. For long Space Filling Curves are used for persistence and querying of multidimensional databases\cite{Lawder:2000:USC:646102.681186}. In modern databases, their application in Geospatial data processing could be found in MongoDB\cite{MongoDB}, Solr\cite{apachesolr}, Oracle Spatial\cite{oraclespatial} 
+		  The main benefit of applying Space Filling Curves on geospatial datatypes is that it does not require major changes to the existing internal data structure that were used to handle one dimensional non-geospatial data type. Once Space Filling Curves transforms Geo dimensions into single dimensions, it could be used with existing data structures, say B+ Trees, R-Tree etc\cite{Asano1995}. For long Space Filling Curves are used for persistence and querying of multidimensional databases\cite{Lawder:2000:USC:646102.681186}. In modern databases, their application in geospatial data processing could be found in MongoDB\cite{MongoDB}, Solr\cite{apachesolr}, Oracle Spatial\cite{oraclespatial} 
 		  
 		  \clearpage
 		  \paragraph{Z-order Curves}
 		  Z-curves was introduced by G. M. Morton as a function to map multidimensional data to single dimension while preserving the data points' locality. The plane traversal in this curve resembles a 'Z', see Fig:\ref{fig:zcurve},  and hence the name. Data points' coordinates binary representation are interleaved to get it Z value. Once the z value is calculated into single dimension it could be used with existing data structure like B-Tree or Hash table. Z ordering could be used in hierarchical data structure similar to depth first traversal of a quad tree\cite{wiki:Zcurves_1, wiki:Zcurves}. We used the z ordered Geohash in combination with Hash table in our approach. 
 		  
-		  As we transform points according to Z-curve used in Geohash, they could be partitioned in regions or Clusters. For any incoming query a sub-set of the clusters has to be retrieved and analysed to produce the result. This idea has adapted and used with Apache Spark to partition spatial data.
+		  As we transform points according to Z-curve used in Geohash, they could be partitioned into clusters each representing a region. For any incoming query a sub-set of the clusters has to be retrieved and analysed to produce the result. This idea has adapted and used with Apache Spark to partition spatial data.
 		  
 		  	\begin{figure}[h]
 		  		\centering
@@ -384,14 +403,14 @@
 		   
 		   \subparagraph{Properties of Geohash: } \cite{Geohash}
 		   \begin{enumerate}
-		   	\item Geohashes could be used as Uniqur Identifiers and a representation of POint data in databases \cite{wiki:geohash}
+		   	\item Geohashes could be used as Unique Identifiers and as a representation of Point data in databases \cite{wiki:geohash}
 		   \item As we remove characters from the right end of a Geohash string, it loses precision and covers a larger region.
-		   \item Two Geohash strings with same prefix are closer to each other. However, the contrary is not true. Two Geohash strings with different prefix are nearby too. This is due to the longer Z curve distance between two grids in the Equatorial and Polar regions.
-		   		   \item Exploiting the above property, Geohash index structure could be used for quick-and-dirty proximity search.
+		   \item Two Geohash strings with same prefix are closer to each other. However, the contrary is not true. Two Geohash strings with different prefix could be nearby too. This is true because of the longer Z curve distance between two grids in the Equatorial and Polar regions.
+		   		   \item Exploiting the above property, Geohash index structure could be used for crude proximity search.
 		   
 		   \end{enumerate}
 		   
-		    All these properties of Geohash encoding system are exploited in designing a Geospatial Partitioning scheme in Apache Spark. 
+		    All these properties of Geohash encoding system are exploited in designing a geospatial Partitioning scheme in Apache Spark. 
 		   
 		   \clearpage
 		   \subsection{Related Work} 
@@ -401,22 +420,22 @@
 		   
 		   \textit{Geospark }\cite{geospark}, one of the projects from DataSys Lab at Arizona State University, extends Apache Spark to provide geospatial support and claims to exhibit better performance in comparison to its hadoop based implementation, SpatialHadoop \cite{spatialhadoop}. Geospark provides Spatial RDDs and Spatial operations on those RDDs. It allows to choose from R-Tree and Quad-Tree based indexing schemes. 
 		   
-		   The motto of our work is not to draw comparison with these systems. Our motto is to design a lightweight spatial partitioning scheme based on Geohash encoding technique, without much modification to internal implementation of Apache Spark. It is a high level design which is not restricted only to Spark and could be easily modified to use in any other distributed computing environment. 
+		   The goal of our work is not to draw comparison with these systems. Our motto is to design a lightweight spatial partitioning scheme based on Geohash encoding technique, without much modification to internal implementation of Apache Spark. It is a high level design which is not restricted only to Spark and could be easily modified to use in any other distributed computing environment. 
 		   
 		  
      \cleardoublepage
      \hfill
 	\section[Spatial Load Aware GeoHash Partitioner(GHP) for Spark]{Spatial Load Aware GeoHash Partitioner(GHP) for \\Spark}
 		\hfill \hrule	\hfill 
-	In this chapter, we look into the design and implementation of a custom spark partitioner that provides  Geospatial partitioning of spatial big data
+	In this chapter, we look into the design and implementation of a custom spark partitioner that provides  geospatial partitioning of spatial big data
 		\subsection{Partitioning}
-			\par As we realize, communication is very expensive in a distributed environment, it is necessary to distribute data in a such a way that minimizes communication. This would result in performance gain and greatly improves speed of execution for key based transformations. In Geospatial application, this means, laying out RDD partitioning in such a way that retains spatial locality of the data points. 
+			\par As we realize, communication is very expensive in a distributed environment, it is necessary to distribute data in a such a way that minimizes communication. This would result in performance gain and greatly improves speed of execution for key based transformations. In geospatial application, this means, laying out RDD partitioning in such a way that retains spatial locality of the data points. 
 			
-			However, (Geospatial) Partitioning is not helpful (or not beneficial) in all applications and scenarios. The gain is considerable when: \cite{sparkbook}
+			However, (geospatial) Partitioning is not helpful (or not beneficial) in all applications and scenarios. The gain is considerable when: 
 			\begin{itemize}
-				\item The dataset is scanned multiple times in key oriented operations like \textit{joins}.
+				\item The dataset is scanned multiple times in key oriented operations like \textit{joins}.\cite{sparkbook}
 				\item Considerable dataset size wherein benefits of partitioning outweighs the effort involved partitioning.
-				\item And clearly when the application involves a relatively more spatial queries.
+				\item And clearly when the application predominantly involves spatial queries than non-spatial queries.
 			\end{itemize}
 			
 		\subsubsection{Default Partitioning in Spark}
@@ -436,17 +455,18 @@
 			\begin{quote}
 				\centering Partition = key.hashCode() / numPartitions
 			\end{quote}
+			where \texttt{hasCode()} method is the java hashcode which returns an interger.  \texttt{numPartitions} is the (desired) number of partitions we need the RDD to be partitioned into.
 			
-			\subparagraph{RangePartitioner} partitions sortable records by range into roughly equal ranges. The content of the RDD passed in are sampled to determine the range\cite{sparkapiPartitioner}. This partitioning scheme is useful when keys have natural ordering and are non-negative.
+			\subparagraph{RangePartitioner} partitions sortable records by range into roughly equal ranges. The content of the RDD passed in is sampled to determine the range\cite{sparkapiPartitioner}. This partitioning scheme is useful when keys have natural ordering and are non-negative.
 			\clearpage
-			Spark's \texttt{HashPartitioner} and \texttt{RangePartitioner} do not involve \textbf{domain specific knowledge} during partitioning. The absence of domain knowledge tends to hash the locations \textit{L1(40.881142 -73.907021)} and \textit{L2(40.88129 -73.90693)} into two different partitions even though these two locations are physically closer and are intended to stay within a single partition. However, Spark provides \textbf{Custom Partitioner object} to leverage domain specific(Geospatial) knowledge to further cut down communication cost. Rest of this segment demonstrates the design of a Geospatial aware custom Partitioner.
+			Spark's \texttt{HashPartitioner} and \texttt{RangePartitioner} do not involve \textbf{domain specific knowledge} during partitioning. The absence of domain knowledge could hash the locations \textit{L1(40.881142 -73.907021)} and \textit{L2(40.88129 -73.90693)} into two different partitions even though these two locations are physically closer and are intended to stay within a single partition. However, Spark provides \textbf{Custom Partitioner object} to leverage domain specific knowledge(e.g., geospatial) to further cut down communication cost. Rest of this section demonstrates the design of a geospatial aware custom Partitioner.
 			
-			\par It is important to note that during partitioning based on key, spark does not provide explicit control of which physical worker node each key goes to. This is partly because of the system design to support node failures.\cite{sparkbook} However, it ensure that the set of keys resides in the same partition. For instance, keys that produce same hashcode stick together  in the same partition. So, in our aim to achieve spatial locality with the data points we could achieve partition level locality, not node level i.e., the data points corresponding to the neighboring region, at a particular level of resolution, might physically reside in different nodes of the cluster. However all data points belonging to a 'same' region(containing same geohash prefix) reside within a single partition and in turn in the same physical node. So, we could summarize the properties of partitioning in Spark as follows: \cite{partitioningHeather} 
+			\par It is important to note that during partitioning based on key, spark does not provide explicit control of which physical worker node each key goes to. This is partly because of the system design to support node failures.\cite{sparkbook} However, it ensures that the set of keys resides in the same partition. For instance, keys that produce the same hashcode stick together  in the same partition. So, in our aim to achieve spatial locality with the data points we could achieve partition level locality, not node level i.e., the data points corresponding to the neighboring region, at a particular level of resolution, might physically reside in different nodes of the cluster. However all data points belonging to a 'same' region(containing same geohash prefix) reside within a single partition and in turn in the same physical node. The properties of partitioning in Spark could be summarized as follows: \cite{partitioningHeather} 
 			 
 			 \begin{enumerate}
-			 	\item Each node in a spark cluster can contain one or more partitions
-			 \item Partitions never span across multiple node. Records in a single partition are guaranteed to be in the same node.
-			\item  The number of partitions in the RDD, \texttt{\textbf{numPartitions}} parameter, could be configured. Default value: Total number of cores on all executor nodes.
+				 \item Each node in a spark cluster can contain one or more partitions
+				 \item Partitions never span across multiple node. Records in a single partition are guaranteed to be in the same node.
+				\item  The number of partitions in the RDD, \texttt{\textbf{numPartitions}} parameter, could be configured. Default value: Total number of cores on all executor nodes.
 			 \end{enumerate}
 			
 		\paragraph{	Contract to implement a Custom Partitioner: }
@@ -459,7 +479,7 @@
 			\end{itemize}
 			\clearpage
 		\subsection{Geohash as Partitioning Key}
-			\par In the background section, the structure and usage of Geohash technique was discussed. Here we use Geohash as the key for creating our Key-Value RDD. We generate this Geohash key by encoding the Latitude and Longitude values from each record. \\
+			\par In the background section \ref{bg}, the structure and usage of Geohash technique was discussed. Here we use Geohash as the key for creating our Key-Value RDD. We generate this Geohash key by encoding the Latitude and Longitude values from each record. \\
 						
 				\begin{figure}[h]
 					\centering
@@ -467,8 +487,8 @@
 					\caption{Geohash encoder to encode spatial points to Geohash Key}
 					\label{fig:GeohashEncoder}
 				\end{figure}
-		In our approach, we use Geohash of Latitude, Longitude of each record as its key. We create a Key-Value RDD with the generated Geohash code as Key and the record itself as the value, as shown in table. 
-		\begin{quote}
+		In our approach, we use Geohash of Latitude, Longitude of each record as its key using maximum resolution as seen in \ref{code:geohash} . We create a Key-Value RDD with the generated Geohash code as Key and the record itself as the value, as shown in table. 
+		\begin{quote} \label{code:geohash}
 			Geohash Key = GeoHashEncode.withCharacterPrecision(Lat, Long, 12\footnote{12 - the  maximum precision of 12 characters for 64bits Geohash}).toBase32()
 		\end{quote}
 				\begin{figure}[h]
@@ -478,13 +498,14 @@
 					\label{fig:kvrdd}
 				\end{figure}
 				
-				As discussed in the background section of Geohash technique, this encoding scheme based on Z-curves, could be used in retaining spatial locality. All data points with same Geohash prefix belong to the same geographical region. This encoding scheme also helps in identifying neighbour along the path of the z traversal. So, the next step is create custom partitioner based on the Geohash code.
+				As discussed in the background section \ref{bg} of Geohash technique, this encoding scheme based on Z-curves, is used to preserve spatial locality. All data points with same Geohash prefix belong to the same geographical region. This encoding scheme also helps in identifying neighbour along the path of the z traversal. So, the next step is to create custom partitioner based on the Geohash code.
 
 		
 		\subsection{Custom Geohash Partitioner}
 				
-		\par The custom extension of Partitioner object should be able to read a record's key and assign a partition number specific to that particular key. Since we need to create spatial awareness to partition allocation we cannot utilize Java Hashcode method on the keys(Geohash) to determine its destined partition. Hence, our custom Geohash partitioner requires a mapping from desired Geohash grid to a physical partition number of the RDD. So, whenever there is an input record's key, the custom partitioner refers to mapping meta-data and returns destined partition number. The design and construction of the \textit{GeohashPartitionMapper} is explained in detail in the following sections.
-		The approach is to leverage the inherent property of Geohashes to denote grids on the earth surface, to create the partitions. For instance, all of New York region falls under the grid 'd'. So, when we partition data from entire world and need all data points in New York and neighboring region to reside in the same partition then we map all Geohash key with prefix of length 1 as 'd' to the same partition number.  
+		\par The custom extension of Partitioner object should be able to read a record's key and assign a partition number specific to that particular key. Since we need to create spatial awareness to partition allocation we cannot utilize the Java \texttt{hashcode()} method on the keys(Geohash) to determine its destined partition. Hence, our custom Geohash partitioner requires a mapping from desired Geohash grid to a physical partition number of the RDD. So, whenever there is an input record's key, the custom partitioner refers to mapping meta-data and returns destined partition number. The design and construction of the \textit{GeohashPartitionMapper} is explained in detail in the following sections.
+		
+		The approach is to leverage the inherent property of Geohashes in representing grids on the earth surface, to create the partitions for RDD. For instance, all of New York region falls under the grid 'd'. So, when we partition data from entire world and need all data points in New York and neighboring region to reside in the same partition then we map all Geohash key with prefix of length 1 as 'd' to the same partition number.  
 		
 		Key '\textit{dr5rugbmh6ym}', at geohash grid resolution 1 has the prefix 'd', goes to partition 'x'
 		Now Key '\textit{dr5rusvvxq1d}', at geohash grid resolution 1 has the prefix 'd', also goes to partition 'x'
@@ -497,7 +518,7 @@
 			\label{fig:Geohash_res1}
 			\end{figure}
 		
-		To proceed further deeper and to denote smaller region as a partition size, we could simply increase the size of Geohash prefix considered as partition. This means drilling into Geohash grid resolution 2, wherein each of the 32 grids are in turn  sampled into another 8x4 grids(32 grids). This would result in a permutation of 32 x 32 = 1024, distinct partitions, Figure \ref{fig:Geohash_res2}. As the work proceeds with this approach, we are hit by the explicit side effect of Hashing techniques - imbalance in load distribution as seen in Graph \ref{fig:imbalance}. This is also prominent with spatial datasets with data point concentrated at hotspots, major cities and metropolitan areas. 
+		To proceed further deeper and to uniquely denote smaller region as a partition, we could simply increase the length of Geohash prefix considered as partition. This means drilling into Geohash grid resolution 2, wherein each of the 32 grids are in turn  sampled into another 8x4 grids(32 grids). This would result in a permutation of 32 x 32 = 1024, distinct partitions, Figure \ref{fig:Geohash_res2}. As the work proceeds with this approach, we are hit by the explicit side effect of Hashing techniques - imbalance in load distribution as seen in graph Figure \ref{fig:imbalance}. This imbalance appears in spatial datasets with data point concentrated at hotspots, major cities and metropolitan areas. 
 		
 			\begin{figure}[h]
 				\centering
@@ -536,15 +557,15 @@
 			\clearpage
 		
 		\begin{itemize}
-			\item This imbalance continues to exist until we ignore the load distribution and blindly increase the overall resolution of the Geohash grid
-			\item Extremely varied size of partitions would result in other spark executors waiting idly for tasks or in \textit{speculative execution} of tasks for slow running tasks. This is the behavior of spark to  transfer Map task from slower nodes to the nodes that have already finished processing their allocation \cite{sparkspeculation}. Or even worse hit time out on \texttt{spark.locality.wait} which would result in poor locality violating the core purpose of our partitioning. The effort to achieve \textit{process local} fails and task steps through process-local, node-local, rack-local and then any. \cite{sparkconfiguration}. However both these parameters could be controlled by configuration settings.
+			\item This imbalance continues to exist as long as the load distribution pattern is ignored and we continue to simply increase the overall resolution of the Geohash grid
+			\item Extremely varied sizes(number of records) of RDD partitions would result in some spark executors waiting idly for tasks or in \textit{speculative execution} of tasks for slow running tasks. This is the behavior of spark to  transfer Map task from slower nodes to the nodes that have already finished processing their allocation \cite{sparkspeculation}. Or even worse, we would hit time out on \texttt{spark.locality.wait} which would result in poor locality violating what was the core purpose of our partitioning. The effort to achieve \textit{process local} fails and task steps through process-local, node-local, rack-local and then any. \cite{sparkconfiguration}. However both these parameters - \texttt{spark.speculation} and \texttt{spark.locality.wait} - could be controlled by configuration settings.
 		\end{itemize}
 
 		
 			\subsubsection{Load Aware Geohash Key Generator}
 				\par To avoid this phenomenon, our approach takes into consideration the geographical distribution of load and in addition leverages benefits of Geohashing to make balanced, location aware partitioning. The result would benefit both from (Geo)Hash based partitioning, to achieve locality, and from Range based partitioning, to attain maximum achievable (or) configured level of uniform load distribution. The custom partitioner achieves this by,
 				 \begin{enumerate}
-				 	\item Determining a threshold parameter based on the size of dataset.
+				 	\item Determining a threshold parameter based on the size(\textit{total number of records}) of dataset.
 				 	\item Drilling deeper into resolutions only for those grids which has number of data points greater than the calculated threshold.
 				 	\item Stop partitioning on grids which has fewer points which would result in varied levels of resolution in different Geohash grid depending on the geographical load distribution.
 				 
@@ -566,16 +587,16 @@
 			\paragraph{Encode the Coordinates}
 				\begin{itemize}
 					\item Create the key-value RDD, \textbf{JavaPairRDD}\textit{[String, Array[String]]}, with '\textit{Geohash of the coordinates}' in data-set as keys. This is the base RDD which is to be partitioned.
-					\item Create a secondary RDD, with just the key from previous RDD. \textit{RDD[String]}. This reduced RDD, with only Geohash string, helps in reduced load during learning about load distribution and creating a Geohash grid to partition mapping. 
+					\item Create a secondary RDD - \texttt{'keyRDD'}, with just the key from previous RDD. \textit{RDD[String]}. This reduced RDD, with only Geohash string, helps in reduced load during learning about load distribution and creating a Geohash grid to partition mapping. 
 				\end{itemize}
 			\paragraph{Determine the Threshold}
-				The next step is determine the \textit{threshold}, which is considered as maximum number of records a region/grid could contain to stay in a single partition. Threshold is calculated in terms of average number of records each partition could handle within a default partition size. The approach chooses\textit{ number of records} as the threshold parameter because it might vary depending upon number and type of columns for different datasets.
+				The next step is to determine the \textit{threshold}, which is considered as maximum number of records a region/grid could be covered by a single partition. Threshold is calculated in terms of average number of records each partition could handle within a default partition size. The approach calculates threshold parameter proportional to the \textit{ number of records} because it might vary depending upon number and type of columns for different datasets.
 				
 				
 				\begin{quote} Partitioning Threshold \footnote{Average Record in each partition}  = Total number  of records / Number of default partitions
 				\end{quote}
 				
-				Total number of records counting is done alone with any operation that involves overall scan
+				Since count operation involves scanning all the records, the \textit{total number of records} counting is done alone with any operation that involves overall scan
 			
 			\paragraph{Deeper Resolution Tree building}
 				The next step is to understand the load distribution w.r.t threshold. This is then used to build the data structure which contains mapping between Geohash Grid to partition number.
@@ -583,7 +604,7 @@
 				\begin{itemize}
 					\item Instantiate and maintain a new list to collect key prefix.
 					
-					\item From the KeyRDD, starting from the prefix size '1', count the number of elements in distinct keys (reduceByKey)
+					\item From the KeyRDD, starting with the prefix size '1', count the number of elements in distinct keys (reduceByKey)
 						\begin{quote} val level1 = keysRDD.map(a => (a.substring(0,1), 1)).reduceByKey(\_+\_ )
 						\end{quote}
 						
@@ -595,10 +616,9 @@
 							 
 						\end{quote}
 				 
-					\item Repeat the count operation by increasing the length of the code by one character for every iteration until the predefined level of Geohash resolution or there are no segments that has more records than threshold. 
-					\item When the desired final level is reached, do not filter based on threshold, instead add all the left out Key prefix to the list.
-					\item This would involve 'n' times complete scan of dataset. So, to optimize it, we could create a \textit{reduceByKey} on the nth prefix length and calculating it in the reverse. This would involve only 1 complete scan of the data set. (n - the predefined prefix limit need to estimate load)
-			 	
+					\item Repeat the count operation by increasing the length of the code by one character for every iteration up to the predefined level of Geohash resolution(\textit{GH\textsubscript{res}}) or there are no segments that has more records than threshold. 
+					\item When the resolution level(\textit{GH\textsubscript{res}}) is reached, further filtering based on threshold is stopped, and all the left out Key prefix are added to the list.
+					\item Suppose the resolution level, (\textit{GH\textsubscript{res}}), need to calculate load distribution is 'n', this process would involve 'n' times complete scan of dataset. So, to optimize it, we could create a \textit{reduceByKey} on the n\textsuperscript{th} prefix length and calculating it in the reverse. This would involve only 1 complete scan of the data set. 
 				\end{itemize}
 															
 				\begin{figure}[h]
@@ -621,7 +641,7 @@
 					\end{figure}
 			 \clearpage
 			\paragraph{Optimized Partitions}
-			The partitioner achieves good geo-load balancing by following above approach. However, there is scope for further optimization. Consider the scenario where we have two different Geohash Prefix of same length and number of elements in one Geohash Prefix exceeds the threshold. In this case, the procedure is to retain the prefix with less elements than threshold and drill deeper into the other prefix. This would result in 32 new partitions in the additional resolution. However if only one among these 32 contributed to more than 90\% of its parent prefix's total number of elements, then this leaves other 31 under fed partitions which could have otherwise been combined into a single partition, see Figure \ref{fig:Optimization}, \ref{fig:Optimization2}
+			The partitioner achieves good geo-load balancing by following above approach. However, there is scope for further optimization. Consider the scenario where we have two different Geohash Prefix of same length and number of elements in one Geohash Prefix exceeds the threshold. In this case, the procedure is to retain the prefix with less elements than threshold and drill deeper into the other prefix. This would result in 32 new partitions in the additional resolution. However if only one among these 32 contributed to more than 90\% of its parent prefix's total number of elements, then this leaves other 31 partitions with very less number of records, which could have otherwise been combined into a single partition, see Figure \ref{fig:Optimization}, \ref{fig:Optimization2}
 									
 				\begin{figure} [h]
 				\centering
@@ -751,7 +771,7 @@ class GeoHashPartitioner(partitionerMap: scala.collection.Map[String,Long]) exte
 				\label{fig:Queryonallnodes2}
 				\end{figure}
 				
-				Spark provides an api, \textbf{\texttt{PartitionPruningRDD<T>}}, which is an RDD used to prune existing RDD partitions in order to prevent launching tasks on all partitions \cite{sparkapiPartitionPruning}. This helps us to launch tasks only on partitions that are of concern for the filter operation in the execution DAG. 
+				Spark provides an api, \textbf{\texttt{PartitionPruningRDD<T>}}, which is an RDD used to prune existing RDD partitions in order to prevent launching tasks on all partitions \cite{sparkapiPartitionPruning}. This helps us to launch tasks only on partitions that are of concern for the filter operation in the execution DAG(Directed Acyclic Graph). 
 				
 									
 					\begin{figure}[h]
@@ -765,12 +785,12 @@ class GeoHashPartitioner(partitionerMap: scala.collection.Map[String,Long]) exte
 									
 		\subsection{Geohash Query Translator}
 		
-		\par The purpose of this module is to analyze the incoming task or query and mark down the regions of interest for that particular query. In the following section, we shall take a look into how the translation works when we have a spatial '\textbf{\textit{Within}}' query (say, show me all the restaurants \textit{150 meters} from \textit{here})
+		\par The purpose of this module is to analyze the incoming task or query and mark down the regions of interest for that particular query. In the following section, we shall take a look into how the translation works when we have a spatial '\textbf{\textit{Within}}' query (say, show me all the restaurants within a circle of \textit{150 meters} around \textit{me})
 
 			\begin{itemize}
 				\item This type of query provides us with the point of interest\textit{(p)} and the desired distance\textit{(d)}.
-				\item In our approach, we make use of spatial distance calculation function like \textit{Haversine formula} \cite{wiki:Haversine_formula_1, wiki:Haversine_formula} (or) \textit{Vincenty's formulae} \cite{wiki:Vincenty's_formulae_1, wiki:Vincenty's_formulae} in our distance calculation between any two points on the earth.
-				\item From the point of interest, calculate a circle(c) with a radius of the d. This query circle(c) is created by all points that are a distance d  from the point of interest(p). 
+				\item In our approach, we make use of spatial distance calculation function \textit{Haversine formula} \cite{wiki:Haversine_formula_1, wiki:Haversine_formula} when we calculate distance between two point and more accurate  \textit{Vincenty's formulae} \cite{wiki:Vincenty's_formulae_1, wiki:Vincenty's_formulae}, which considers Earth as oblate sphere, in query translation module.
+				\item From the point of interest, calculate a circle(c) with a radius of the d. This query circle(c) is created by all points that are within a distance 'd'  from the point of interest(p). 
 				\item Using this query circle, a minimum bounding box that completely covers circle of interest  is calculated. The mathematical formula for calculating bounding box coordinates are derived from \cite{HandbookofMathematics} and clearly explained in the work \cite{matuschek_2010}
 			
 			\end{itemize}		
@@ -829,7 +849,7 @@ class GeoHashPartitioner(partitionerMap: scala.collection.Map[String,Long]) exte
 			
 		\clearpage
 			\subsubsection{Enhanced Optimization}
-				\par This candidate partition section procedure could be further optimized by efficiently ignoring partitions that are within the query bounding box prefix but out of Query circle. This could be achieved by taking advantage of the knowledge about varied levels of Geohash grid resolution and dropping out partitions that are not needed for the query as shown in the Figure \ref{fig:QueryOpt3}. As we could see, only \textit{4 out of 32} inner partitions of grid '\textit{\textbf{k}}' are of interest for this query and so the remaining 28 partitions could be easily dropped from consideration. Bigger grids, grid '\textit{\textbf{7}}', with no further inner partitions has to be considered as whole.
+				\par This candidate partition section procedure could be further optimized by efficiently ignoring partitions that are within the query bounding box prefix but out of Query circle. This could be achieved by taking advantage of the knowledge about varied levels of Geohash grid resolution and dropping out partitions that are not needed for the query as shown in the Figure \ref{fig:QueryOpt3}. As we could see, only \textit{4 out of 32} inner partitions of grid '\textit{\textbf{k}}' are of interest for this query and so the remaining 28 partitions could be easily dropped from consideration. Bigger grids, like grid '\textit{\textbf{7}}', with no further inner partitions has to be considered as whole.
 				
 				
 					\begin{figure}[h]
@@ -839,7 +859,7 @@ class GeoHashPartitioner(partitionerMap: scala.collection.Map[String,Long]) exte
 					\label{fig:QueryOpt3}
 					\end{figure}
 			
-			Once the candidate partitions are identified by using either of these methods, they are pruned out from the large partitioned RDD and task is launched on the resulting, pruned RDD as shown in Figure \ref{fig:partitionprunning}. This results in a much lesser workload and reduced scans needed to obtain the same results and in turn enhances performance. The efficiency of \textit{Geohash Partitioning and Query optimizing} approach could be evidently noticed from the evaluation results. The following section shows the results of evaluation for the test cases run on New York Taxi Data.
+			Once the candidate partitions are identified by using either of these methods, they are pruned out from the large partitioned RDD and task is launched on the resulting, pruned RDD as shown in Figure \ref{fig:partitionprunning}. This results in considerably less workload and leading to fewer scans in obtaining the same results and in turn enhancing performance. The efficiency of \textit{Geohash Partitioning and Query optimizing} approach could be evidently noticed from the evaluation results. The later section \ref{eval} shows the results of evaluation for the test cases run on New York Taxi Data.
 			
 		 
 		\clearpage
@@ -856,8 +876,8 @@ class GeoHashPartitioner(partitionerMap: scala.collection.Map[String,Long]) exte
   \cleardoublepage
   
   \hfill
-  \section[Evaluating our approach on a Spark \& HDFS cluster]{Evaluating our approach on a Spark \& HDFS \\cluster}
-  \hfill
+  \section[Evaluating our approach on a Spark \& HDFS cluster]{Evaluating our approach on a Spark \& HDFS \\cluster} \label{eval}
+
   		  \subsection{System Footprint}
 		  
 		  \subsubsection{Environment}
@@ -920,10 +940,10 @@ class GeoHashPartitioner(partitionerMap: scala.collection.Map[String,Long]) exte
 		  		    	\label{hdfsenv}
 		  		    \end{table}
 		  
-		  
+		  \clearpage
 		  
 		  \subsubsection{Dataset}
-			  The evaluation used Input dataset with Geospatial point data from New York Taxi dataset\cite{nyctaxidata}.
+			  The evaluation used Input dataset with geospatial point data from New York Taxi dataset\cite{nyctaxidata}.
 			  
 			  The dataset is in CSV format and it contains records with details about trips made, with month level segregation for any particular year. Each record corresponds to a trip and fields of these records includes 
 			  
@@ -934,6 +954,15 @@ class GeoHashPartitioner(partitionerMap: scala.collection.Map[String,Long]) exte
 			  	\item  \textbf{Trip Fare},
 			  	\item  \textbf{Payment Type} etc
 			 \end{itemize}
+			  
+			  		  
+			  		  The evaluation was performed on varying sizes of dataset, 
+			  		  \begin{itemize}
+			  		  	\item Small (just for coding the logic), 
+			  		  	\item Medium (~15 million records) and 
+			  		  	\item Large (~ 175 million records). 
+			  		  \end{itemize}
+			  
 			  
 			  The spatial data from the raw dataset comes with few corrupted GPS recording, locating irrelevant locations. Before using them for evaluation, we use spark to cleanse the dataset to remove all empty and erroneous location references. The cleansed dataset is then uploaded and persisted into HDFS. 
 			  
@@ -997,19 +1026,13 @@ class GeoHashPartitioner(partitionerMap: scala.collection.Map[String,Long]) exte
 		  \hfill
 		  \clearpage
 		  \subsection{Results}
-		  
-		   The evaluation was performed on varying sizes of dataset, 
-		   \begin{itemize}
-		   	\item Small (just for coding the logic), 
-		   \item Medium (~15 million records) and 
-		   \item Large (~ 175 million records). 
-		   \end{itemize}
+
 		  Once the dataset is read from HDFS, the necessary spatial fields are GeoHash encoded and a default Key Value RDD is created with GeoHash value as the key. Then a new RDD is created by partitioning the default RDD, based on GeoHash partitioner logic. Queries are executed against both these RDDs. Besides the Query response time, parameters like time taken to perform default partition, Geohash based partition are calculated. Then the locality of tasks during the query execution on these differently partitioned RDD is observed.
 		  
 		  Spatial \textbf{\textit{Within}} query was executed on these RDDs and results are observed. 
 		  
 		  \begin{quote}
-		  	"Return all the Taxi \textbf{\textit{on boarding events}} that happened within a radius of \textbf{\textit{200 meters}} around \textbf{\textit{my location}}"
+		  	"Return all the Taxi \textbf{\textit{on boarding events}} that happened within a radius of \textbf{\textit{200 meters}} around \textbf{\textit{Time Square(40.758895,-73.9872836)}}"
 		  \end{quote}
 		  
 		  Any evaluation execution runs in parallel for three different partitioners logic,
@@ -1025,8 +1048,8 @@ class GeoHashPartitioner(partitionerMap: scala.collection.Map[String,Long]) exte
 		  \clearpage
 			  \paragraph{Improvement in Spatial Query Response time}
 		  	  
-		  	  As a first metric for the evaluation, \textit{Response time }of spatial queries is measured fpor different dataset sizes and on three different targets as described in \ref{typesofevalset} 
-		  	  
+		  	  As a first metric for the evaluation, \textit{Response time }of spatial queries is measured for different dataset sizes and on RDD with (i) Default partitioning (ii) Geohash partitioning and (iii) Geohash partitioning with optimized querying.
+		  	   	  
 				\begin{figure}[h]
 				\centering
 				\includegraphics[width=1.0\linewidth]{img/QueryResponsetime}
@@ -1036,8 +1059,8 @@ class GeoHashPartitioner(partitionerMap: scala.collection.Map[String,Long]) exte
 				
 				The following were inferred from the results, 
 				\begin{itemize}
-					\item There was no drastic improvement in query response time in for Geohash Partitioned RDDs as against default partitioned RDDs. The considerable reduction in response time with GHP RDDs is due to the minimized shuffling, and shuffling induced read writes. For medium sized data set, there was a more than 50\% improvement, however larger dataset it was more or less equal
-					\item On contrary, the response time of queries on GeoHash partitioned RDDs with Query pre-processor displayed noticeable reduction in response time. Also it was consistent through various dataset sizes
+					\item There was no drastic improvement in query response time in for Geohash Partitioned RDDs as against default partitioned RDDs. The considerable reduction in response time with GHP RDDs is due to the minimized shuffling, and shuffling induced read writes. For medium sized data set, there was an improvement of more than 50\%, on the other hand, for larger dataset the improvement was around 10\%
+					\item On contrary, the response time of queries on GeoHash partitioned RDDs with Query pre-processor displayed noticeable reduction in response time. The improvement was prominently seen in all sizes of datasets.
 				\end{itemize}
 				
 		  \clearpage
@@ -1058,21 +1081,59 @@ class GeoHashPartitioner(partitionerMap: scala.collection.Map[String,Long]) exte
 			\paragraph{Reduction Locality of Spark tasks and minimized shuffling}
 			The following observation was made with regards to locality of tasks 
 			\begin{itemize}
-				\item The GeoHash partitioned RDD(with optimized querying) results in 100\%  \texttt{'Process\_Local'} execution, which is the best possible locality possible
-				\item However since we perform \textit{Hash based} partitioning, and load balancing is performed only upto a default resolution of order 6(\textit{configurable}), there are few region with much denser points even after load balanced drilling. This results in few partitions with very large block size processing longer than rest of them. Spark speculation tries to transfer task over network to other processing resulting in \texttt{Any} level(\textit{worst}) locality. This is avoided by configuring a higher locality wait time. 
+				\item The GeoHash partitioned RDD(with optimized querying) results in 100\%  \texttt{'Process\_Local'} (see section \ref{datalocality} for explanation)
+					 execution, which is the best possible locality possible
+				\item However since we perform \textit{Hash based} partitioning, and load balancing is performed only up to a predefined level of Geohash resolution(\textit{GH\textsubscript{res}}) of order 6(\textit{configurable}), there are few region with much denser points even after load balanced drilling. This results in few partitions with very high number of records, processing longer than rest of partitions. Spark speculation tries to re-launch any of the slow running task(or) threshold to wait on locality would transfer task over network to other less-local nodes resulting in \texttt{Any} level(\textit{worst}) locality (see section \ref{datalocality} for explanation). This is avoided by configuring a higher locality wait time - \texttt{spark.locality.wait} (default 3s) and ensuring \texttt{spark.speculation} is set to \texttt{false} (or) a higher timeout value for \texttt{spark.speculation.interval} (default 100ms). 
 			\end{itemize}
+			
+			The advantage of partitioning based on domain to minimize network cost when there is a domain specific query. This network cost is caused due to the shuffling of records across partitions and in turn nodes. According to spark's programming guide \cite{sparkKV}, the operations which could cause shuffling are:
+			\begin{itemize}
+				\item \textbf{Repartition} operations: \texttt{repartition, coalesce}
+				\item \textbf{ByKey} operations: \texttt{groupByKey, reduceByKey}
+				\item \textbf{join} operations: \texttt{cogroup, join}
+			\end{itemize}
+			
+			To analysis the impact on reduction in Shuffling read/write, we create a another query which would involve one of the above mentioned operations. Consider the following scenario and its query, a taxi company needs to find region wise income for all trips.
+			
+				\subparagraph{Simple \textit{reduceByKey() } operation:}
+			\begin{quote}
+				"List down the Region wise sum of all the trip income. (For simplicity, suppose that regions are specified in terms of Geohash grids.)"
+			\end{quote}	
+			\subparagraph{Simple \textit{join()} operation:}
+			\begin{quote}
+				"List down all the trips that started 350 meters around Time Square(40.758895,-73.9872836) and trip distance is less than 5 kilometers"
+			\end{quote}	
+			
+			From Figure \ref{fig:reducebykey}, we could see that there is around 75\% reduction in size of Shuffled Read and Shuffled Write after the dataset is Geohash partitioned. We should, however, remember that there is always an initial Shuffle involved once during custom partitioning. However, once they are partitioned there is a reduced shuffling for all future queries on the RDD. 
+			
 				\begin{figure}[h]
-				\centering
-				\includegraphics[width=0.7\linewidth]{img/locality}
-				\caption{Behaviour of tasks: Locality and read/write}
-				\label{fig:locality}
+					\centering
+					\includegraphics[width=0.9\linewidth]{reducebykey}
+					\caption{Shuffling read/write Behavior: \texttt{reduceByKey()}} 
+					\label{fig:reducebykey}
+				\end{figure}
+				
+			When we analyze the case for \texttt{join()} operations, Figure \ref{fig:join} shows that there is a very high penalty for join operations in terms of Shuffled read/write when there is no location based partitioning. For instance, when we join two RDDs based on location key, the default partitioning results in very large shuffle write upfront. This is retained as long as the query is repeated. However, if there is another query involving join, then again a huge shuffle write is involved. This is greatly minimized when records are already shuffled to placed closer to their neighbors by our partitioning scheme. The values shown in Figure \ref{fig:join} is for all the trips that cost less than \$10. The size of shuffle varies depending on the number of records in joining and selection criteria on the joining RDDs. Not only does this involve network cost but also affects response time since it involves writing shuffled values to disk. Figure \ref{fig:sparkui}			
+				
+				\begin{figure}[h]
+					\centering
+					\includegraphics[width=0.9\linewidth]{join}
+					\caption{Shuffling read/write Behavior: \texttt{join()}} 
+				\label{fig:join}
+			\end{figure}
+			
+				\begin{figure}[h]
+					\centering
+					\includegraphics[width=0.9\linewidth]{sparkui}
+					\caption{Timeline view on Spark UI indicating shuffle Write Time} 
+					\label{fig:sparkui}
 				\end{figure}
 			\clearpage
 			\paragraph{Partitioning is not always beneficial: Benefits of Partitioning with multiple Reads}
 			
-			As we could infer that custom partitioning involves (i) additional transformations, (ii) learning about the load to performing load balancing, (iii) increase or decrease in size of partitions and  (iv) redistribution of data points, there is a considerable increase in the time Spark takes to partition relative to the default partitioning. 
+			As we could infer, running custom partitioning takes considerably longer than default partitioning due to the steps involved:  (i) additional transformations, (ii) learning about the load to performing load balancing, (iii) increase or decrease in size of partitions and  (iv) redistribution of data points, there is a considerable increase in the time Spark takes to partition relative to the default partitioning. 
 			
-			So, when we take into consideration also the time it took to partition the dataset. However this is a one time process and further querying on these partitions are spatially effective. So, when we calculate the overall benefit the partitioning provides, we consider the impact on multiple reads(spatial queries, filters and joins) on this Geohash Partitioned RDD. 
+			So, we should take into consideration also the time it took to partition the dataset. However this is a one time process and later spatial querying on these partitions are effective in terms of response time and minimized shuffling. So, when we calculate the overall benefit the partitioning provides, we consider the impact on multiple reads(spatial queries, filters and joins) on this Geohash Partitioned RDD. 
 							 
 				\begin{figure}[h]
 				\centering
@@ -1084,20 +1145,20 @@ class GeoHashPartitioner(partitionerMap: scala.collection.Map[String,Long]) exte
 			From the graph it is obvious that 
 			\begin{itemize}
 				\item the reason to partition has to be solid 
-				\item contain multiple Spatial reads on these partitioned RDDs
-				\item need to maintain the context of partition through the application’s lifespan
+				\item the application must contain multiple Spatial reads on these partitioned RDDs
+				\item need to maintain the context of partition through the application's lifespan
 			\end{itemize}
 						  
 		  \clearpage
 		  \subsection{Challenges and Limitations}
 		  
-		  The realization of the proposed approached imposed few challenges and limitations. The thesis work tried to solve those challenges with simpler solutions and optimizations and the rest of technical chanllenges that are beyond the scope of this work have been documented as limitations in this section.
+		  The realization of the proposed approached imposed few challenges and limitations. The thesis work tried to solve those challenges with simpler solutions and optimizations and the rest of technical challenges that are beyond the scope of this work have been documented as limitations in this section.
 		  
 		  \paragraph{Inherent imbalance with Hashing}
-			  Hash based partitioning alone, generally results in an imbalanced partitioning. Data could be distributed more at one particular hash value. This is greatly possible with geospatial data set with data points concentrated around major cities and temporally in hotspot areas. Hence there is a need to address this issue and we propose that the algorithm learns the data distribution of the input dataset and the creates variable orders of space filling curves. 
+			  Hash based partitioning alone, generally results in an imbalanced partitioning. There could be more records corresponding to one particular hash value. This is greatly possible with geospatial data set with data points concentrated around major cities and temporally in hotspot areas. Hence there is a need to address this issue and we propose that the algorithm learns the data distribution of the input dataset and limits the number of records to a hash key based on a threshold value. This is achieved by curves filling the earth with variable orders(increased curve order in areas of density and reduced in sparse areas.)
 			  
 		  \paragraph{Need for minimizing scans during load balancing}
-			  During the load aware balancing phase, there is a need to scan through the complete dataset multiple times to encode latitude, longitude to Geohash, calculate Geohash prefix, understand the load distribution under each prefix cluster. Such multiple scanning during partitioning are acceptable if the size of dataset is considerably small. However for large data sets with more than 100 million records, would result is \textit{n x 100 millions scans} if we are scanning them for \textit{'n'} difference operations. The algorithm addresses this problem by drilling deeper scan once and building in reverse for coarser resolutions as explained in section \pageref{fig:loadlevels}. 
+			  During the load aware balancing phase, there is a need to scan through the complete dataset multiple times to encode latitude, longitude to Geohash, calculate Geohash prefix, understand the load distribution under each prefix cluster. Such multiple scanning during partitioning are acceptable if the size of dataset is considerably small. However for large data sets with more than 100 million records, would result is \textit{n x 100 millions scans} if we are scanning them for \textit{'n'} difference operations. The algorithm addresses this problem by drilling deeper scan once and building in reverse for coarser resolutions as explained in figure \pageref{fig:loadlevels}. 
 			  
 		 \paragraph{Custom partitioner: Need to maintain metadata}
 		  \par The default hash partitioning algorithm in spark depends on Java hash code. For every incoming record, the hash code of its key is generated. Each hash code which is an integer, is mapped on to one the available partitions using 
@@ -1111,7 +1172,7 @@ class GeoHashPartitioner(partitionerMap: scala.collection.Map[String,Long]) exte
 		  However, in our case, since hashcode is a geohash string and we perform a load balanced hash partitioning we always need the data structure that holds the load aware geohash to RDD partitions mapping metadata. We need this metadata to perform partitioning. 
 		  
 		  \paragraph{Custom partitioner: Need to retain spark context}
-		  Once the spark Job is completed the Geohash partitioned RDD has to be persisted on to a disk (or) HDFS. When we read these RDDs back again within a different spark context, the RDD would retain the partitioner and partitions but not the same corresponding partition number. In this case, the metadata with mapping from Geohash to Partition number becomes irrelevant. Hence we are need to maintain the same spark context throughout the life span of the application or the life span of spark cluster. This is the normal case with any Spark application, yet it is a reasonable limitation.
+		  Once the spark Job is completed the Geohash partitioned RDD has to be persisted on to a disk (or) HDFS. When we read these RDDs back again within a different spark context, the RDD would retain the partitioner and partitions but not the same corresponding partition number. In this case, the metadata with mapping from Geohash to Partition number becomes irrelevant. Hence we are need to maintain the same spark context throughout the life span of the application or the life span of spark cluster. This is the normal case with any Spark application, yet it is a limitation.
 		  
   \cleardoublepage
   
