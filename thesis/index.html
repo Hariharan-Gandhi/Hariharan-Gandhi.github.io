@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=1024" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <title>GeoHashSpark | Geo-Partitioning and querying in Apache Spark</title>
-    
+
     <meta name="description" content="Home Page for my thesis work" />
     <meta name="author" content="Hariharan Gandhi" />
-    
+
     <link rel="shortcut icon" href="../favicon.ico" />
     <link rel="icon" href="../favicon.ico">
 
@@ -18,7 +18,7 @@
 
     <!-- Bootstrap: Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-    
+
     <!--Google Analytics Tagging -->
     <script>
         (function(i, s, o, g, r, a, m) {
@@ -27,26 +27,25 @@
                 (i[r].q = i[r].q || []).push(arguments)
             }, i[r].l = 1 * new Date();
             a = s.createElement(o),
-            m = s.getElementsByTagName(o)[0];
+                m = s.getElementsByTagName(o)[0];
             a.async = 1;
             a.src = g;
             m.parentNode.insertBefore(a, m)
         })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
         ga('create', 'UA-63700129-1', 'auto');
         ga('send', 'pageview');
-        
-        
+
+
         window.onload = function() {
-          // $("#ifrm").contents().find('img').css({'width':'100%','height':'100%'});
+            // $("#ifrm").contents().find('img').css({'width':'100%','height':'100%'});
         };
-        
-        
     </script>
 </head>
 
 <body>
     <div class="page-header container text-center">
-        <h1>Balanced Geohash Partitioning and Efficient Retrieval of Geospatial Big Data on Distributed and Parallel Platforms (Apache Spark)</h1><h2><small><a href="#docs"> Documentation <span class="glyphicon glyphicon-file" aria-hidden="true"></span></a> &#43; <a href="#code">Source Code <span class="glyphicon glyphicon-console" aria-hidden="true"></span></a> &#43; <a href="#presentation">Presentation <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span></a></small></h2>
+        <h1>Balanced Geohash Partitioning and Efficient Retrieval of Geospatial Big Data on Distributed and Parallel Platforms (Apache Spark)</h1>
+        <h2><small><a href="#docs"> Documentation <span class="glyphicon glyphicon-file" aria-hidden="true"></span></a> &#43; <a href="#code">Source Code <span class="glyphicon glyphicon-console" aria-hidden="true"></span></a> &#43; <a href="#presentation">Presentation <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span></a></small></h2>
     </div>
     <div class="container">
         <div class="panel panel-warning">
@@ -55,114 +54,69 @@
             </div>
             <div class="panel-body">
                 <ul style="list-style-type:square">
-                    
-                    <li>Thesis Defence completed - 13th July 2016</li>
+
+                    <li>Thesis Defence completed - <b>13th July 2016</b> 🎓  &nbsp; 😊</li>
 
                     <li>New Document: Updated Presentation with the DVS(Datenbanken und Verteilte Systeme/Databases and Distributed Systems ) format</li>
 
                 </ul>
-            </div>     
+            </div>
         </div>
-        
-        
+
+
         <h2 id="docs">Documents</h2>
         <hr>
-            <div id="alert" class="alert alert-danger alert-dismissible" role="alert" style="display: none">
-                <button type="button" class="close" onclick="$('#alert').hide()" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <strong>Note! </strong> Links to documents are currently disabled. Next Update: 11/12-June-2016
-            </div>
-
-        <div class="table-responsive">
-            <table class="table table-hover">
-                <!--<tr style="font-size: 16px;">
-                    <th class="info">Document Name</th>
-                    <th class="info">Version</th>
-                    <th class="info">Last Updated</th>
-                </tr>
-                -->
-                <tr>
-                    <td class="active"><img style="display:inline" class="media-object" src="../Resources/Homepage/Adobe_PDF_file_icon_32x32.png" alt="..."> Thesis Pdf</td>
-                    <td class=" ">V2.0 &nbsp;<a target="_blank" href="http://hariharan-gandhi.github.io/thesis/TUDthesis.pdf"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></a> &nbsp; &#124; &nbsp; Pre print Version &nbsp;<a target="_blank" href="http://hariharan-gandhi.github.io/thesis/TUDthesis.pdf"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span><small><i>&nbsp;()</i></small></a></td>
-                    
-                </tr>
-                
-                <!--
-                <tr>
-                    <td class="active"><i style="color:#64B5F6">[doc]</i> Abstract</td>
-                    <td class=" ">V1.0</td>
-                    <td class="warning">Gregor <a href="#" onclick="$('#alert').show()" class="glyphicon glyphicon-edit" aria-hidden="true"></a> &nbsp; &#124; &nbsp; Robert <a href="#" onclick="$('#alert').show()" class="glyphicon glyphicon-edit" aria-hidden="true"></a></td>
-                    <td class="success">07-June-2016</td>
-                </tr>
-                <tr>
-                    <td class="active"><i style="color:#64B5F6">[doc]</i> Introduction</td>
-                    <td class=" ">V1.0</td>
-                    <td class="warning">Gregor <a href="#" onclick="$('#alert').show()" class="glyphicon glyphicon-edit" aria-hidden="true"></a>  &nbsp; &#124; &nbsp; Robert <a href="#" onclick="$('#alert').show()" class="glyphicon glyphicon-edit" aria-hidden="true"></a></td>
-                    <td class="success">07-June-2016</td>
-                </tr>
-                <tr>
-                    <td class="active"><i style="color:#64B5F6">[doc]</i> Background and Related Work</td>
-                    <td class=" ">V1.0</td>
-                    <td class="warning">Gregor <a href="#" onclick="$('#alert').show()" class="glyphicon glyphicon-edit" aria-hidden="true"></a>  &nbsp; &#124; &nbsp; Robert <a href="#" onclick="$('#alert').show()" class="glyphicon glyphicon-edit" aria-hidden="true"></a></td>
-                    <td class="success">07-June-2016</td>
-                </tr>
-                <tr>
-                    <td class="active"><i style="color:#64B5F6">[doc]</i> GeoHash Partitioner: Design and Implementation</td>
-                    <td class=" ">V1.0</td>
-                    <td class="warning">Gregor <a href="#" onclick="$('#alert').show()" class="glyphicon glyphicon-edit" aria-hidden="true"></a>  &nbsp; &#124; &nbsp; Robert <a href="#" onclick="$('#alert').show()" class="glyphicon glyphicon-edit" aria-hidden="true"></a></td>
-                    <td class="success">07-June-2016</td>
-                </tr>
-                <tr>
-                    <td class="active"><i style="color:#64B5F6">[doc]</i> GeoHash Query Optimizer: Design and Implementation</td>
-                    <td class=" ">V1.0</td>
-                    <td class="warning">Gregor <a href="#" onclick="$('#alert').show()" class="glyphicon glyphicon-edit" aria-hidden="true"></a>  &nbsp; &#124; &nbsp; Robert <a href="#" onclick="$('#alert').show()" class="glyphicon glyphicon-edit" aria-hidden="true"></a></td>
-                    <td class="success">07-June-2016</td>
-                </tr>
-                <tr>
-                    <td class="active"><i style="color:#64B5F6">[doc]</i> Evaluation and Results</td>
-                    <td class=" ">V1.0</td>
-                    <td class="warning">Gregor <a href="#" onclick="$('#alert').show()" class="glyphicon glyphicon-edit" aria-hidden="true"></a>  &nbsp; &#124; &nbsp; Robert <a href="#" onclick="$('#alert').show()" class="glyphicon glyphicon-edit" aria-hidden="true"></a></td>
-                    <td class="success">07-June-2016</td>
-                </tr>
-                <tr>
-                    <td class="active"><i style="color:#64B5F6">[doc]</i> Conclusions</td>
-                    <td class=" ">V1.0</td>
-                    <td class="warning">Gregor <a href="#" onclick="$('#alert').show()" class="glyphicon glyphicon-edit" aria-hidden="true"></a>  &nbsp; &#124; &nbsp; Robert <a href="#" onclick="$('#alert').show()" class="glyphicon glyphicon-edit" aria-hidden="true"></a> </td>
-                    <td class="success">07-June-2016</td>
-                </tr>
-                -->
-            </table>
+        <div id="alert" class="alert alert-danger alert-dismissible" role="alert" style="display: none">
+            <button type="button" class="close" onclick="$('#alert').hide()" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <strong>Note! </strong> Links to documents are currently disabled. Next Update: 11/12-June-2016
         </div>
+        
+        <div>
+            <a target="_blank" href="TUDthesis.pdf">
+                <img style="display:inline; margin-right:5px" class="media-object" src="../Resources/Homepage/Adobe_PDF_file_icon_32x32.png" alt="...">Download Thesis PDF format
+            </a> 
+            &nbsp;|&nbsp;
+                <a target="_blank" href="https://github.com/Hariharan-Gandhi/Master-Thesis/tree/master/Latex"><img style="display:inline;width:30px; margin-right:5px" class="media-object" src="../Resources/Homepage/tex.png" alt="...">Download Latex Project</a>
+        </div>
+        
+
 
         <h2 id="presentation">Presentation</h2>
         <hr>
 
+        <div>
+                <a target="_blank" href="./Presentation/GeohashPartitioning.pptx"><img style="display:inline;width:30px; margin-right:5px" class="media-object" src="../Resources/Homepage/ppt.svg" alt="...">Download PPT format</a> 
+            &nbsp;|&nbsp;
+                <a target="_blank" href="./Presentation/GeohashPartitioning.pdf"><img style="display:inline; margin-right:5px" class="media-object" src="../Resources/Homepage/Adobe_PDF_file_icon_32x32.png" alt="...">Download Presentation PDF</a>
+            &nbsp;|&nbsp;
+                <a target="_blank" href="./Presentation/GeoHashPartitioning_Presentation.odp"><img style="display:inline;width:30px; margin-right:5px" class="media-object" src="../Resources/Homepage/odp.png" alt="...">Download ODP format<small class="text-warning"><i>&#42; Outdated &#33; (Archive)</i></small></a> 
+            
+        </div>
+        <br>
+
         <div class="panel panel-info">
-          <div class="panel-heading" style="padding:20px 15px">
-              <h3 class="panel-title">Balanced Geohash Partitioning &amp; Querying for Apache Spark™
+            <div class="panel-heading" style="padding:20px 15px">
+                <h3 class="panel-title">Balanced Geohash Partitioning &amp; Querying for Apache Spark™
                   <span style="float:right"><a target="_blank" href="http://hariharan-gandhi.github.io/thesis/Presentation/GeoHashPartitioning_Impress/index.html">Launch Presentation in new tab <span class="glyphicon glyphicon-blackboard" aria-hidden="true"></span></a></span></h3>
-          </div>
-          <div class="panel-body"  style="padding:0px">
-            <!-- <iframe src="./Presentation/GeoHashPartitioning_Impress/res/img/prescover.png" id="ifrm" name="iframe_presentation" width="100%" height="500" frameborder="0">You need iframes buddy!!!</iframe> -->
-        <iframe src="./Presentation/GeoHashPartitioning_Impress/index.html#/overview" id="ifrm" name="iframe_presentation" width="100%" height="500" frameborder="0">You need iframes buddy!!!</iframe>
-          </div>
-            
+            </div>
+            <div class="panel-body" style="padding:0px">
+                <!-- <iframe src="./Presentation/GeoHashPartitioning_Impress/res/img/prescover.png" id="ifrm" name="iframe_presentation" width="100%" height="500" frameborder="0">You need iframes buddy!!!</iframe> -->
+                <iframe src="./Presentation/GeoHashPartitioning_Impress/index.html#/overview" id="ifrm" name="iframe_presentation" width="100%" height="500" frameborder="0">You need iframes buddy!!!</iframe>
+            </div>
+
             <div class="panel-footer" style="margin-top: -5px;"><small>Click on empty area and use &nbsp;<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span> &nbsp; and &nbsp;<span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>&nbsp;to navigate <i>Created with <a href="https://github.com/impress/impress.js/" target="_blank">impress.js</a>👍</i></small>
-            <span style="float:right">
-                <a target="_blank" href="https://github.com/Hariharan-Gandhi/Hariharan-Gandhi.github.io/blob/master/thesis/Presentation/GeoHashPartitioning_Presentation.odp?raw=true"> Download ODP format</a> |
-                <a target="_blank" href="https://github.com/Hariharan-Gandhi/Hariharan-Gandhi.github.io/blob/master/thesis/Presentation/GeoHashPartitioning_Presentation.odp?raw=true"> Download PPT format</a> |
-                <a target="_blank" href="https://github.com/Hariharan-Gandhi/Hariharan-Gandhi.github.io/blob/master/thesis/Presentation/GeoHashPartitioning_Presentation.odp?raw=true"> Download Presentation PDF</a>
-                </span>
-            
+
+
             </div>
         </div>
 
 
         <h2 id="code">Source Code </h2>
         <hr>
-        <li> <a href="https://github.com/Hariharan-Gandhi/Master-Thesis"> View Source on Github </a>
-            <img style="display:inline" class="media-object" src="../Resources/Homepage/GitHub-Mark-120px-plus.png" alt="..."> 
-            <small class="text-warning"><i>&nbsp; &#42;Currently available only to collaborators&#33; </i></small>
-        </li>
+        <img style="display:inline; width:30px" class="media-object" src="../Resources/Homepage/GitHub-Mark-120px-plus.png">&nbsp;
+        <a href="https://github.com/Hariharan-Gandhi/Master-Thesis">View Source on Github </a>
+        <small class="text-warning"><i>&nbsp; &#42;Currently available only to collaborators&#33; </i></small>
+
         <hr style="margin-top:50px">
 
         <!-- Modal -->
