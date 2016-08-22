@@ -16,6 +16,25 @@ $(window).load(function() {
 
 
 $(document).ready(function() {
+    
+     $(function() {
+            $(".typed_search")
+                .typed({
+                    strings: [
+                        'my recent 🌎 search terms...'
+                    ],
+
+                    typeSpeed: 60,
+                    backDelay: 500,
+                    loop: true,
+                    contentType: 'text', // or text
+                    // defaults to false for infinite loop
+                    loopCount: false,
+                    callback: function() {},
+                    resetCallback: function() {}
+                });
+        });
+
 
     $('#htmlMistakeText').popover({
         'placement': 'top',
