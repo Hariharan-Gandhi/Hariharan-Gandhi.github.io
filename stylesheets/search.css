@@ -90,6 +90,24 @@
     -moz-animation-iteration-count: 2;
     -moz-animation-timing-function: linear;
 }
+
+.bubble_spy {
+    font-size: 3.7em;
+    line-height: 126px;
+    text-align: center;
+    vertical-align: middle;
+    -webkit-animation-name: thumb;
+    -webkit-animation-duration: 400ms;
+    -webkit-transform-origin: 50% 50%;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    -moz-animation-name: thumb;
+    -moz-animation-duration: 400ms;
+    -moz-transform-origin: 50% 50%;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-timing-function: linear;
+}
+
 #page-loading-div {
     position: fixed;
     z-index: 50;
@@ -99,15 +117,19 @@
     right: 0;
     background: rgba(0, 0, 0, 0.9);
     transition: 1s 0.4s;
-    text-align: center;
     opacity: 1;
     filter: alpha(opacity=80);
 }
-#page-loading-img {
+.page-loading-img {
     position: absolute;
     top: 50%;
-    left: 50%;
+
+    right: 47%;
+    height:126px;
+    width:126px;
 }
+
+
 #page-loading-text {
     font-size: 0.7em;
     letter-spacing: 3px;
@@ -489,3 +511,5 @@
 60% {
     transform: translateY(-15px);
 }
+
+

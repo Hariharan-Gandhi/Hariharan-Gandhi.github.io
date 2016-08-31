@@ -21,7 +21,7 @@ $(document).ready(function() {
             $(".typed_search")
                 .typed({
                     strings: [
-                        'my recent 🌎 search terms...'
+                        'these days I google 🌎 for...'
                     ],
 
                     typeSpeed: 60,
@@ -35,7 +35,7 @@ $(document).ready(function() {
                 });
         });
 
-
+    /*
     $('#htmlMistakeText').popover({
         'placement': 'top',
         'animation': true,
@@ -43,7 +43,7 @@ $(document).ready(function() {
         'content': 'Seems like a mistake <button id="report-btn" type="button" data-toggle="modal" data-target="#myModal" onclick="$(&quot;#htmlMistakeText&quot;).popover(&quot;hide&quot;);" class="btn btn-danger">Report!</button>',
 
         'container': 'body'
-    });
+    }); */
 
     $('#reported-btn').click(function() {
         console.log("Reported");

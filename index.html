@@ -61,8 +61,15 @@
 
     <!-- Initial Overlay until page loads -->
     <div id="page-loading-div">
-        <h5 id="page-loading-text">Please wait. Loading....</h5>
-        <img id="page-loading-img" src="./Resources/Homepage/loading.gif" alt="Loading" />
+        <span id="page-loading-text">Loading everything you should know about Hari.... </span>
+<!--        <img id="page-loading-img" src="./Resources/Homepage/loading.gif" alt="Loading" />-->
+        
+    <div class="page-loading-img">
+        <img style="position:absolute" src="./Resources/Homepage/ring.gif" alt="Loading" />
+
+        <div class="bubble_spy"> 🕵 </div>
+
+    </div>
 
 
     </div>
@@ -96,13 +103,15 @@
 
         <div class="row featurette">
             <div class="col-md-7">
-                <h2 class="featurette-heading" id="htmlMistakeText" style="margin-top: 0px;"><font color="red">&#33;</font>&lt;p class="header-text text-anim" &gt; About: &lt;/p&gt;</h2>
+                <!-- <h2 class="featurette-heading" id="htmlMistakeText" style="margin-top: 0px;"><font color="red">&#33;</font>&lt;p class="header-text text-anim" &gt; About: &lt;/p&gt;</h2> -->
+                <h2 class="featurette-heading" id="htmlMistakeText" style="margin-top: 0px;">About me:</h2> 
 
-                <p class="lead">I am <a href="https://de.linkedin.com/in/hariharangandhi" target="_blank">Hariharan Gandhi</a>, 26 yr old, Software developer. I am fresh graduate with a Master's degree in Informatics specializing in <a href="https://www.informatik.tu-darmstadt.de/en/students/study-programmes/masterstudiengaenge/specialized-master-degrees/distributed-software-systems/" target="_blank">Distributed Software Systems</a> at the <a href="https://www.tu-darmstadt.de/universitaet/selbstverstaendnis/index.en.jsp" target="_blank">Technical University of Darmstadt</a>. I am currently interning and doing my master thesis at <a href="https://www-05.ibm.com/de/entwicklung/index_en.html" target="_blank">IBM Deutschland Research and Development Lab</a>
+                <p class="lead">I am <a href="https://de.linkedin.com/in/hariharangandhi" target="_blank">Hariharan Gandhi</a>, 26 yr old, Software developer. I am a fresh graduate with a Master's degree in Informatics specializing in <a href="https://www.informatik.tu-darmstadt.de/en/students/study-programmes/masterstudiengaenge/specialized-master-degrees/distributed-software-systems/" target="_blank">Distributed Software Systems</a> at the <a href="https://www.tu-darmstadt.de/universitaet/selbstverstaendnis/index.en.jsp" target="_blank">Technical University of Darmstadt</a>. I am currently interning and doing my master thesis at <a href="https://www-05.ibm.com/de/entwicklung/index_en.html" target="_blank">IBM Deutschland Research and Development Lab</a>
                 </p>
             </div>
             <div class="col-md-5">
-                <img class="featurette-image img-responsive center-block img-circle bubble" src="./Resources/Homepage/me.jpg" alt="Generic placeholder image">
+<!--                <img class="featurette-image img-responsive center-block img-circle bubble" src="./Resources/Homepage/me.jpg" alt="Generic placeholder image">-->
+                <img class="featurette-image img-responsive center-block img-circle bubble" style="height:300px;width:300px" src="./Resources/Homepage/hari1.jpg" alt="Generic placeholder image">
 
             </div>
             <div class="row featurette viewmore col-md-12 text-center">
@@ -285,7 +294,7 @@
                             <h2><span class="glyphicon glyphicon-education" aria-hidden="true"></span> <span class="timeline-header">Master of Science</span></h2>
                             <h2>Technische Universität Darmstadt</h2>
                             <h3>Distributed Software System</h3>
-                            <kbd>Score: 1.9 </kbd><samp> (Best: 1.0 - Worst 5.0)</samp>
+                            <kbd>Score: 1.9 </kbd><samp> [Grade Scale: 1.0(Best) - 5.0(Worst)]</samp>
                         </div>
                         <div class="col-sm-3 timeline-media">
                             <a href="https://www.tu-darmstadt.de/universitaet/index.en.jsp" target="_blank">
@@ -308,10 +317,10 @@
                             <h2><span class="glyphicon glyphicon-education" aria-hidden="true"></span> <span class="timeline-header">Bachelor of Technology</span></h2>
                             <h2>Madras Institute of Technology, University Department, Anna University</h2>
                             <h3>Information Technology</h3>
-                            <kbd>Score: 8.1 </kbd><samp> (Best: 10.0 - Worst 1.0)</samp>
+                            <kbd>Score: 8.1 </kbd><samp>  [Grade Scale: 10.0(Best) - 1.0(Worst)]</samp>
                         </div>
                         <div class="col-sm-3 timeline-media">
-                            <a href="https://www.mitindia.edu/" target="_blank">
+                            <a href="http://www.mitindia.edu/" target="_blank">
                                 <img class="img-rounded featurette-image img-responsive" style="border-radius:16px;" src="./Resources/Homepage/Anna_University_Chennai_logo.png" alt="Generic placeholder image">
                             </a>
                         </div>
@@ -330,10 +339,10 @@
                             <h2><span class="glyphicon glyphicon-education" aria-hidden="true"></span> <span class="timeline-header">Higher Secondary</span></h2>
                             <h2>Kurinji Higher Secondary School</h2>
                             <h3> Computer Science, Mathematics</h3>
-                            <kbd>Score: 96.7&#37; </kbd><samp> (Best: 100&#37;)</samp>
+                            <kbd>Score: 96.7&#37; </kbd><samp>  [Grade Scale: 100&#37;(Best)]</samp>
                         </div>
                         <div class="col-sm-3 timeline-media">
-                            <a href="https://www.kurinjischoolnkl.in/" target="_blank">
+                            <a href="http://www.kurinjischoolnkl.in/" target="_blank">
                                 <img class="img-rounded featurette-image img-responsive" src="./Resources/Homepage/kurinji_school_logo_new.png" alt="Generic placeholder image">
                             </a>
                         </div>
@@ -350,9 +359,9 @@
                         <div class="col-sm-9">
 
                             <h2><span class="glyphicon glyphicon-education" aria-hidden="true"></span> <span class="timeline-header">High School</span></h2>
-                            <h2>Devi Matriculation School</h2>
+                            <h2>Devi Matriculation Higher Sec School</h2>
                             <h3>High School</h3>
-                            <kbd>Score: 91.64&#37; </kbd><samp> (Best: 100&#37;)</samp>
+                            <kbd>Score: 91.64&#37; </kbd><samp> [Grade Scale: 100&#37;(Best)]</samp>
                         </div>
                         <div class="col-sm-3 timeline-media">
                             <a href="https://www.facebook.com/devimatrichrsecschool" target="_blank">
@@ -745,7 +754,7 @@ Extension of IBM-DB2, and Analytics using Apache Spark as a Service
     <div class="container">
         <div class="row featurette">
             <div class="col-md-12">
-                <h2 class="featurette-heading">Awards &amp; Events  <span class="text-muted"> events I participate &amp; accolades</span></h2>
+                <h2 class="featurette-heading">Awards &amp; Events  <span class="text-muted"> my participations &amp; accolades</span></h2>
                 <div class="heading-underline"></div>
                  <!-- ** Accordation**-->
                     
