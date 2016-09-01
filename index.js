@@ -21,20 +21,26 @@ $(document).ready(function() {
             $(".typed_search")
                 .typed({
                     strings: [
-                        'these days I google 🌎 for...'
-                    ],
+                                    '<a href="https://twitter.com/hashtag/scalability" target="_blank" style="color: cadetblue">#Scalability</a>',
+                                    '<a href="https://twitter.com/hashtag/Cloudfoundry" target="_blank" style="color: cadetblue">#Cloud Foundry</a>',
+                                    '<a href="https://twitter.com/hashtag/bosh.io" target="_blank" style="color: cadetblue">#BOSH.io</a>',
+                                    '<a href="https://twitter.com/hashtag/Golang" target="_blank" style="color: cadetblue">#Golang</a>',
+                                    '<a href="https://twitter.com/hashtag/Rio Olympics" target="_blank" style="color: cadetblue">#Rio Olympics</a>'
+                                    ],
 
-                    typeSpeed: 60,
+                    typeSpeed: 90,
                     backDelay: 500,
                     loop: true,
-                    contentType: 'text', // or text
+                    contentType: 'html', // or text
                     // defaults to false for infinite loop
                     loopCount: false,
-                    callback: function() {},
+                    callback: function() {
+                        
+                    },
                     resetCallback: function() {}
                 });
         });
-
+//these days I google 🌎 for... 
     /*
     $('#htmlMistakeText').popover({
         'placement': 'top',
