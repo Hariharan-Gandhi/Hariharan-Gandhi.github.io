@@ -22,10 +22,10 @@ $(document).ready(function() {
                 .typed({
                     strings: [
                                     '<a href="https://twitter.com/hashtag/scalability" target="_blank" style="color: cadetblue">#Scalability</a>',
+                                    '<a href="https://twitter.com/hashtag/Elasticsearch" target="_blank" style="color: cadetblue">#Elasticsearch</a>',
                                     '<a href="https://twitter.com/hashtag/Cloudfoundry" target="_blank" style="color: cadetblue">#Cloud Foundry</a>',
                                     '<a href="https://twitter.com/hashtag/bosh.io" target="_blank" style="color: cadetblue">#BOSH.io</a>',
-                                    '<a href="https://twitter.com/hashtag/Golang" target="_blank" style="color: cadetblue">#Golang</a>',
-                                    '<a href="https://twitter.com/hashtag/Rio Olympics" target="_blank" style="color: cadetblue">#Rio Olympics</a>'
+                                    '<a href="https://twitter.com/hashtag/Golang" target="_blank" style="color: cadetblue">#Golang</a>'
                                     ],
 
                     typeSpeed: 90,
