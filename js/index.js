@@ -20,8 +20,8 @@ $(document).ready(function() {
      $(function() {
             $(".typed_search")
                 .typed({
-                    strings: ['<a href="https://twitter.com/hashtag/scalability" target="_blank" style="color: cadetblue">#Kubernetes</a>',
-                              '<a href="https://twitter.com/hashtag/scalability" target="_blank" style="color: cadetblue">#Open Broker</a>',
+                    strings: ['<a href="https://twitter.com/hashtag/kubernetes" target="_blank" style="color: cadetblue">#Kubernetes</a>',
+                              '<a href="https://twitter.com/hashtag/OpenBroker" target="_blank" style="color: cadetblue">#Open Broker</a>',
                               '<a href="https://twitter.com/hashtag/scalability" target="_blank" style="color: cadetblue">#Scalability</a>',
                               '<a href="https://twitter.com/hashtag/Elasticsearch" target="_blank" style="color: cadetblue">#Elasticsearch</a>',
                               '<a href="https://twitter.com/hashtag/Cloudfoundry" target="_blank" style="color: cadetblue">#Cloud Foundry</a>',
